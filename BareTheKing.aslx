@@ -10,14 +10,15 @@
   </game>
   <object name="StartRoom">
     <inherit name="editor_room" />
-    <alias>a clearing</alias>
+    <alias>clearing</alias>
     <description>It appears to be in the midst of a typical temperate forest. There is a broken statue off to the northwest end. Paths run to the north, west, and east.</description>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
-    <object name="RookStatue">
+    <object name="rookStatue">
       <inherit name="editor_object" />
+      <inherit name="container_open" />
       <alias>broken statue</alias>
       <look>It is a broken statue, composed of strangely shaped bricks. These bricks might be made of marble, but you are not entirely sure. Parts of the top of the statue are broken off, but what remains implies it might have looked like the top of a medieval tower before. Amidst some debris, there is a brick on the ground nearby.</look>
       <alt type="stringlist">
@@ -31,6 +32,29 @@
       </displayverbs>
       <inventoryverbs type="stringlist" />
       <usestandardverblist type="boolean">false</usestandardverblist>
+      <drop type="boolean">false</drop>
+      <feature_container />
+      <close type="boolean">false</close>
+      <open type="boolean">false</open>
+      <contentsprefix>has</contentsprefix>
+    </object>
+    <object name="trees">
+      <inherit name="editor_object" />
+      <scenery />
+      <look>There is a mix of decidious and coniferous trees. They are otherwise nondescript.</look>
+      <drop type="boolean">false</drop>
+    </object>
+    <object name="tree">
+      <inherit name="editor_object" />
+      <scenery />
+      <look>Which tree, exactly?</look>
+    </object>
+    <object name="brick">
+      <inherit name="editor_object" />
+      <visible />
+      <look>It is a brick made out of the same material as the broken statue.</look>
+      <take />
+      <scenery />
     </object>
   </object>
 </asl>
