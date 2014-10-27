@@ -8,11 +8,29 @@
     <firstpublished>2014</firstpublished>
     <author>Team DJKALA</author>
   </game>
-  <object name="room">
+  <object name="StartRoom">
     <inherit name="editor_room" />
+    <alias>a clearing</alias>
+    <description>It appears to be in the midst of a typical temperate forest. There is a broken statue off to the northwest end. Paths run to the north, west, and east.</description>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
+    </object>
+    <object name="RookStatue">
+      <inherit name="editor_object" />
+      <alias>broken statue</alias>
+      <look>It is a broken statue, composed of strangely shaped bricks. These bricks might be made of marble, but you are not entirely sure. Parts of the top of the statue are broken off, but what remains implies it might have looked like the top of a medieval tower before. Amidst some debris, there is a brick on the ground nearby.</look>
+      <alt type="stringlist">
+        <value>statue</value>
+        <value>broken statue</value>
+        <value>rook</value>
+        <value>broken rook</value>
+      </alt>
+      <displayverbs type="stringlist">
+        <value>Look at</value>
+      </displayverbs>
+      <inventoryverbs type="stringlist" />
+      <usestandardverblist type="boolean">false</usestandardverblist>
     </object>
   </object>
 </asl>
