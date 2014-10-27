@@ -1,0 +1,18 @@
+<!--Saved by Quest 5.5.5328.26617-->
+<asl version="550">
+  <include ref="English.aslx" />
+  <include ref="Core.aslx" />
+  <game name="Bare the King">
+    <gameid>508d9430-e42b-4fb5-989f-f43e11445fca</gameid>
+    <version>1.0</version>
+    <firstpublished>2014</firstpublished>
+    <author>Team DJKALA</author>
+  </game>
+  <object name="room">
+    <inherit name="editor_room" />
+    <object name="player">
+      <inherit name="editor_object" />
+      <inherit name="editor_player" />
+    </object>
+  </object>
+</asl>
