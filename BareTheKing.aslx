@@ -7,54 +7,52 @@
     <version>1.0</version>
     <firstpublished>2014</firstpublished>
     <author>Team DJKALA</author>
+    <gridmap />
   </game>
-  <object name="StartRoom">
+  <object name="startingSquare">
     <inherit name="editor_room" />
-    <alias>clearing</alias>
-    <description>It appears to be in the midst of a typical temperate forest. There is a broken statue off to the northwest end. Paths run to the north, west, and east.</description>
+    <alias>Starting Square</alias>
+    <description>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bar, empty floor in an alternating black and white tile pattern.</description>
+    <descprefix>You open your eyes slowly.*ping*</descprefix>
+    <objectslistprefix type="string"></objectslistprefix>
     <object name="player">
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
-    <object name="rookStatue">
+    <exit alias="northeast" to="rookSquare">
+      <inherit name="northeastdirection" />
+    </exit>
+  </object>
+  <object name="rookSquare">
+    <inherit name="editor_room" />
+    <descprefix>As your approach</descprefix>
+    <objectslistprefix type="string"></objectslistprefix>
+    <description>the tower, you see that it appears to be in ruin. A battlement crowned top lies a few feet away from the base, nwith small tufts of soft, fragrant grass poking up from underneath it.</description>
+    <object name="Rook">
       <inherit name="editor_object" />
-      <inherit name="container_open" />
-      <alias>broken statue</alias>
-      <look>It is a broken statue, composed of strangely shaped bricks. These bricks might be made of marble, but you are not entirely sure. Parts of the top of the statue are broken off, but what remains implies it might have looked like the top of a medieval tower before. Amidst some debris, there is a brick on the ground nearby.</look>
-      <alt type="stringlist">
-        <value>statue</value>
-        <value>broken statue</value>
-        <value>rook</value>
-        <value>broken rook</value>
-      </alt>
-      <displayverbs type="stringlist">
-        <value>Look at</value>
-      </displayverbs>
-      <inventoryverbs type="stringlist" />
-      <usestandardverblist type="boolean">false</usestandardverblist>
-      <drop type="boolean">false</drop>
-      <feature_container />
-      <close type="boolean">false</close>
-      <open type="boolean">false</open>
-      <contentsprefix>has</contentsprefix>
+      <inherit name="male" />
+      <alias>The Tower</alias>
+      <look>Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.</look>
+      <speak type="script">
+        msg ("As you gasp, trying to catch your breath, it heaves a heavy sigh.")
+        msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
+        msg ("“Ah!  You...you talk?”")
+        msg ("“It appears so.”")
+        msg ("“Oh...ok then?  Where am I, what happened here?”")
+        msg ("It heaves another sigh.")
+        msg ("“We are losing the battle.  I am broken and undone.”")
+        msg ("“The battle?”")
+        msg ("“Yes.  Have you not seen the red pieces?  They have already taken the queen.  It is only a matter of time now before the rest of us are destroyed.”")
+        msg ("“You don’t seem that broken, why don’t you rejoin the fight?”")
+        msg ("If it had eyebrows, the tower would be raising them at you.")
+        msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
+        msg ("The tower sighs again and lapses into sad silence.")
+      </speak>
+      <gender>it</gender>
+      <article>it</article>
     </object>
-    <object name="trees">
-      <inherit name="editor_object" />
-      <scenery />
-      <look>There is a mix of decidious and coniferous trees. They are otherwise nondescript.</look>
-      <drop type="boolean">false</drop>
-    </object>
-    <object name="tree">
-      <inherit name="editor_object" />
-      <scenery />
-      <look>Which tree, exactly?</look>
-    </object>
-    <object name="brick">
-      <inherit name="editor_object" />
-      <visible />
-      <look>It is a brick made out of the same material as the broken statue.</look>
-      <take />
-      <scenery />
-    </object>
+    <exit alias="southwest" to="startingSquare">
+      <inherit name="southwestdirection" />
+    </exit>
   </object>
 </asl>
