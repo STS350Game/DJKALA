@@ -19,19 +19,19 @@
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
-    <exit alias="northeast" to="rookSquare">
+    <exit alias="northeast" to="The Tower">
       <inherit name="northeastdirection" />
     </exit>
   </object>
-  <object name="rookSquare">
+  <object name="The Tower">
     <inherit name="editor_room" />
-    <descprefix>As your approach</descprefix>
-    <objectslistprefix type="string"></objectslistprefix>
-    <description>the tower, you see that it appears to be in ruin. A battlement crowned top lies a few feet away from the base, nwith small tufts of soft, fragrant grass poking up from underneath it.</description>
+    <descprefix>You approach</descprefix>
+    <objectslistprefix>You can see</objectslistprefix>
+    <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
     <object name="Rook">
       <inherit name="editor_object" />
       <inherit name="male" />
-      <alias>The Tower</alias>
+      <alias>Tower</alias>
       <look>Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.</look>
       <speak type="script">
         msg ("As you gasp, trying to catch your breath, it heaves a heavy sigh.")
@@ -54,5 +54,22 @@
     <exit alias="southwest" to="startingSquare">
       <inherit name="southwestdirection" />
     </exit>
+  </object>
+  <object name="bishopSquare">
+    <inherit name="editor_room" />
+    <description>You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.</description>
+    <object name="Bishop">
+      <inherit name="editor_object" />
+      <look><![CDATA[You are assailed with images of bloody knuckles and a cruel laugh as a silent scream rings in your ears, the voice terrifyingly familiar: it is your own.  Pain threatens to overwhelm you, but dissipates somewhat as you stumble towards the seated figure.  Shaking your head to clear the lingering hurt, you approach him.<br/>]]></look>
+      <gender>he</gender>
+      <article>him</article>
+      <speak type="script">
+        msg ("“Hello?”")
+        msg ("“Go away.”")
+        msg ("“Er...who are you?  What are you doing here?”")
+        msg ("“It doesn’t matter anymore.  I couldn’t save the queen, I failed.  I have nothing left to fight for.”")
+        msg ("The man covers his eyes with his hands, ignoring you.")
+      </speak>
+    </object>
   </object>
 </asl>
