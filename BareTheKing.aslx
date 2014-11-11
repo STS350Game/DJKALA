@@ -34,19 +34,25 @@
       <alias>Tower</alias>
       <look>Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.</look>
       <speak type="script">
-        msg ("As you gasp, trying to catch your breath, it heaves a heavy sigh.")
-        msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
-        msg ("“Ah!  You...you talk?”")
-        msg ("“It appears so.”")
-        msg ("“Oh...ok then?  Where am I, what happened here?”")
-        msg ("It heaves another sigh.")
-        msg ("“We are losing the battle.  I am broken and undone.”")
-        msg ("“The battle?”")
-        msg ("“Yes.  Have you not seen the red pieces?  They have already taken the queen.  It is only a matter of time now before the rest of us are destroyed.”")
-        msg ("“You don’t seem that broken, why don’t you rejoin the fight?”")
-        msg ("If it had eyebrows, the tower would be raising them at you.")
-        msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
-        msg ("The tower sighs again and lapses into sad silence.")
+        if (not GetBoolean(Rook,"talked_before")) {
+          msg ("As you gasp, trying to catch your breath, it heaves a heavy sigh.")
+          msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
+          msg ("“Ah!  You...you talk?”")
+          msg ("“It appears so.”")
+          msg ("“Oh...ok then?  Where am I, what happened here?”")
+          msg ("It heaves another sigh.")
+          msg ("“We are losing the battle.  I am broken and undone.”")
+          msg ("“The battle?”")
+          msg ("“Yes.  Have you not seen the red pieces?  They have already taken the queen.  It is only a matter of time now before the rest of us are destroyed.”")
+          msg ("“You don’t seem that broken, why don’t you rejoin the fight?”")
+          msg ("If it had eyebrows, the tower would be raising them at you.")
+          msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
+          msg ("The tower sighs again and lapses into sad silence.")
+          Rook.talked_before = true
+        }
+        else {
+          msg ("The tower is unresponsive, a somber silence lingers in the air.")
+        }
       </speak>
       <gender>it</gender>
       <article>it</article>
