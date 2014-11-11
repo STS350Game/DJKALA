@@ -17,6 +17,9 @@
     <object name="brick3">
       <inherit name="editor_object" />
     </object>
+    <object name="Token">
+      <inherit name="editor_object" />
+    </object>
   </game>
   <object name="startingSquare">
     <inherit name="editor_room" />
@@ -96,6 +99,14 @@
           msg ("“It doesn’t matter anymore.  I couldn’t save the queen, I failed.  I have nothing left to fight for.”")
           msg ("The man covers his eyes with his hands, ignoring you.")
           Bishop.talked_before = true
+        }
+        else if (Token.parent = player) {
+          msg ("You hold out the white kerchief to the Bishop.  He looks up, startled.")
+          msg ("“What is this?”")
+          msg ("“Its just a hankee.  The Knight said something about strengthening my heart, but...I think you might need it more then me.”")
+          msg ("“That...is very kind of you.  But giving yourself strength may not be enough to win this fight.”")
+          msg ("You shrug awkwardly.")
+          msg(""Maybe not but...the Knight seemed pretty convinced that this isn’t over yet.  He’s out there fighting as hard as he can, even if it is hopeless."")
         }
         else {
           msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
