@@ -70,11 +70,17 @@
       <gender>he</gender>
       <article>him</article>
       <speak type="script">
-        msg ("“Hello?”")
-        msg ("“Go away.”")
-        msg ("“Er...who are you?  What are you doing here?”")
-        msg ("“It doesn’t matter anymore.  I couldn’t save the queen, I failed.  I have nothing left to fight for.”")
-        msg ("The man covers his eyes with his hands, ignoring you.")
+        if (not GetBoolean(Bishop,"talked_before")) {
+          msg ("“Hello?”")
+          msg ("“Go away.”")
+          msg ("“Er...who are you?  What are you doing here?”")
+          msg ("“It doesn’t matter anymore.  I couldn’t save the queen, I failed.  I have nothing left to fight for.”")
+          msg ("The man covers his eyes with his hands, ignoring you.")
+          Bishop.talked_before = true
+        }
+        else {
+          msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
+        }
       </speak>
     </object>
   </object>
