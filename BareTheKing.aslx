@@ -20,6 +20,9 @@
     <object name="Token">
       <inherit name="editor_object" />
     </object>
+    <object name="Horse">
+      <inherit name="editor_object" />
+    </object>
   </game>
   <object name="startingSquare">
     <inherit name="editor_room" />
@@ -112,6 +115,35 @@
           msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
         }
       </speak>
+    </object>
+  </object>
+  <object name="KnightSquare">
+    <inherit name="editor_room" />
+    <description>You see an armoured man staring forlornly at the darkness that surrounds the chessboard, making half hearted whistles and clicking noises. </description>
+    <descprefix type="string"></descprefix>
+    <objectslistprefix type="string"></objectslistprefix>
+    <object name="Knight">
+      <inherit name="editor_object" />
+      <speak type="script">
+        if (not GetBoolean(Knight,"talked_to")){
+          msg(""Who are you calling for?”")
+          msg("“The Red Queen chased off my loyal steed, and now she’s lost in the darkness.  If anything happens to her, I’ll never be able to forgive myself.”")
+          msg("“Why don’t you go after her?”")
+          msg(""“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
+          msg("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
+          Knight.talked_to = true
+        }
+        else if (Horse.parent = player){
+          msg("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
+          msg("“Thank you for returning her to me, we are not complete without each other.  My fellow pieces have lost heart in the battle, but we never did: we only lost our ability to fight.  Take this token, that it may strengthen your heart as you have mine.”")
+          msg("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off into the enemy ranks, nimbly dodging around several pieces before toppling the Rook.")
+          msg("As the Rook falls, you notice something glinting where it’s base was resting. ")
+        }
+         else {
+          msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
+        }
+      </speak>
+      <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
     </object>
   </object>
 </asl>
