@@ -8,6 +8,15 @@
     <firstpublished>2014</firstpublished>
     <author>Team DJKALA</author>
     <gridmap />
+    <object name="brick1">
+      <inherit name="editor_object" />
+    </object>
+    <object name="brick2">
+      <inherit name="editor_object" />
+    </object>
+    <object name="brick3">
+      <inherit name="editor_object" />
+    </object>
   </game>
   <object name="startingSquare">
     <inherit name="editor_room" />
@@ -49,6 +58,16 @@
           msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
           msg ("The tower sighs again and lapses into sad silence.")
           Rook.talked_before = true
+        }
+        else if ((brick1.parent = player)) {
+          if ( brick2.parent = player) {
+            if (brick3.parent = player) {
+              msg ("You place the bricks in the obvious hole, then lift the Rook’s head back onto its shoulders.  The bricks shift a bit under the weight, but appear to be holding.  The Rook shifts on its base to stare down the board.")
+              msg ("“I am whole again?  Thank you.  Now I can continue my duty, your way will be clear.  The Pawn must be Queen, it is the only way to check the Red King.  Hurry, your time is growing short.”")
+              msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Bishop.")
+              msg ("You see a small twinkle as something falls to the ground where the red piece stood.")
+            }
+          }
         }
         else {
           msg ("The tower is unresponsive, a somber silence lingers in the air.")
