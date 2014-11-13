@@ -3,11 +3,14 @@
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <game name="Bare the King">
+    <inherit name="theme_novella" />
     <gameid>508d9430-e42b-4fb5-989f-f43e11445fca</gameid>
     <version>1.0</version>
     <firstpublished>2014</firstpublished>
     <author>Team DJKALA</author>
     <gridmap />
+    <start type="script">
+    </start>
     <object name="brick1">
       <inherit name="editor_object" />
     </object>
@@ -36,6 +39,7 @@
     </object>
     <exit alias="northeast" to="The Tower">
       <inherit name="northeastdirection" />
+      <attr name="grid_length" type="int">0</attr>
     </exit>
   </object>
   <object name="The Tower">
@@ -48,6 +52,8 @@
       <inherit name="male" />
       <alias>Tower</alias>
       <look>Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.</look>
+      <gender>it</gender>
+      <article>it</article>
       <speak type="script">
         if (not GetBoolean(Rook,"talked_before")) {
           msg ("As you gasp, trying to catch your breath, it heaves a heavy sigh.")
@@ -79,11 +85,10 @@
           msg ("The tower is unresponsive, a somber silence lingers in the air.")
         }
       </speak>
-      <gender>it</gender>
-      <article>it</article>
     </object>
     <exit alias="southwest" to="startingSquare">
       <inherit name="southwestdirection" />
+      <attr name="grid_length" type="int">0</attr>
     </exit>
   </object>
   <object name="bishopSquare">
@@ -124,26 +129,26 @@
     <objectslistprefix type="string"></objectslistprefix>
     <object name="Knight">
       <inherit name="editor_object" />
+      <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
       <speak type="script">
-        if (not GetBoolean(Knight,"talked_to")){
+        if (not GetBoolean(Knight,"talked_to")) {
           msg(""Who are you calling for?”")
           msg("“The Red Queen chased off my loyal steed, and now she’s lost in the darkness.  If anything happens to her, I’ll never be able to forgive myself.”")
           msg("“Why don’t you go after her?”")
           msg(""“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
-          msg("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
+          msg ("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
           Knight.talked_to = true
         }
-        else if (Horse.parent = player){
-          msg("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
-          msg("“Thank you for returning her to me, we are not complete without each other.  My fellow pieces have lost heart in the battle, but we never did: we only lost our ability to fight.  Take this token, that it may strengthen your heart as you have mine.”")
-          msg("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off into the enemy ranks, nimbly dodging around several pieces before toppling the Rook.")
-          msg("As the Rook falls, you notice something glinting where it’s base was resting. ")
+        else if (Horse.parent = player) {
+          msg ("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
+          msg ("“Thank you for returning her to me, we are not complete without each other.  My fellow pieces have lost heart in the battle, but we never did: we only lost our ability to fight.  Take this token, that it may strengthen your heart as you have mine.”")
+          msg ("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off into the enemy ranks, nimbly dodging around several pieces before toppling the Rook.")
+          msg ("As the Rook falls, you notice something glinting where it’s base was resting. ")
         }
-         else {
+        else {
           msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
         }
       </speak>
-      <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
     </object>
   </object>
 </asl>
