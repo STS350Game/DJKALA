@@ -37,12 +37,12 @@
       <inherit name="editor_object" />
       <inherit name="editor_player" />
     </object>
-    <exit alias="northeast" to="The Tower">
+    <exit alias="northeast" to="Tower">
       <inherit name="northeastdirection" />
       <attr name="grid_length" type="int">0</attr>
     </exit>
   </object>
-  <object name="The Tower">
+  <object name="Tower">
     <inherit name="editor_room" />
     <descprefix>You approach</descprefix>
     <objectslistprefix>You can see</objectslistprefix>
@@ -64,7 +64,7 @@
           msg ("It heaves another sigh.")
           msg ("“We are losing the battle.  I am broken and undone.”")
           msg ("“The battle?”")
-          msg ("“Yes.  Have you not seen the red pieces?  They have already taken the queen.  It is only a matter of time now before the rest of us are destroyed.”")
+          msg ("“Yes.  Have you not seen the black pieces?  They have already taken the queen.  It is only a matter of time now before the rest of us are destroyed.”")
           msg ("“You don’t seem that broken, why don’t you rejoin the fight?”")
           msg ("If it had eyebrows, the tower would be raising them at you.")
           msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
@@ -75,9 +75,9 @@
           if ( brick2.parent = player) {
             if (brick3.parent = player) {
               msg ("You place the bricks in the obvious hole, then lift the Rook’s head back onto its shoulders.  The bricks shift a bit under the weight, but appear to be holding.  The Rook shifts on its base to stare down the board.")
-              msg ("“I am whole again?  Thank you.  Now I can continue my duty, your way will be clear.  The Pawn must be Queen, it is the only way to check the Red King.  Hurry, your time is growing short.”")
-              msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Bishop.")
-              msg ("You see a small twinkle as something falls to the ground where the red piece stood.")
+              msg ("“I am whole again?  Thank you.  Now I can continue my duty, your way will be clear.  The Pawn must be Queen, it is the only way to check the black King.  Hurry, your time is growing short.”")
+              msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Queen.")
+              msg ("You see a small twinkle as something falls to the ground where the black piece stood.")
             }
           }
         }
@@ -115,6 +115,16 @@
           msg ("“That...is very kind of you.  But giving yourself strength may not be enough to win this fight.”")
           msg ("You shrug awkwardly.")
           msg(""Maybe not but...the Knight seemed pretty convinced that this isn’t over yet.  He’s out there fighting as hard as he can, even if it is hopeless."")
+          msg ("“Maybe not but...the Knight seemed pretty convinced that this isn’t over yet.  He’s out there fighting as hard as he can, even if it is hopeless.  Wouldn’t trying be better than sitting here waiting for the end?”")
+          msg ("He looks pensive.")
+          msg ("“Besides, it’s not like it could get any worse.”")
+          msg ("A sad smile tugs at his mouth.  ")
+          msg ("“You...may have a point.  Besides, it looks like that damn Knight isn’t going to let this end any time soon.  Here, take this.”")
+          msg ("He pulls a brick from behind his robes, it’s one of the Rook’s!")
+          msg ("“I...sabotaged the Rook.  I didn’t want to keep fighting, so I thought I would at least hasten the end.  It was foolish of me, and I can only hope you will find it in your heart to forgive me.”")
+          msg ("Turning, he squares his shoulders and moves confidently down the board, toppling the black Pawn directly before the enemy King.")
+          msg ("The Black King chuckles menacingly, then leaps forward, smashing the Bishop to the ground.")
+          msg ("A small sparkle flies through the air, landing a few feet away from you.")
         }
         else {
           msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
@@ -136,14 +146,18 @@
           msg("“The Red Queen chased off my loyal steed, and now she’s lost in the darkness.  If anything happens to her, I’ll never be able to forgive myself.”")
           msg("“Why don’t you go after her?”")
           msg(""“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
+          msg ("“Who are you calling for?”")
+          msg ("“The black Queen chased off my loyal steed, and now she’s lost in the darkness.  If anything happens to her, I’ll never be able to forgive myself.”")
+          msg ("“Why don’t you go after her?”")
+          msg ("“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
           msg ("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
           Knight.talked_to = true
         }
         else if (Horse.parent = player) {
           msg ("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
           msg ("“Thank you for returning her to me, we are not complete without each other.  My fellow pieces have lost heart in the battle, but we never did: we only lost our ability to fight.  Take this token, that it may strengthen your heart as you have mine.”")
-          msg ("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off into the enemy ranks, nimbly dodging around several pieces before toppling the Rook.")
-          msg ("As the Rook falls, you notice something glinting where it’s base was resting. ")
+          msg ("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off as the Knight draws a lance from somewhere.  You realize that they are approaching the enemy Rook, and try to call out a warning, but you are too late!")
+          msg ("The Knight plants his lance into the side of the Rook, which shudders.  To your amazement, it begins shaking apart, and as it falls into ruin you notice something glinting where it’s base was resting. The Knight, his labour completed, salutes you before turning back towards the enemy lines.")
         }
         else {
           msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
