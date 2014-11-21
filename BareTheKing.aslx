@@ -41,6 +41,14 @@
       <inherit name="northeastdirection" />
       <attr name="grid_length" type="int">0</attr>
     </exit>
+    <exit alias="north" to="KnightSquare">
+      <inherit name="northdirection" />
+      <attr name="grid_length" type="int">0</attr>
+    </exit>
+    <exit alias="northwest" to="bishopSquare">
+      <inherit name="northwestdirection" />
+      <attr name="grid_length" type="int">0</attr>
+    </exit>
   </object>
   <object name="The Tower">
     <inherit name="editor_room" />
@@ -121,6 +129,9 @@
         }
       </speak>
     </object>
+    <exit alias="southeast" to="startingSquare">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
   <object name="KnightSquare">
     <inherit name="editor_room" />
@@ -150,5 +161,8 @@
         }
       </speak>
     </object>
+    <exit alias="south" to="startingSquare">
+      <inherit name="southdirection" />
+    </exit>
   </object>
 </asl>
