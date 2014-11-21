@@ -55,6 +55,15 @@
     <exit alias="east" to="F6">
       <inherit name="eastdirection" />
     </exit>
+    <exit alias="southwest" to="D5">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="E5">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="F5">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
   <object name="Tower">
     <inherit name="editor_room" />
@@ -111,6 +120,9 @@
     <exit alias="west" to="G6">
       <inherit name="westdirection" />
     </exit>
+    <exit alias="south" to="H5">
+      <inherit name="southdirection" />
+    </exit>
   </object>
   <object name="bishopSquare">
     <inherit name="editor_room" />
@@ -164,6 +176,9 @@
     </exit>
     <exit alias="east" to="B5">
       <inherit name="eastdirection" />
+    </exit>
+    <exit alias="south" to="A4">
+      <inherit name="southdirection" />
     </exit>
   </object>
   <object name="KnightSquare">
@@ -521,6 +536,9 @@
     <exit alias="south" to="B5">
       <inherit name="southdirection" />
     </exit>
+    <exit alias="southeast" to="C5">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
   <object name="C6">
     <inherit name="editor_room" />
@@ -542,6 +560,12 @@
     <exit alias="southwest" to="B5">
       <inherit name="southwestdirection" />
     </exit>
+    <exit alias="south" to="C5">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="D5">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
   <object name="D6">
     <inherit name="editor_room" />
@@ -559,6 +583,12 @@
     </exit>
     <exit alias="east" to="startingSquare">
       <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="C5">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="southeast" to="E5">
+      <inherit name="southeastdirection" />
     </exit>
   </object>
   <object name="F6">
@@ -578,6 +608,15 @@
     <exit alias="east" to="G6">
       <inherit name="eastdirection" />
     </exit>
+    <exit alias="southwest" to="E5">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="F5">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="G5">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
   <object name="G6">
     <inherit name="editor_room" />
@@ -596,6 +635,15 @@
     <exit alias="east" to="Tower">
       <inherit name="eastdirection" />
     </exit>
+    <exit alias="southwest" to="F5">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="G5">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="H5">
+      <inherit name="southeastdirection" />
+    </exit>
   </object>
   <object name="PawnSquare">
     <inherit name="editor_room" />
@@ -612,6 +660,319 @@
       <inherit name="northdirection" />
     </exit>
     <exit alias="northeast" to="C6">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="C5">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="A4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="B4">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="C4">
+      <inherit name="southeastdirection" />
+    </exit>
+  </object>
+  <object name="C5">
+    <inherit name="editor_room" />
+    <exit alias="west" to="B5">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="B6">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="C6">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="D6">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="D5">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="B4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="C4">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="D4">
+      <inherit name="southeastdirection" />
+    </exit>
+  </object>
+  <object name="D5">
+    <inherit name="editor_room" />
+    <exit alias="west" to="C5">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="C6">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="D6">
+      <inherit name="northdirection" />
+      <attr name="grid_length" type="int">0</attr>
+    </exit>
+    <exit alias="northeast" to="startingSquare">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="E5">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="C4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="D4">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="E4">
+      <inherit name="southeastdirection" />
+    </exit>
+  </object>
+  <object name="E5">
+    <inherit name="editor_room" />
+    <exit alias="west" to="D5">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="D6">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="startingSquare">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="F6">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="F5">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="D4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="E4">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="F4">
+      <inherit name="southeastdirection" />
+    </exit>
+  </object>
+  <object name="F5">
+    <inherit name="editor_room" />
+    <exit alias="west" to="E5">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="startingSquare">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="F6">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="G6">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="G5">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="E4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="F4">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="G4">
+      <inherit name="southeastdirection" />
+    </exit>
+  </object>
+  <object name="G5">
+    <inherit name="editor_room" />
+    <exit alias="west" to="F5">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="F6">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="G6">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="Tower">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="H5">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="F4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="G4">
+      <inherit name="southdirection" />
+    </exit>
+    <exit alias="southeast" to="H4">
+      <inherit name="southeastdirection" />
+    </exit>
+  </object>
+  <object name="H5">
+    <inherit name="editor_room" />
+    <exit alias="west" to="G5">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="G6">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="Tower">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="southwest" to="G4">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="south" to="H4">
+      <inherit name="southdirection" />
+    </exit>
+  </object>
+  <object name="A4">
+    <inherit name="editor_room" />
+    <exit alias="north" to="bishopSquare">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="B5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="B4">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="south" to="A3">
+      <inherit name="southdirection" />
+    </exit>
+  </object>
+  <object name="B4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="A4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="bishopSquare">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="B5">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="C5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="C4">
+      <inherit name="eastdirection" />
+    </exit>
+    <exit alias="southwest" to="A3">
+      <inherit name="southwestdirection" />
+    </exit>
+  </object>
+  <object name="C4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="B4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="B5">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="C5">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="D5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="D4">
+      <inherit name="eastdirection" />
+    </exit>
+  </object>
+  <object name="D4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="C4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="C5">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="D5">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="E5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="E4">
+      <inherit name="eastdirection" />
+    </exit>
+  </object>
+  <object name="E4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="D4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="D5">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="E5">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="F5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="F4">
+      <inherit name="eastdirection" />
+    </exit>
+  </object>
+  <object name="F4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="E4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="E5">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="F5">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="G5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="G4">
+      <inherit name="eastdirection" />
+    </exit>
+  </object>
+  <object name="G4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="F4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="F5">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="G5">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="H5">
+      <inherit name="northeastdirection" />
+    </exit>
+    <exit alias="east" to="H4">
+      <inherit name="eastdirection" />
+    </exit>
+  </object>
+  <object name="H4">
+    <inherit name="editor_room" />
+    <exit alias="west" to="G4">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="G5">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="north" to="H5">
+      <inherit name="northdirection" />
+    </exit>
+  </object>
+  <object name="A3">
+    <inherit name="editor_room" />
+    <exit alias="north" to="A4">
+      <inherit name="northdirection" />
+    </exit>
+    <exit alias="northeast" to="B4">
       <inherit name="northeastdirection" />
     </exit>
   </object>
