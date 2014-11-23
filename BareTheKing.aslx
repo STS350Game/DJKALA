@@ -3,7 +3,6 @@
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <game name="Bare the King">
-    <inherit name="theme_novella" />
     <gameid>508d9430-e42b-4fb5-989f-f43e11445fca</gameid>
     <version>1.0</version>
     <firstpublished>2014</firstpublished>
@@ -73,6 +72,7 @@
     </object>
     <object name="B8">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="A8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -119,6 +119,7 @@
     </object>
     <object name="D8">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="C8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -158,9 +159,14 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="east" to="F8">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="F8">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="E8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -196,12 +202,33 @@
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="east" to="H8">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+    </object>
+    <object name="H8">
+      <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
+      <exit alias="west" to="G8">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southwest" to="G7">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="H7">
+        <inherit name="southdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
   </object>
   <object name="Row 7">
     <inherit name="editor_room" />
     <object name="A7">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="east" to="B7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -260,6 +287,7 @@
     </object>
     <object name="C7">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -350,9 +378,14 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="east" to="E7">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="E7">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="east" to="F7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -375,6 +408,14 @@
       </exit>
       <exit alias="southeast" to="F6">
         <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="west" to="D7_KnightSquare">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="E6_StartingSquare">
+        <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -411,6 +452,7 @@
     </object>
     <object name="G7">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="F7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -435,6 +477,14 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northeast" to="H8">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="H6_TowerSquare">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="H7">
       <inherit name="editor_room" />
@@ -448,6 +498,10 @@
       </exit>
       <exit alias="southwest" to="G6">
         <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="north" to="H8">
+        <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -479,6 +533,7 @@
     </object>
     <object name="B6">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -549,6 +604,7 @@
     </object>
     <object name="D6">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="C6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -623,6 +679,7 @@
     </object>
     <object name="F6">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="E6_StartingSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -697,6 +754,7 @@
       <objectslistprefix>You can see</objectslistprefix>
       <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
       <alias>H6</alias>
+      <attr name="grid_fill">Gray</attr>
       <object name="Rook">
         <inherit name="editor_object" />
         <inherit name="male" />
@@ -750,6 +808,10 @@
       </exit>
       <exit alias="south" to="H5">
         <inherit name="southdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="G7">
+        <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -821,6 +883,7 @@
     </object>
     <object name="B5">
       <inherit name="editor_room" />
+      <attr name="grid_fill">White</attr>
       <exit alias="west" to="A5_BishopSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -856,6 +919,7 @@
     </object>
     <object name="C5">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="B5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -926,6 +990,7 @@
     </object>
     <object name="E5">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="D5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -996,6 +1061,7 @@
     </object>
     <object name="G5">
       <inherit name="editor_room" />
+      <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="F5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1869,6 +1935,8 @@
     <object name="B1">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <attr name="grid_borderwidth" type="int">1</attr>
+      <grid_parent_offset_auto />
       <exit alias="west" to="A1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1917,6 +1985,7 @@
     <object name="D1">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <attr name="grid_borderwidth" type="int">1</attr>
       <exit alias="west" to="C1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
