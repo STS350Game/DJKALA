@@ -9,8 +9,9 @@
     <author>Team DJKALA</author>
     <gridmap />
     <pov type="object">player</pov>
-    <start type="script">
-    </start>
+    <start type="script"><![CDATA[
+      msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
+    ]]></start>
     <object name="brick1">
       <inherit name="editor_object" />
       <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
@@ -637,9 +638,11 @@
     <object name="E6_StartingSquare">
       <inherit name="editor_room" />
       <alias>E6</alias>
-      <description>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bar, empty floor in an alternating black and white tile pattern.</description>
-      <descprefix>You open your eyes slowly.*ping*</descprefix>
-      <objectslistprefix type="string"></objectslistprefix>
+      <description type="string"></description>
+      <descprefix>You are in</descprefix>
+      <objectslistprefix>You can see</objectslistprefix>
+      <usedefaultprefix type="boolean">false</usedefaultprefix>
+      <prefix>square</prefix>
       <object name="player">
         <inherit name="editor_object" />
         <inherit name="editor_player" />
