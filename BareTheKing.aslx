@@ -1004,6 +1004,10 @@
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
       <enter type="script">
+        if (GetBoolean(EnemyQueen, "alive")) {
+          msg ("Immediately after entering the square, the black queen to your southeast quickly slides towards you. Before you could react, everything is black. You are dead.")
+          finish
+        }
       </enter>
       <beforeenter type="script">
         if (GetBoolean(EnemyPawn, "alive")) {
@@ -1946,6 +1950,10 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="EnemyQueen">
+        <inherit name="editor_object" />
+        <alive />
+      </object>
     </object>
   </object>
   <object name="Row 1">
