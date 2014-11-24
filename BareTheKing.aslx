@@ -638,11 +638,17 @@
     <object name="E6_StartingSquare">
       <inherit name="editor_room" />
       <alias>E6</alias>
-      <description type="string"></description>
+      <description type="script">
+        if (GetBoolean(EnemyPawn, "alive")) {
+          msg ("A black pawn stands in the square to your immediate south.")
+        }
+      </description>
       <descprefix>You are in</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
+      <beforefirstenter type="script">
+      </beforefirstenter>
       <object name="player">
         <inherit name="editor_object" />
         <inherit name="editor_player" />
@@ -1026,6 +1032,15 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="EnemyPawn">
+        <inherit name="editor_object" />
+        <alias>Black pawn</alias>
+        <take type="boolean">false</take>
+        <displayverbs type="stringlist" />
+        <inventoryverbs type="stringlist" />
+        <drop type="boolean">false</drop>
+        <alive />
+      </object>
     </object>
     <object name="F5">
       <inherit name="editor_room" />
