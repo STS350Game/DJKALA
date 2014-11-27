@@ -15,6 +15,7 @@
     <object name="brick1">
       <inherit name="editor_object" />
       <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
+      <dropmsg>You dropped the beige brick</dropmsg>
       <take type="script">
         if (GetBoolean(Rook, "talked_before")) {
           msg ("You pick up the brick. It must belong to the Rook.")
@@ -25,7 +26,6 @@
         numBricks = numBricks+1
         // //Not sure if I need to initialize numBricks to 0 and where that would be done.
       </take>
-      <dropmsg>You dropped the beige brick</dropmsg>
       <ondrop type="script">
         numBricks = numBricks-1
       </ondrop>
@@ -45,6 +45,17 @@
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <giveto type="scriptdictionary">
+        <item key="Knight">
+          msg ("You give the horse to the knight")
+        </item>
+      </giveto>
+      <givesingle type="boolean">false</givesingle>
+      <givetoanything type="script">
+        msg ("They don't seem to want the horse.")
+      </givetoanything>
+      <pet>You calmly pet the horse, as if trying to reassure it. </pet>
     </object>
     <object name="memory1">
       <inherit name="editor_object" />
@@ -94,6 +105,12 @@
     <inherit name="editor_room" />
     <object name="A8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="south" to="A7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -110,6 +127,12 @@
     <object name="B8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="A8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -133,6 +156,12 @@
     </object>
     <object name="C8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="B8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -157,6 +186,12 @@
     <object name="D8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="C8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -180,6 +215,12 @@
     </object>
     <object name="E8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="D8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -204,6 +245,12 @@
     <object name="F8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="E8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -227,6 +274,12 @@
     </object>
     <object name="G8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="south" to="G7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -247,6 +300,12 @@
     <object name="H8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -266,6 +325,12 @@
     <object name="A7">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="east" to="B7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -521,6 +586,12 @@
     </object>
     <object name="H7">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -543,6 +614,12 @@
     <inherit name="editor_room" />
     <object name="A6">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A7">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -684,6 +761,7 @@
       <object name="player">
         <inherit name="editor_object" />
         <inherit name="editor_player" />
+        <attr name="horse_possible" type="boolean">false</attr>
       </object>
       <exit alias="northeast" to="F7">
         <inherit name="northeastdirection" />
@@ -796,6 +874,12 @@
       <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
       <alias>H6</alias>
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <object name="Rook">
         <inherit name="editor_object" />
         <inherit name="male" />
@@ -862,21 +946,22 @@
         <dropmsg>You drop the grass into more grass.</dropmsg>
         <eat>You taste a bit of the grass, but it doesn't taste as good as it smells.</eat>
         <look>The grass looks quite soft.</look>
+        <inventoryverbs type="stringlist">
+          <value>Look at</value>
+          <value>Drop</value>
+        </inventoryverbs>
         <offertothedarkness type="script">
-          if (GetBoolean(Knight, "talked_to")) {
+          if (GetBoolean(Knight, "talked_to") and GetBoolean(player,"horse_possible")) {
             msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink")
             msg ("There is a pregnant pause, and the fear that you are too late gnaws at you, but then...you hear the clopping of hooves, and with a jubilant whinny, a large white war horse bursts from the fog, nearly knocking you over.  Startled, you drop the grass, and the horse happily snuffles it up before raising its head to regard you with soft brown eyes.  There is a bridle on its head and a saddle on its back.")
             MakeObjectInvisible (grass)
             // //Have a check if to see if player is on the right square to do this
+            AddToInventory (Horse)
           }
           else {
             msg ("Nothing happens.")
           }
         </offertothedarkness>
-        <inventoryverbs type="stringlist">
-          <value>Look at</value>
-          <value>Drop</value>
-        </inventoryverbs>
       </object>
     </object>
   </object>
@@ -887,6 +972,12 @@
       <description>You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.</description>
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <object name="Bishop">
         <inherit name="editor_object" />
         <look><![CDATA[You are assailed with images of bloody knuckles and a cruel laugh as a silent scream rings in your ears, the voice terrifyingly familiar: it is your own.  Pain threatens to overwhelm you, but dissipates somewhat as you stumble towards the seated figure.  Shaking your head to clear the lingering hurt, you approach him.<br/>]]></look>
@@ -1185,6 +1276,12 @@
     </object>
     <object name="H5">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1211,6 +1308,12 @@
     <inherit name="editor_room" />
     <object name="A4">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A5_BishopSquare">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1452,6 +1555,12 @@
     <object name="H4">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1479,6 +1588,12 @@
     <object name="A3">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A4">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1764,6 +1879,12 @@
     <object name="H3">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1791,6 +1912,12 @@
     <object name="A2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A3">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2031,6 +2158,12 @@
     <object name="H2">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2062,6 +2195,14 @@
     <object name="A1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = True
+      </enter>
+      <beforefirstenter type="script">
+      </beforefirstenter>
+      <onexit type="script">
+        player.horse_possible = False
+      </onexit>
       <exit alias="north" to="A2">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2080,6 +2221,14 @@
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
       <grid_parent_offset_auto />
+      <beforeenter type="script">
+      </beforeenter>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="A1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2104,6 +2253,12 @@
     <object name="C1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="B1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2129,6 +2284,12 @@
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="C1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2153,6 +2314,12 @@
     <object name="E1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="D1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2182,6 +2349,12 @@
       </beforeenter>
       <beforefirstenter type="script">
       </beforefirstenter>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="E1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2231,6 +2404,12 @@
     <object name="G1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="F1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2254,6 +2433,12 @@
     </object>
     <object name="H1">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2272,5 +2457,10 @@
     <property>offertothedarkness</property>
     <pattern>offer to the darkness</pattern>
     <defaultexpression>"You can't offer to the darkness " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>pet</property>
+    <pattern>pet</pattern>
+    <defaultexpression>"You can't pet " + object.article + "."</defaultexpression>
   </verb>
 </asl>
