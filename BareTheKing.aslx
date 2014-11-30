@@ -88,7 +88,7 @@
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <MemoryCounter type="int">0</MemoryCounter>
     </object>
-<<<<<<< HEAD
+
     <object name="helped_rook">
       <inherit name="editor_object" />
       <visible type="boolean">false</visible>
@@ -103,7 +103,7 @@
       <inherit name="editor_object" />
       <visible type="boolean">false</visible>
       <scenery />
-=======
+    </object>
     <object name="memory3">
       <inherit name="editor_object" />
       <take />
@@ -115,7 +115,6 @@
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
       ]]></ontake>
->>>>>>> origin/master
     </object>
   </game>
   <object name="Row 8">
