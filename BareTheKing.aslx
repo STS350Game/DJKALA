@@ -53,6 +53,21 @@
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <MemoryCounter type="int">0</MemoryCounter>
     </object>
+    <object name="helped_rook">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <scenery />
+    </object>
+    <object name="helped_bishop">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <scenery />
+    </object>
+    <object name="helped_knight">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <scenery />
+    </object>
   </game>
   <object name="Row 8">
     <inherit name="editor_room" />
@@ -349,6 +364,7 @@
             msg ("“Thank you for returning her to me, we are not complete without each other.  My fellow pieces have lost heart in the battle, but we never did: we only lost our ability to fight.  Take this token, that it may strengthen your heart as you have mine.”")
             msg ("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off as the Knight draws a lance from somewhere.  You realize that they are approaching the enemy Rook, and try to call out a warning, but you are too late!")
             msg ("The Knight plants his lance into the side of the Rook, which shudders.  To your amazement, it begins shaking apart, and as it falls into ruin you notice something glinting where it’s base was resting. The Knight, his labour completed, salutes you before turning back towards the enemy lines.")
+            AddToInventory (helped_knight)
           }
           else {
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
@@ -638,15 +654,15 @@
     <object name="E6_StartingSquare">
       <inherit name="editor_room" />
       <alias>E6</alias>
+      <descprefix>You are in</descprefix>
+      <objectslistprefix>You can see</objectslistprefix>
+      <usedefaultprefix type="boolean">false</usedefaultprefix>
+      <prefix>square</prefix>
       <description type="script">
         if (GetBoolean(EnemyPawn, "alive")) {
           msg ("A black pawn stands in the square to your immediate south.")
         }
       </description>
-      <descprefix>You are in</descprefix>
-      <objectslistprefix>You can see</objectslistprefix>
-      <usedefaultprefix type="boolean">false</usedefaultprefix>
-      <prefix>square</prefix>
       <beforefirstenter type="script">
       </beforefirstenter>
       <object name="player">
@@ -786,7 +802,6 @@
             msg ("If it had eyebrows, the tower would be raising them at you.")
             msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
             msg ("The tower sighs again and lapses into sad silence.")
-            Rook.talked_before = true
           }
           else if ((brick1.parent = player)) {
             if (brick2.parent = player) {
@@ -795,6 +810,7 @@
                 msg ("“I am whole again?  Thank you.  Now I can continue my duty, your way will be clear.  The Pawn must be Queen, it is the only way to check the black King.  Hurry, your time is growing short.”")
                 msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Queen.")
                 msg ("You see a small twinkle as something falls to the ground where the black piece stood.")
+                AddToInventory (helped_rook)
               }
             }
           }
@@ -852,7 +868,6 @@
             msg ("“Its just a hankee.  The Knight said something about strengthening my heart, but...I think you might need it more then me.”")
             msg ("“That...is very kind of you.  But giving yourself strength may not be enough to win this fight.”")
             msg ("You shrug awkwardly.")
-            msg(""Maybe not but...the Knight seemed pretty convinced that this isn’t over yet.  He’s out there fighting as hard as he can, even if it is hopeless."")
             msg ("“Maybe not but...the Knight seemed pretty convinced that this isn’t over yet.  He’s out there fighting as hard as he can, even if it is hopeless.  Wouldn’t trying be better than sitting here waiting for the end?”")
             msg ("He looks pensive.")
             msg ("“Besides, it’s not like it could get any worse.”")
@@ -863,6 +878,8 @@
             msg ("Turning, he squares his shoulders and moves confidently down the board, toppling the black Pawn directly before the enemy King.")
             msg ("The Black King chuckles menacingly, then leaps forward, smashing the Bishop to the ground.")
             msg ("A small sparkle flies through the air, landing a few feet away from you.")
+            RemoveObject (Bishop)
+            AddToInventory (helped_bishop)
           }
           else {
             msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
@@ -1637,36 +1654,34 @@
             msg ("Glaring, he shuffles his feet around a bit, but keeps his spear pointing at the enemy King.")
             Pawn.talked_before = true
           }
-          else if ((brick1.parent = player)) {
-            if (brick2.parent = player) {
-              if (brick3.parent = player) {
-                if (Token.parent = player) {
-                  if (Horse.parent = player) {
-                    msg ("“D-don’t come any closer!”")
-                    msg ("“Ok, I’ll stay right here.  Listen, you have to go.  Your path is clear, you’re the only one who can end this!”")
-                    msg ("“What?” Staring around in astonishment, he notices that the Queen that was threatening his flank is missing.")
-                    msg ("“But...what can I do?  I’m just one pawn...and the King is right there!”")
-                    msg ("The Black King shifts around to face the Pawn, and smiles menacingly.")
-                    msg ("“Don’t worry about him, you can make it!  If you get to the end, this will all end! You can do it, everyone is depending on you!”")
-                    msg ("He seems hesitant, but glances over at the square where the Bishop fell.  Taking a deep breath, he levels his spear and gulps.")
-                    msg ("“Oh...ok.  I’ll do it.”")
-                    msg ("")
-                    msg ("Taking another deep breath, he tightens his grip on his spear and charges straight forward.  The Black King’s grin slips when he realizes that the Pawn isn’t going for him: he’s heading for the end square.")
-                    msg ("Panic fills the Black King’s face as he rushes to catch the Pawn, but he’s too late.")
-                    msg ("")
-                    msg ("The Pawn steps over the edge and a blinding light engulfs him.  The Black King screams.")
-                    msg ("")
-                    msg ("When the light fades, you look over to see a woman in shining white armour standing over the Black King’s crumpled form.  She turns her masked face towards you, and offers you the hilt of the King’s sword.")
-                    msg ("")
-                    msg ("“It is over.” Says the White Queen.")
-                    RemoveObject (Pawn)
-                  }
-                }
+          else if ((helped_rook.parent = player)) {
+            if (helpe_bishop.parent = player) {
+              if (helped_knight.parent = player) {
+                msg ("“D-don’t come any closer!”")
+                msg ("“Ok, I’ll stay right here.  Listen, you have to go.  Your path is clear, you’re the only one who can end this!”")
+                msg ("“What?” Staring around in astonishment, he notices that the Queen that was threatening his flank is missing.")
+                msg ("“But...what can I do?  I’m just one pawn...and the King is right there!”")
+                msg ("The Black King shifts around to face the Pawn, and smiles menacingly.")
+                msg ("“Don’t worry about him, you can make it!  If you get to the end, this will all end! You can do it, everyone is depending on you!”")
+                msg ("He seems hesitant, but glances over at the square where the Bishop fell.  Taking a deep breath, he levels his spear and gulps.")
+                msg ("“Oh...ok.  I’ll do it. Will you come with me?”")
+                msg ("“Sure, I don’t see why not.“")
+                msg ("")
+                msg ("Taking another deep breath, he tightens his grip on his spear and charges straight forward.  The Black King’s grin slips when he realizes that the Pawn isn’t going for him: he’s heading for the end square.")
+                msg ("")
+                msg ("Panic fills the Black King’s face as he rushes to catch the Pawn, but he’s too late.")
+                msg ("")
+                msg ("The Pawn steps over the edge and a blinding light engulfs him.  The Black King screams.")
+                msg ("")
+                msg ("When the light fades, you look over to see a woman in shining white armour standing over the Black King’s crumpled form. She turns a serene, beautiful face towards you, and offers you the hilt of the King’s sword.  A sense of purpose emanates from the sword, and your previous feelings of helplessness are driven from you.")
+                msg ("")
+                msg ("“It is over.” Says the White Queen.")
+                RemoveObject (Pawn)
               }
             }
           }
           else {
-            msg ("The man stands firm, while holding his spear pointed at the enemy king with glaring eyes darting around the battlefield.")
+            msg ("The boy stands firm, while holding his spear pointed at the enemy king with glaring eyes darting around the battlefield.")
           }
         </speak>
       </object>
