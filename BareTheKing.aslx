@@ -15,10 +15,26 @@
     <object name="brick1">
       <inherit name="editor_object" />
       <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
+      <dropmsg>You dropped the beige brick</dropmsg>
+      <take type="script">
+        if (GetBoolean(Rook, "talked_before")) {
+          msg ("You pick up the brick. It must belong to the Rook.")
+        }
+        else {
+          msg ("You pick up the brick. Maybe it belong's to someone.")
+        }
+        numBricks = numBricks+1
+        // //Not sure if I need to initialize numBricks to 0 and where that would be done.
+      </take>
+      <ondrop type="script">
+        numBricks = numBricks-1
+      </ondrop>
     </object>
     <object name="brick2">
       <inherit name="editor_object" />
       <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
+      <take type="script">
+      </take>
     </object>
     <object name="brick3">
       <inherit name="editor_object" />
@@ -29,23 +45,42 @@
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <giveto type="scriptdictionary">
+        <item key="Knight">
+          msg ("You give the horse to the knight")
+        </item>
+      </giveto>
+      <givesingle type="boolean">false</givesingle>
+      <givetoanything type="script">
+        msg ("They don't seem to want the horse.")
+      </givetoanything>
+      <pet>You calmly pet the horse, as if trying to reassure it. </pet>
     </object>
     <object name="memory1">
       <inherit name="editor_object" />
       <take />
-      <takemsg>You pick up the small twinkling object.</takemsg>
+      <takemsg>You come upon the sparkle you noticed when the Rook destroyed the black Queen.  It is a small brass key.</takemsg>
       <drop type="boolean">false</drop>
-      <ontake type="script">
+      <alias>Rook's Memory</alias>
+      <look>It is the small brass key that was dropped  when the Rook destroyed the black Queen.</look>
+      <ontake type="script"><![CDATA[
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
-      </ontake>
+        msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
+      ]]></ontake>
     </object>
     <object name="memory2">
       <inherit name="editor_object" />
       <take />
-      <takemsg>You pick up the small sparkling object</takemsg>
-      <ontake type="script">
+      <takemsg>The small object that flew from the Bishop when he was destroyed by the black King shimmers quietly on the ground.  It is a thermometre.</takemsg>
+      <alias>Bishop's Memory</alias>
+      <attr name="feature_usegive" type="boolean">false</attr>
+      <drop type="boolean">false</drop>
+      <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
+      <ontake type="script"><![CDATA[
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
-      </ontake>
+        msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
+      ]]></ontake>
     </object>
     <object name="GameStatus">
       <inherit name="editor_object" />
@@ -53,6 +88,7 @@
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <MemoryCounter type="int">0</MemoryCounter>
     </object>
+<<<<<<< HEAD
     <object name="helped_rook">
       <inherit name="editor_object" />
       <visible type="boolean">false</visible>
@@ -67,12 +103,31 @@
       <inherit name="editor_object" />
       <visible type="boolean">false</visible>
       <scenery />
+=======
+    <object name="memory3">
+      <inherit name="editor_object" />
+      <take />
+      <drop type="boolean">false</drop>
+      <alias>Knight's Memory</alias>
+      <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
+      <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
+      <ontake type="script"><![CDATA[
+        IncreaseObjectCounter (GameStatus, "MemoryCounter")
+        msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
+      ]]></ontake>
+>>>>>>> origin/master
     </object>
   </game>
   <object name="Row 8">
     <inherit name="editor_room" />
     <object name="A8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="south" to="A7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -89,6 +144,12 @@
     <object name="B8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="A8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -112,6 +173,12 @@
     </object>
     <object name="C8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="B8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -136,6 +203,12 @@
     <object name="D8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="C8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -159,6 +232,12 @@
     </object>
     <object name="E8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="D8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -183,6 +262,12 @@
     <object name="F8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="E8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -206,6 +291,12 @@
     </object>
     <object name="G8">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="south" to="G7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -226,6 +317,12 @@
     <object name="H8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -245,6 +342,12 @@
     <object name="A7">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="east" to="B7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -348,10 +451,6 @@
         <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
         <speak type="script">
           if (not GetBoolean(Knight,"talked_to")) {
-            msg(""Who are you calling for?”")
-            msg("“The Red Queen chased off my loyal steed, and now she’s lost in the darkness.  If anything happens to her, I’ll never be able to forgive myself.”")
-            msg("“Why don’t you go after her?”")
-            msg(""“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
             msg ("“Who are you calling for?”")
             msg ("“The black Queen chased off my loyal steed, and now she’s lost in the darkness.  If anything happens to her, I’ll never be able to forgive myself.”")
             msg ("“Why don’t you go after her?”")
@@ -505,6 +604,12 @@
     </object>
     <object name="H7">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -527,6 +632,12 @@
     <inherit name="editor_room" />
     <object name="A6">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A7">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -668,6 +779,7 @@
       <object name="player">
         <inherit name="editor_object" />
         <inherit name="editor_player" />
+        <attr name="horse_possible" type="boolean">false</attr>
       </object>
       <exit alias="northeast" to="F7">
         <inherit name="northeastdirection" />
@@ -780,6 +892,12 @@
       <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
       <alias>H6</alias>
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <object name="Rook">
         <inherit name="editor_object" />
         <inherit name="male" />
@@ -789,12 +907,11 @@
         <article>it</article>
         <speak type="script">
           if (not GetBoolean(Rook,"talked_before")) {
-            msg ("As you gasp, trying to catch your breath, it heaves a heavy sigh.")
             msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
             msg ("“Ah!  You...you talk?”")
             msg ("“It appears so.”")
             msg ("“Oh...ok then?  Where am I, what happened here?”")
-            msg ("It heaves another sigh.")
+            msg ("It heaves a sigh.")
             msg ("“We are losing the battle.  I am broken and undone.”")
             msg ("“The battle?”")
             msg ("“Yes.  Have you not seen the black pieces?  They have already taken the queen.  It is only a matter of time now before the rest of us are destroyed.”")
@@ -839,6 +956,31 @@
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="grass">
+        <inherit name="editor_object" />
+        <smell>The grass has a very horse-friendly scent.</smell>
+        <take />
+        <takemsg>You take some of the fragrant grass.</takemsg>
+        <dropmsg>You drop the grass into more grass.</dropmsg>
+        <eat>You taste a bit of the grass, but it doesn't taste as good as it smells.</eat>
+        <look>The grass looks quite soft.</look>
+        <inventoryverbs type="stringlist">
+          <value>Look at</value>
+          <value>Drop</value>
+        </inventoryverbs>
+        <offertothedarkness type="script">
+          if (GetBoolean(Knight, "talked_to") and GetBoolean(player,"horse_possible")) {
+            msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink")
+            msg ("There is a pregnant pause, and the fear that you are too late gnaws at you, but then...you hear the clopping of hooves, and with a jubilant whinny, a large white war horse bursts from the fog, nearly knocking you over.  Startled, you drop the grass, and the horse happily snuffles it up before raising its head to regard you with soft brown eyes.  There is a bridle on its head and a saddle on its back.")
+            MakeObjectInvisible (grass)
+            // //Have a check if to see if player is on the right square to do this
+            AddToInventory (Horse)
+          }
+          else {
+            msg ("Nothing happens.")
+          }
+        </offertothedarkness>
+      </object>
     </object>
   </object>
   <object name="Row 5">
@@ -848,6 +990,12 @@
       <description>You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.</description>
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <object name="Bishop">
         <inherit name="editor_object" />
         <look><![CDATA[You are assailed with images of bloody knuckles and a cruel laugh as a silent scream rings in your ears, the voice terrifyingly familiar: it is your own.  Pain threatens to overwhelm you, but dissipates somewhat as you stumble towards the seated figure.  Shaking your head to clear the lingering hurt, you approach him.<br/>]]></look>
@@ -1148,6 +1296,12 @@
     </object>
     <object name="H5">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1174,6 +1328,12 @@
     <inherit name="editor_room" />
     <object name="A4">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A5_BishopSquare">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1415,6 +1575,12 @@
     <object name="H4">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1442,6 +1608,12 @@
     <object name="A3">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A4">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1725,6 +1897,12 @@
     <object name="H3">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1752,6 +1930,12 @@
     <object name="A2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="north" to="A3">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1992,6 +2176,12 @@
     <object name="H2">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2023,6 +2213,14 @@
     <object name="A1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = True
+      </enter>
+      <beforefirstenter type="script">
+      </beforefirstenter>
+      <onexit type="script">
+        player.horse_possible = False
+      </onexit>
       <exit alias="north" to="A2">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2041,6 +2239,14 @@
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
       <grid_parent_offset_auto />
+      <beforeenter type="script">
+      </beforeenter>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="A1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2065,6 +2271,12 @@
     <object name="C1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="B1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2090,6 +2302,12 @@
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="C1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2114,6 +2332,12 @@
     <object name="E1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="D1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2141,18 +2365,14 @@
       <alias>PawnedWhiteQueenSquare</alias>
       <beforeenter type="script">
       </beforeenter>
-      <beforefirstenter type="script"><![CDATA[
-        if (ListContains(ScopeVisible(), WhiteQueen)) {
-        }
-        else if (GetInt(GameStatus, "MemoryCounter") >= 2) {
-          msg ("As you approach the White Queen, a gentle light parts the fog overhead, and you can feel yourself being drawn towards it.  She smiles, and offers the sword’s hilt to you.<br/><br/>“I don’t think I can take this with me where I’m going…”<br/>“Not physically, no.  But it will be here whenever you need it.  Do you understand now?”<br/>You smile, thinking back to the happy memories that the defeated black pieces reminded you of.  <br/>“Yes, I think I do.”<br/>“Then go.  Be happy, for all of us.”<br/>Nodding, you take the hilt of the sword and turn towards the light again.  You feel your feet getting lighter, and you let yourself go.  As you float towards it, your eyes close, and the chessboard fades out.<br/><br/>You open your eyes to the concerned faces of your loved ones standing around your hospital bed, tears of relief and joy in their eyes.<br/><br/>You blink back tears yourself, and smile.  <br/>“Its ok...I’m ok.  I’m back.”")
-          finish
-        }
-        else {
-          msg ("As you approach the White Queen, a harsh white light pierces the fog overhead, and you flinch from its touch.  The White Queen smiles, and offers the sword’s hilt to you.<br/><br/>“Take it, and be free.”<br/>You shrink from the sword, the painful memories of the white chess pieces still burning in your mind.<br/>“I...can’t.”<br/>The smile fades from her face, and she slowly lowers the sword.<br/>“If you remain here, nothing will change.  You will be trapped forever.”<br/><br/>You look around.  With the black pieces gone, the chessboard doesn’t look nearly as frightening.  There’s nothing left here to hurt you.<br/><br/>Turning to the White Queen, you take her other hand and place it on the hilt.<br/><br/>“You beat him, you keep it.”<br/>She sighs and shakes her head.<br/>“I can’t protect you forever.”<br/>“I’ll just stay a while and get my strength back, you won’t have to hold it forever, I promise.”<br/><br/>You turn to go to the Knight, ignoring the light in the sky as it starts to dim.  You’re sure it’ll still be there when you’re finished visiting with him and the Rook.<br/><br/>You start to whistle, free from pain for the first time in what feels like forever.  The light in the sky flickers for a few moments, then finally goes out.  The darkness starts enclosing the board, enveloping and hiding the Rook and the Knight, but you’re not afraid this time.  The darkness is different, warmer.<br/><br/>Somewhere far above you, the pinging stops, and you hear hysterical sobs, but it doesn’t matter now.<br/><br/>You smile as the darkness engulfs you, closing your eyes and drifting away in its gentle embrace.")
-          finish
-        }
-      ]]></beforefirstenter>
+      <beforefirstenter type="script">
+      </beforefirstenter>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="E1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2178,11 +2398,36 @@
         <inherit name="female" />
         <visible type="boolean">false</visible>
         <look>A woman in shining white armour stands valorously before you.</look>
+        <drop type="boolean">false</drop>
+        <attr name="feature_switchable" type="boolean">false</attr>
+        <speak type="script"><![CDATA[
+          if (GetInt(GameStatus, "MemoryCounter") >= 3) {
+            msg ("As you approach the White Queen, a gentle light parts the fog overhead, and you can feel yourself being drawn towards it.  She smiles, and offers the sword’s hilt to you.<br/><br/>“I don’t think I can take this with me where I’m going…”<br/>“Not physically, no.  But it will be here whenever you need it.  Do you understand now?”<br/>You smile, thinking back to the happy memories that the defeated black pieces reminded you of.  <br/>“Yes, I think I do.”<br/>“Then go.  Be happy, for all of us.”<br/>Nodding, you take the hilt of the sword and turn towards the light again.  You feel your feet getting lighter, and you let yourself go.  As you float towards it, your eyes close, and the chessboard fades out.<br/><br/>You open your eyes to the concerned faces of your loved ones standing around your hospital bed, tears of relief and joy in their eyes.<br/><br/>You blink back tears yourself, and smile.  <br/>“Its ok...I’m ok.  I’m back.”")
+          }
+          else {
+            msg ("As you approach the White Queen, a harsh white light pierces the fog overhead, and you flinch from its touch.  The White Queen smiles, and offers the sword’s hilt to you.<br/><br/>“Take it, and be free.”<br/>You shrink from the sword, the painful memories of the white chess pieces still burning in your mind.<br/>“I...can’t.”<br/>The smile fades from her face, and she slowly lowers the sword.<br/>“If you remain here, nothing will change.  You will be trapped forever.”<br/><br/>You look around.  With the black pieces gone, the chessboard doesn’t look nearly as frightening.  There’s nothing left here to hurt you.<br/><br/>Turning to the White Queen, you take her other hand and place it on the hilt.<br/><br/>“You beat him, you keep it.”<br/>She sighs and shakes her head.<br/>“I can’t protect you forever.”<br/>“I’ll just stay a while and get my strength back, you won’t have to hold it forever, I promise.”<br/><br/>You turn to go to the Knight, ignoring the light in the sky as it starts to dim.  You’re sure it’ll still be there when you’re finished visiting with him and the Rook.<br/><br/>You start to whistle, free from pain for the first time in what feels like forever.  The light in the sky flickers for a few moments, then finally goes out.  The darkness starts enclosing the board, enveloping and hiding the Rook and the Knight, but you’re not afraid this time.  The darkness is different, warmer.<br/><br/>Somewhere far above you, the pinging stops, and you hear hysterical sobs, but it doesn’t matter now.<br/><br/>You smile as the darkness engulfs you, closing your eyes and drifting away in its gentle embrace.")
+            finish
+          }
+        ]]></speak>
+        <turnscript name="WhiteQueenVisibility">
+          <enabled />
+          <script>
+            if (not Contains (F3_PawnSquare,Pawn)) {
+              MakeObjectVisible (WhiteQueen)
+            }
+          </script>
+        </turnscript>
       </object>
     </object>
     <object name="G1">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="F1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2206,6 +2451,12 @@
     </object>
     <object name="H1">
       <inherit name="editor_room" />
+      <enter type="script">
+        player.horse_possible = true
+      </enter>
+      <onexit type="script">
+        player.horse_possible = false
+      </onexit>
       <exit alias="west" to="G1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2220,4 +2471,14 @@
       </exit>
     </object>
   </object>
+  <verb>
+    <property>offertothedarkness</property>
+    <pattern>offer to the darkness</pattern>
+    <defaultexpression>"You can't offer to the darkness " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>pet</property>
+    <pattern>pet</pattern>
+    <defaultexpression>"You can't pet " + object.article + "."</defaultexpression>
+  </verb>
 </asl>
