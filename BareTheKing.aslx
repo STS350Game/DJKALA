@@ -89,6 +89,7 @@
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
       ]]></ontake>
+      <visible type="boolean">false</visible>
     </object>
     <object name="memory2">
       <inherit name="editor_object" />
@@ -102,6 +103,7 @@
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
       ]]></ontake>
+      <visible type="boolean">false</visible>
     </object>
     <object name="memory3">
       <inherit name="editor_object" />
@@ -114,6 +116,7 @@
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
       ]]></ontake>
+      <visible type="boolean">false</visible>
     </object>
   </game>
   <object name="Row 8">
@@ -692,6 +695,14 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="EnemyRook">
+        <inherit name="editor_object" />
+        <alive />
+        <changedalive type="script">
+          MoveObject (memory3, B6)
+          MakeObjectVisible (memory3)
+        </changedalive>
+      </object>
     </object>
     <object name="C6">
       <inherit name="editor_room" />
@@ -999,6 +1010,7 @@
         <look><![CDATA[You are assailed with images of bloody knuckles and a cruel laugh as a silent scream rings in your ears, the voice terrifyingly familiar: it is your own.  Pain threatens to overwhelm you, but dissipates somewhat as you stumble towards the seated figure.  Shaking your head to clear the lingering hurt, you approach him.<br/>]]></look>
         <gender>he</gender>
         <article>him</article>
+        <alive />
         <speak type="script">
           if (not GetBoolean(Bishop,"talked_before")) {
             msg ("“Hello?”")
@@ -1031,7 +1043,10 @@
             msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
           }
         </speak>
-        <isAlive />
+        <changedalive type="script">
+          MoveObject (memory2, D3)
+          MakeObjectVisible (memory2)
+        </changedalive>
       </object>
       <exit alias="southeast" to="E6_StartingSquare">
         <inherit name="southeastdirection" />
@@ -1739,14 +1754,6 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <turnscript name="DropBishopMemory">
-        <enabled />
-        <script>
-          if (Bishop.isAlive = False) {
-            MoveObjectHere (memory2)
-          }
-        </script>
-      </turnscript>
     </object>
     <object name="E3">
       <inherit name="editor_room" />
@@ -2212,8 +2219,11 @@
       <object name="EnemyQueen">
         <inherit name="editor_object" />
         <alive />
+        <changedalive type="script">
+          MoveObject (memory1, H2)
+          MakeObjectVisible (memory1)
+        </changedalive>
       </object>
-      <turnscript />
     </object>
   </object>
   <object name="Row 1">
