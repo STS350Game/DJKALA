@@ -46,16 +46,37 @@
     <object name="Horse">
       <inherit name="editor_object" />
       <attr name="feature_usegive" type="boolean">false</attr>
+      <givesingle type="boolean">false</givesingle>
+      <pet>You calmly pet the horse, as if trying to reassure it. </pet>
+      <givetoanything type="script">
+        msg ("They don't seem to want the horse.")
+      </givetoanything>
       <giveto type="scriptdictionary">
         <item key="Knight">
           msg ("You give the horse to the knight")
         </item>
       </giveto>
-      <givesingle type="boolean">false</givesingle>
-      <givetoanything type="script">
-        msg ("They don't seem to want the horse.")
-      </givetoanything>
-      <pet>You calmly pet the horse, as if trying to reassure it. </pet>
+    </object>
+    <object name="GameStatus">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <usedefaultprefix type="boolean">false</usedefaultprefix>
+      <MemoryCounter type="int">0</MemoryCounter>
+    </object>
+    <object name="helped_rook">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <scenery />
+    </object>
+    <object name="helped_bishop">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <scenery />
+    </object>
+    <object name="helped_knight">
+      <inherit name="editor_object" />
+      <visible type="boolean">false</visible>
+      <scenery />
     </object>
     <object name="memory1">
       <inherit name="editor_object" />
@@ -81,28 +102,6 @@
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
       ]]></ontake>
-    </object>
-    <object name="GameStatus">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <usedefaultprefix type="boolean">false</usedefaultprefix>
-      <MemoryCounter type="int">0</MemoryCounter>
-    </object>
-
-    <object name="helped_rook">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <scenery />
-    </object>
-    <object name="helped_bishop">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <scenery />
-    </object>
-    <object name="helped_knight">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <scenery />
     </object>
     <object name="memory3">
       <inherit name="editor_object" />
@@ -1032,6 +1031,7 @@
             msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
           }
         </speak>
+        <isAlive />
       </object>
       <exit alias="southeast" to="E6_StartingSquare">
         <inherit name="southeastdirection" />
@@ -1739,6 +1739,14 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <turnscript name="DropBishopMemory">
+        <enabled />
+        <script>
+          if (Bishop.isAlive = False) {
+            MoveObjectHere (memory2)
+          }
+        </script>
+      </turnscript>
     </object>
     <object name="E3">
       <inherit name="editor_room" />
