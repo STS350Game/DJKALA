@@ -2213,6 +2213,7 @@
         <inherit name="editor_object" />
         <alive />
       </object>
+      <turnscript />
     </object>
   </object>
   <object name="Row 1">
