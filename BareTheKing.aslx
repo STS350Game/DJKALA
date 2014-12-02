@@ -648,6 +648,7 @@
     <inherit name="editor_room" />
     <object name="A6">
       <inherit name="editor_room" />
+      <threatenedByRook />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -723,6 +724,7 @@
     </object>
     <object name="C6">
       <inherit name="editor_room" />
+      <threatenedByRook />
       <exit alias="west" to="B6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -793,6 +795,7 @@
     <object name="E6_StartingSquare">
       <inherit name="editor_room" />
       <alias>E6</alias>
+      <threatenedByRook />
       <descprefix>You are in</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
@@ -854,6 +857,7 @@
     <object name="F6">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByRook />
       <exit alias="west" to="E6_StartingSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -889,6 +893,7 @@
     </object>
     <object name="G6">
       <inherit name="editor_room" />
+      <threatenedByRook />
       <exit alias="west" to="F6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -924,6 +929,7 @@
     </object>
     <object name="H6_TowerSquare">
       <inherit name="editor_room" />
+      <threatenedByRook />
       <threatenedByQueen />
       <descprefix>You approach</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
