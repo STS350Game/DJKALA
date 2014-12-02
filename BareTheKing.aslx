@@ -85,11 +85,11 @@
       <drop type="boolean">false</drop>
       <alias>Rook's Memory</alias>
       <look>It is the small brass key that was dropped  when the Rook destroyed the black Queen.</look>
+      <visible type="boolean">false</visible>
       <ontake type="script"><![CDATA[
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
       ]]></ontake>
-      <visible type="boolean">false</visible>
     </object>
     <object name="memory2">
       <inherit name="editor_object" />
@@ -99,11 +99,11 @@
       <attr name="feature_usegive" type="boolean">false</attr>
       <drop type="boolean">false</drop>
       <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
+      <visible type="boolean">false</visible>
       <ontake type="script"><![CDATA[
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
       ]]></ontake>
-      <visible type="boolean">false</visible>
     </object>
     <object name="memory3">
       <inherit name="editor_object" />
@@ -112,11 +112,11 @@
       <alias>Knight's Memory</alias>
       <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
       <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
+      <visible type="boolean">false</visible>
       <ontake type="script"><![CDATA[
         IncreaseObjectCounter (GameStatus, "MemoryCounter")
         msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
       ]]></ontake>
-      <visible type="boolean">false</visible>
     </object>
   </game>
   <object name="Row 8">
@@ -794,29 +794,38 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="north" to="E7">
+      <exit name="Exit_E6_E7" alias="north" to="E7">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <locked />
+        <lockmessage>That space is threatened. You cannot move there.</lockmessage>
       </exit>
       <exit alias="northwest" to="D7_KnightSquare">
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="west" to="D6">
+      <exit name="Exit_E6_D6" alias="west" to="D6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <locked />
+        <runscript />
+        <lockmessage>That space is threatened. You cannot move there.</lockmessage>
       </exit>
-      <exit alias="east" to="F6">
+      <exit name="Exit_E6_F6" alias="east" to="F6">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <locked />
+        <lockmessage>That space is threatened. You cannot move there.</lockmessage>
       </exit>
       <exit alias="southwest" to="D5">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="south" to="E5_EnemyPawn">
+      <exit name="Exit_E6_E5" alias="south" to="E5_EnemyPawn">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <locked />
+        <lockmessage>That space is threatened. You cannot move there.</lockmessage>
       </exit>
       <exit alias="southeast" to="F5">
         <inherit name="southeastdirection" />
