@@ -149,6 +149,7 @@
     <object name="B8">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -321,6 +322,7 @@
     </object>
     <object name="H8">
       <inherit name="editor_room" />
+      <threatenedByQueen />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = true
@@ -412,6 +414,7 @@
     <object name="C7">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -612,6 +615,7 @@
     </object>
     <object name="H7">
       <inherit name="editor_room" />
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -752,6 +756,7 @@
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
+      <threatenedByQueen />
       <exit alias="west" to="C6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -915,6 +920,7 @@
     </object>
     <object name="H6_TowerSquare">
       <inherit name="editor_room" />
+      <threatenedByQueen />
       <descprefix>You approach</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
       <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
@@ -1198,6 +1204,7 @@
     <object name="E5">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <alias>E5</alias>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
@@ -1320,6 +1327,7 @@
     </object>
     <object name="H5">
       <inherit name="editor_room" />
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1528,6 +1536,7 @@
     <object name="F4">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <exit alias="west" to="E4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1599,6 +1608,7 @@
     <object name="H4">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1885,6 +1895,7 @@
     <object name="G3">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <exit alias="west" to="F3_PawnSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1921,6 +1932,7 @@
     <object name="H3">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1954,6 +1966,7 @@
     <object name="A2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1984,6 +1997,7 @@
     <object name="B2">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <exit alias="west" to="A2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2020,6 +2034,7 @@
     <object name="C2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <threatenedByQueen />
       <exit alias="west" to="B2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2056,6 +2071,7 @@
     <object name="D2">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <exit alias="west" to="C2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2092,6 +2108,7 @@
     <object name="E2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <threatenedByQueen />
       <exit alias="west" to="D2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2128,6 +2145,7 @@
     <object name="F2">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByQueen />
       <exit alias="west" to="E2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2164,6 +2182,7 @@
     <object name="G2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
+      <threatenedByQueen />
       <exit alias="west" to="F2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2479,6 +2498,7 @@
     </object>
     <object name="H1">
       <inherit name="editor_room" />
+      <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
       </enter>
