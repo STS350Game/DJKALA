@@ -40,8 +40,12 @@
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
     </object>
-    <object name="Token">
+    <object name="Kerchief">
       <inherit name="editor_object" />
+      <look>It is a white kerchief.</look>
+      <alias>token</alias>
+      <feature_usegive />
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -62,21 +66,21 @@
       <visible type="boolean">false</visible>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <MemoryCounter type="int">0</MemoryCounter>
-    </object>
-    <object name="helped_rook">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <scenery />
-    </object>
-    <object name="helped_bishop">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <scenery />
-    </object>
-    <object name="helped_knight">
-      <inherit name="editor_object" />
-      <visible type="boolean">false</visible>
-      <scenery />
+      <object name="helped_rook">
+        <inherit name="editor_object" />
+        <visible type="boolean">false</visible>
+        <scenery />
+      </object>
+      <object name="helped_bishop">
+        <inherit name="editor_object" />
+        <visible type="boolean">false</visible>
+        <scenery />
+      </object>
+      <object name="helped_knight">
+        <inherit name="editor_object" />
+        <visible type="boolean">false</visible>
+        <scenery />
+      </object>
     </object>
     <object name="memory1">
       <inherit name="editor_object" />
@@ -447,6 +451,8 @@
       <descprefix type="string"></descprefix>
       <objectslistprefix type="string"></objectslistprefix>
       <alias>D7</alias>
+      <firstenter type="script">
+      </firstenter>
       <object name="Knight">
         <inherit name="editor_object" />
         <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
@@ -458,6 +464,7 @@
             msg ("“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
             msg ("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
             Knight.talked_to = true
+            AddToInventory (Token)
           }
           else if (Horse.parent = player) {
             msg ("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
@@ -663,6 +670,8 @@
     <object name="B6">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <enter type="script">
+      </enter>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -695,7 +704,7 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="EnemyRook">
+      <object name="Black Rook">
         <inherit name="editor_object" />
         <alive />
         <changedalive type="script">
