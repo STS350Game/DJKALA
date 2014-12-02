@@ -742,6 +742,7 @@
     <object name="D6">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByRook />
       <exit alias="west" to="C6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -766,7 +767,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southeast" to="E5_EnemyPawn">
+      <exit alias="southeast" to="E5">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -821,7 +822,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit name="Exit_E6_E5" alias="south" to="E5_EnemyPawn">
+      <exit name="Exit_E6_E5" alias="south" to="E5">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
         <locked />
@@ -855,7 +856,7 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southwest" to="E5_EnemyPawn">
+      <exit alias="southwest" to="E5">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1168,7 +1169,7 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="east" to="E5_EnemyPawn">
+      <exit alias="east" to="E5">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1185,24 +1186,15 @@
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
-    <object name="E5_EnemyPawn">
+    <object name="E5">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <alias>E5</alias>
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
       <enter type="script">
-        if (GetBoolean(EnemyQueen, "alive")) {
-          msg ("Immediately after entering the square, the black queen to your southeast quickly slides towards you. Before you could react, everything is black. You are dead.")
-          finish
-        }
       </enter>
       <beforeenter type="script">
-        if (GetBoolean(EnemyPawn, "alive")) {
-          msg ("Once you cross the threshold of squares, the black pawn standing within fades out of existence.")
-          SetObjectFlagOff (EnemyPawn, "alive")
-          RemoveObject (EnemyPawn)
-        }
       </beforeenter>
       <exit alias="west" to="D5">
         <inherit name="westdirection" />
@@ -1248,7 +1240,7 @@
     </object>
     <object name="F5">
       <inherit name="editor_room" />
-      <exit alias="west" to="E5_EnemyPawn">
+      <exit alias="west" to="E5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1464,7 +1456,7 @@
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northeast" to="E5_EnemyPawn">
+      <exit alias="northeast" to="E5">
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1499,7 +1491,7 @@
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="north" to="E5_EnemyPawn">
+      <exit alias="north" to="E5">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1531,7 +1523,7 @@
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northwest" to="E5_EnemyPawn">
+      <exit alias="northwest" to="E5">
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
