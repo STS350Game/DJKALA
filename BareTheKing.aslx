@@ -81,6 +81,10 @@
         <visible type="boolean">false</visible>
         <scenery />
       </object>
+      <object name="numBricks">
+        <inherit name="editor_object" />
+        <numBricks type="int">0</numBricks>
+      </object>
     </object>
     <object name="memory1">
       <inherit name="editor_object" />
