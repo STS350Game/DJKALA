@@ -1055,7 +1055,17 @@
             msg ("The man covers his eyes with his hands, ignoring you.")
             Bishop.talked_before = true
           }
-          else if (Token.parent = player) {
+          else {
+            msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
+          }
+        </speak>
+        <changedalive type="script">
+          MoveObject (memory2, D3)
+          MakeObjectVisible (memory2)
+        </changedalive>
+        <feature_usegive />
+        <useon type="scriptdictionary">
+          <item key="Kerchief">
             msg ("You hold out the white kerchief to the Bishop.  He looks up, startled.")
             msg ("“What is this?”")
             msg ("“Its just a hankee.  The Knight said something about strengthening my heart, but...I think you might need it more then me.”")
@@ -1073,15 +1083,8 @@
             msg ("A small sparkle flies through the air, landing a few feet away from you.")
             RemoveObject (Bishop)
             AddToInventory (helped_bishop)
-          }
-          else {
-            msg ("The man refuses to look up as you speak to him, his head still remains in his hands.")
-          }
-        </speak>
-        <changedalive type="script">
-          MoveObject (memory2, D3)
-          MakeObjectVisible (memory2)
-        </changedalive>
+          </item>
+        </useon>
       </object>
       <exit alias="southeast" to="E6_StartingSquare">
         <inherit name="southeastdirection" />
@@ -2538,5 +2541,10 @@
     <property>pet</property>
     <pattern>pet</pattern>
     <defaultexpression>"You can't pet " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>givesingle</property>
+    <pattern>givesingle</pattern>
+    <defaultexpression>"You can't givesingle " + object.article + "."</defaultexpression>
   </verb>
 </asl>
