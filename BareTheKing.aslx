@@ -13,7 +13,6 @@
       msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
     ]]></start>
     <autodescription type="boolean">false</autodescription>
-    <autodisplayverbs type="boolean">false</autodisplayverbs>
     <object name="brick1">
       <inherit name="editor_object" />
       <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
@@ -486,6 +485,11 @@
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
           }
         </speak>
+        <alt type="stringlist">
+          <value>man</value>
+          <value>armoured man</value>
+          <value>armored man</value>
+        </alt>
       </object>
       <exit alias="south" to="E6_StartingSquare">
         <inherit name="southdirection" />
