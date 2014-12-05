@@ -17,6 +17,7 @@
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
       <alias>Brick</alias>
+      <dropmsg>You dropped the ivory brick.</dropmsg>
       <take type="script">
         if (GetBoolean(Rook, "talked_before")) {
           msg ("You pick up the brick. It must belong to the Rook.")
@@ -35,7 +36,6 @@
         }
         numBricks = numBricks+1
       </ontake>
-      <dropmsg>You dropped the ivory brick.</dropmsg>
       <ondrop type="script">
         player.numBricks = player.numBricks-1
       </ondrop>
@@ -45,8 +45,8 @@
       <look>It is a white kerchief.</look>
       <alias>token</alias>
       <feature_usegive />
-      <giveto type="scriptdictionary" />
       <givesingle type="boolean">false</givesingle>
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -709,6 +709,8 @@
     <object name="C6">
       <inherit name="editor_room" />
       <threatenedByRook />
+      <changedthreatenedByRook type="script">
+      </changedthreatenedByRook>
       <exit alias="west" to="B6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1664,6 +1666,8 @@
       <object name="brick2">
         <inherit name="editor_object" />
         <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
+        <alias>Brick</alias>
+        <dropmsg>You dropped the cream coloured brick.</dropmsg>
         <take type="script">
           if (GetBoolean(Rook, "talked_before")) {
             msg ("You pick up the brick. It must belong to the Rook.")
@@ -1673,8 +1677,6 @@
           }
           player.numBricks = player.numBricks+1
         </take>
-        <alias>Brick</alias>
-        <dropmsg>You dropped the cream coloured brick.</dropmsg>
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
@@ -2078,6 +2080,7 @@
         <inherit name="editor_object" />
         <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
         <dropmsg>You dropped the beige brick.</dropmsg>
+        <alias>Brick</alias>
         <take type="script">
           if (GetBoolean(Rook, "talked_before")) {
             msg ("You pick up the brick. It must belong to the Rook.")
@@ -2090,7 +2093,6 @@
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
-        <alias>Brick</alias>
       </object>
     </object>
     <object name="C2">
