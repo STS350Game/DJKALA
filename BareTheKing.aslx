@@ -1753,6 +1753,7 @@
     <object name="C3">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByPawn2 />
       <exit alias="west" to="B3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1824,6 +1825,7 @@
     <object name="E3">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByPawn2 />
       <exit alias="west" to="D3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
