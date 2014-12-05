@@ -41,6 +41,7 @@
       <ondrop type="script">
         player.numBricks = player.numBricks-1
       </ondrop>
+      <throw>You throw the brick up into the air. You'd best get out of the way before it comes down.</throw>
     </object>
     <object name="Kerchief">
       <inherit name="editor_object" />
@@ -49,6 +50,7 @@
       <feature_usegive />
       <givesingle type="boolean">false</givesingle>
       <giveto type="scriptdictionary" />
+      <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -63,6 +65,7 @@
           msg ("You give the horse to the knight")
         </item>
       </giveto>
+      <ride>You don't know how to ride a horse.</ride>
     </object>
     <object name="GameStatus">
       <inherit name="editor_object" />
@@ -830,6 +833,7 @@
         <inherit name="editor_player" />
         <attr name="horse_possible" type="boolean">false</attr>
         <numBricks type="int">0</numBricks>
+        <attr name="feature_player" type="boolean">false</attr>
       </object>
       <exit alias="northeast" to="F7">
         <inherit name="northeastdirection" />
@@ -1733,6 +1737,7 @@
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
+        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
       </object>
     </object>
   </object>
@@ -2691,6 +2696,11 @@
     <property>givesingle</property>
     <pattern>givesingle</pattern>
     <defaultexpression>"You can't givesingle " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>ride</property>
+    <pattern>ride</pattern>
+    <defaultexpression>"You can't ride " + object.article + "."</defaultexpression>
   </verb>
   <type name="square">
     <inherit name="editor_room" />
