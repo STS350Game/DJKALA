@@ -90,46 +90,6 @@
         <scenery />
       </object>
     </object>
-    <object name="memory1">
-      <inherit name="editor_object" />
-      <take />
-      <takemsg>You come upon the sparkle you noticed when the Rook destroyed the black Queen.  It is a small brass key.</takemsg>
-      <drop type="boolean">false</drop>
-      <alias>Rook's Memory</alias>
-      <look>It is the small brass key that was dropped  when the Rook destroyed the black Queen.</look>
-      <visible type="boolean">false</visible>
-      <ontake type="script"><![CDATA[
-        IncreaseObjectCounter (GameStatus, "MemoryCounter")
-        msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
-      ]]></ontake>
-    </object>
-    <object name="memory2">
-      <inherit name="editor_object" />
-      <take />
-      <takemsg>The small object that flew from the Bishop when he was destroyed by the black King shimmers quietly on the ground.  It is a thermometre.</takemsg>
-      <alias>Bishop's Memory</alias>
-      <attr name="feature_usegive" type="boolean">false</attr>
-      <drop type="boolean">false</drop>
-      <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
-      <visible type="boolean">false</visible>
-      <ontake type="script"><![CDATA[
-        IncreaseObjectCounter (GameStatus, "MemoryCounter")
-        msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
-      ]]></ontake>
-    </object>
-    <object name="memory3">
-      <inherit name="editor_object" />
-      <take />
-      <drop type="boolean">false</drop>
-      <alias>Knight's Memory</alias>
-      <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
-      <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
-      <visible type="boolean">false</visible>
-      <ontake type="script"><![CDATA[
-        IncreaseObjectCounter (GameStatus, "MemoryCounter")
-        msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
-      ]]></ontake>
-    </object>
   </game>
   <object name="Row 8">
     <inherit name="editor_room" />
@@ -488,6 +448,8 @@
             msg ("He hands you down a white kerchief, before turning his steed in the direction of the enemy lines.  The horse rears, then charges off as the Knight draws a lance from somewhere.  You realize that they are approaching the enemy Rook, and try to call out a warning, but you are too late!")
             msg ("The Knight plants his lance into the side of the Rook, which shudders.  To your amazement, it begins shaking apart, and as it falls into ruin you notice something glinting where it’s base was resting. The Knight, his labour completed, salutes you before turning back towards the enemy lines.")
             AddToInventory (helped_knight)
+            RemoveObject (Horse)
+            MakeObjectVisible (memory3)
           }
           else {
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
@@ -522,6 +484,19 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="memory3">
+        <inherit name="editor_object" />
+        <take />
+        <drop type="boolean">false</drop>
+        <alias>Knight's Memory</alias>
+        <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
+        <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
+        <visible type="boolean">false</visible>
+        <ontake type="script"><![CDATA[
+          IncreaseObjectCounter (GameStatus, "MemoryCounter")
+          msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
+        ]]></ontake>
+      </object>
     </object>
     <object name="E7">
       <inherit name="editor_room" />
@@ -982,6 +957,7 @@
                 msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Queen.")
                 msg ("You see a small twinkle as something falls to the ground where the black piece stood.")
                 AddToInventory (helped_rook)
+                MakeObjectVisible (memory1)
               }
             }
           }
@@ -1033,6 +1009,19 @@
             msg ("Nothing happens.")
           }
         </offertothedarkness>
+      </object>
+      <object name="memory1">
+        <inherit name="editor_object" />
+        <take />
+        <takemsg>You come upon the sparkle you noticed when the Rook destroyed the black Queen.  It is a small brass key.</takemsg>
+        <drop type="boolean">false</drop>
+        <alias>Rook's Memory</alias>
+        <look>It is the small brass key that was dropped  when the Rook destroyed the black Queen.</look>
+        <visible type="boolean">false</visible>
+        <ontake type="script"><![CDATA[
+          IncreaseObjectCounter (GameStatus, "MemoryCounter")
+          msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
+        ]]></ontake>
       </object>
     </object>
   </object>
@@ -1092,6 +1081,7 @@
             msg ("A small sparkle flies through the air, landing a few feet away from you.")
             RemoveObject (Bishop)
             AddToInventory (helped_bishop)
+            MakeObjectVisible (memory2)
           </item>
         </useon>
       </object>
@@ -1115,6 +1105,20 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="memory2">
+        <inherit name="editor_object" />
+        <take />
+        <takemsg>The small object that flew from the Bishop when he was destroyed by the black King shimmers quietly on the ground.  It is a thermometre.</takemsg>
+        <alias>Bishop's Memory</alias>
+        <attr name="feature_usegive" type="boolean">false</attr>
+        <drop type="boolean">false</drop>
+        <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
+        <visible type="boolean">false</visible>
+        <ontake type="script"><![CDATA[
+          IncreaseObjectCounter (GameStatus, "MemoryCounter")
+          msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
+        ]]></ontake>
+      </object>
     </object>
     <object name="B5">
       <inherit name="editor_room" />
