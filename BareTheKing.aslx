@@ -20,6 +20,7 @@
       <look>It is an ivory-coloured brick.</look>
       <alias>Brick</alias>
       <dropmsg>You dropped the ivory brick.</dropmsg>
+      <throw>You throw the brick up into the air. You'd best get out of the way before it comes down.</throw>
       <take type="script">
         if (GetBoolean(Rook, "talked_before")) {
           msg ("You pick up the brick. It must belong to the Rook.")
@@ -41,7 +42,6 @@
       <ondrop type="script">
         player.numBricks = player.numBricks-1
       </ondrop>
-      <throw>You throw the brick up into the air. You'd best get out of the way before it comes down.</throw>
     </object>
     <object name="Kerchief">
       <inherit name="editor_object" />
@@ -49,14 +49,15 @@
       <alias>token</alias>
       <feature_usegive />
       <givesingle type="boolean">false</givesingle>
-      <giveto type="scriptdictionary" />
       <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
       <attr name="feature_usegive" type="boolean">false</attr>
       <givesingle type="boolean">false</givesingle>
       <pet>You calmly pet the horse, as if trying to reassure it. </pet>
+      <ride>You don't know how to ride a horse.</ride>
       <givetoanything type="script">
         msg ("They don't seem to want the horse.")
       </givetoanything>
@@ -65,7 +66,6 @@
           msg ("You give the horse to the knight")
         </item>
       </giveto>
-      <ride>You don't know how to ride a horse.</ride>
     </object>
     <object name="GameStatus">
       <inherit name="editor_object" />
@@ -303,7 +303,7 @@
     <object name="H8">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <threatenedByQueen />
+      <threatenedByQueen type="boolean">false</threatenedByQueen>
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = true
@@ -631,7 +631,7 @@
     <object name="H7">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <threatenedByQueen />
+      <threatenedByQueen type="boolean">false</threatenedByQueen>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -956,8 +956,8 @@
     <object name="H6_TowerSquare">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <threatenedByRook />
-      <threatenedByQueen />
+      <threatenedByRook type="boolean">false</threatenedByRook>
+      <threatenedByQueen type="boolean">false</threatenedByQueen>
       <descprefix>You approach</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
       <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
@@ -1725,6 +1725,7 @@
         <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
         <alias>Brick</alias>
         <dropmsg>You dropped the cream coloured brick.</dropmsg>
+        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
         <take type="script">
           if (GetBoolean(Rook, "talked_before")) {
             msg ("You pick up the brick. It must belong to the Rook.")
@@ -1737,7 +1738,6 @@
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
-        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
       </object>
     </object>
   </object>
