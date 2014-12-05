@@ -435,15 +435,15 @@
     <object name="D7_KnightSquare">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>You see an armoured man staring forlornly at the darkness that surrounds the chessboard, making half hearted whistles and clicking noises. </description>
+      <description>An armoured man staring forlornly at the darkness that surrounds the chessboard, making half hearted whistles and clicking noises. </description>
       <descprefix type="string"></descprefix>
       <objectslistprefix type="string"></objectslistprefix>
       <alias>D7</alias>
       <firstenter type="script">
+        msg ("You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  You push past the desolation in your mind and approach the figure. ")
       </firstenter>
       <object name="Knight">
         <inherit name="editor_object" />
-        <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
         <alt type="stringlist">
           <value>man</value>
           <value>armoured man</value>
@@ -960,7 +960,7 @@
       <threatenedByQueen type="boolean">false</threatenedByQueen>
       <descprefix>You approach</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
-      <description><![CDATA[Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.<br/><br/>A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.]]></description>
+      <description>There is a ruined tower before you. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
       <alias>H6</alias>
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
@@ -969,6 +969,9 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <firstenter type="script">
+        msg ("Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.")
+      </firstenter>
       <object name="Rook">
         <inherit name="editor_object" />
         <inherit name="male" />
@@ -1080,9 +1083,11 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <firstenter type="script">
+        msg ("You are assailed with images of bloody knuckles and a cruel laugh as a silent scream rings in your ears, the voice terrifyingly familiar: it is your own.  Pain threatens to overwhelm you, but dissipates somewhat as you stumble towards the seated figure.  Shaking your head to clear the lingering hurt, you approach him.")
+      </firstenter>
       <object name="Bishop">
         <inherit name="editor_object" />
-        <look><![CDATA[You are assailed with images of bloody knuckles and a cruel laugh as a silent scream rings in your ears, the voice terrifyingly familiar: it is your own.  Pain threatens to overwhelm you, but dissipates somewhat as you stumble towards the seated figure.  Shaking your head to clear the lingering hurt, you approach him.<br/>]]></look>
         <gender>he</gender>
         <article>him</article>
         <alive />
