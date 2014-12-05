@@ -8,15 +8,15 @@
     <firstpublished>2014</firstpublished>
     <author>Team DJKALA</author>
     <gridmap />
+    <autodescription type="boolean">false</autodescription>
     <pov type="object">player</pov>
     <start type="script"><![CDATA[
       msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
     ]]></start>
-    <autodescription type="boolean">false</autodescription>
-    <object name="brick1">
+    <object name="brick3">
       <inherit name="editor_object" />
-      <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
-      <dropmsg>You dropped the beige brick</dropmsg>
+      <look>It is an ivory-coloured brick.</look>
+      <alias>Brick</alias>
       <take type="script">
         if (GetBoolean(Rook, "talked_before")) {
           msg ("You pick up the brick. It must belong to the Rook.")
@@ -24,22 +24,21 @@
         else {
           msg ("You pick up the brick. Maybe it belong's to someone.")
         }
+        player.numBricks = player.numBricks+1
+      </take>
+      <ontake type="script">
+        if (GetBoolean(Rook, "talked_before")) {
+          msg ("You pick up the brick. It must belong to the Rook.")
+        }
+        else {
+          msg ("You pick up the brick. Maybe it belong's to someone.")
+        }
         numBricks = numBricks+1
-        // //Not sure if I need to initialize numBricks to 0 and where that would be done.
-      </take>
+      </ontake>
+      <dropmsg>You dropped the ivory brick.</dropmsg>
       <ondrop type="script">
-        numBricks = numBricks-1
+        player.numBricks = player.numBricks-1
       </ondrop>
-    </object>
-    <object name="brick2">
-      <inherit name="editor_object" />
-      <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
-      <take type="script">
-      </take>
-    </object>
-    <object name="brick3">
-      <inherit name="editor_object" />
-      <look>It is an ivory-coloured brick.</look>
     </object>
     <object name="Kerchief">
       <inherit name="editor_object" />
@@ -47,6 +46,7 @@
       <alias>token</alias>
       <feature_usegive />
       <giveto type="scriptdictionary" />
+      <givesingle type="boolean">false</givesingle>
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -85,6 +85,9 @@
       <object name="numBricks">
         <inherit name="editor_object" />
         <numBricks type="int">0</numBricks>
+        <visible type="boolean">false</visible>
+        <drop />
+        <scenery />
       </object>
     </object>
     <object name="memory1">
@@ -464,6 +467,11 @@
       <object name="Knight">
         <inherit name="editor_object" />
         <look>You are immediately assailed by a hopeless feeling of loneliness, and solitude, as images of empty chairs around a dinner table, and backs turning in a crowded room.  Again you push past the desolation in your mind and approach the figure.</look>
+        <alt type="stringlist">
+          <value>man</value>
+          <value>armoured man</value>
+          <value>armored man</value>
+        </alt>
         <speak type="script">
           if (not GetBoolean(Knight,"talked_to")) {
             msg ("“Who are you calling for?”")
@@ -472,7 +480,7 @@
             msg ("“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
             msg ("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
             Knight.talked_to = true
-            AddToInventory (Token)
+            AddToInventory (Kerchief)
           }
           else if (Horse.parent = player) {
             msg ("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
@@ -485,11 +493,6 @@
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
           }
         </speak>
-        <alt type="stringlist">
-          <value>man</value>
-          <value>armoured man</value>
-          <value>armored man</value>
-        </alt>
       </object>
       <exit alias="south" to="E6_StartingSquare">
         <inherit name="southdirection" />
@@ -817,6 +820,7 @@
         <inherit name="editor_object" />
         <inherit name="editor_player" />
         <attr name="horse_possible" type="boolean">false</attr>
+        <numBricks type="int">0</numBricks>
       </object>
       <exit alias="northeast" to="F7">
         <inherit name="northeastdirection" />
@@ -1023,7 +1027,6 @@
             msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink")
             msg ("There is a pregnant pause, and the fear that you are too late gnaws at you, but then...you hear the clopping of hooves, and with a jubilant whinny, a large white war horse bursts from the fog, nearly knocking you over.  Startled, you drop the grass, and the horse happily snuffles it up before raising its head to regard you with soft brown eyes.  There is a bridle on its head and a saddle on its back.")
             MakeObjectInvisible (grass)
-            // //Have a check if to see if player is on the right square to do this
             AddToInventory (Horse)
           }
           else {
@@ -1052,6 +1055,7 @@
         <gender>he</gender>
         <article>him</article>
         <alive />
+        <feature_usegive />
         <speak type="script">
           if (not GetBoolean(Bishop,"talked_before")) {
             msg ("“Hello?”")
@@ -1069,7 +1073,6 @@
           MoveObject (memory2, D3)
           MakeObjectVisible (memory2)
         </changedalive>
-        <feature_usegive />
         <useon type="scriptdictionary">
           <item key="Kerchief">
             msg ("You hold out the white kerchief to the Bishop.  He looks up, startled.")
@@ -1654,6 +1657,24 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="brick2">
+        <inherit name="editor_object" />
+        <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
+        <take type="script">
+          if (GetBoolean(Rook, "talked_before")) {
+            msg ("You pick up the brick. It must belong to the Rook.")
+          }
+          else {
+            msg ("You pick up the brick. Maybe it belong's to someone.")
+          }
+          player.numBricks = player.numBricks+1
+        </take>
+        <alias>Brick</alias>
+        <dropmsg>You dropped the cream coloured brick.</dropmsg>
+        <ondrop type="script">
+          player.numBricks = player.numBricks-1
+        </ondrop>
+      </object>
     </object>
   </object>
   <object name="Row 3">
@@ -2049,6 +2070,24 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="brick1">
+        <inherit name="editor_object" />
+        <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
+        <dropmsg>You dropped the beige brick.</dropmsg>
+        <take type="script">
+          if (GetBoolean(Rook, "talked_before")) {
+            msg ("You pick up the brick. It must belong to the Rook.")
+          }
+          else {
+            msg ("You pick up the brick. Maybe it belong's to someone.")
+          }
+          player.numBricks = player.numBricks+1
+        </take>
+        <ondrop type="script">
+          player.numBricks = player.numBricks-1
+        </ondrop>
+        <alias>Brick</alias>
+      </object>
     </object>
     <object name="C2">
       <inherit name="editor_room" />
