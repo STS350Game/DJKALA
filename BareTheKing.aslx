@@ -709,6 +709,8 @@
     <object name="C6">
       <inherit name="editor_room" />
       <threatenedByRook />
+      <changedthreatenedByRook type="script">
+      </changedthreatenedByRook>
       <exit alias="west" to="B6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
