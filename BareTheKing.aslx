@@ -17,6 +17,7 @@
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
       <alias>Brick</alias>
+      <dropmsg>You dropped the ivory brick.</dropmsg>
       <take type="script">
         if (GetBoolean(Rook, "talked_before")) {
           msg ("You pick up the brick. It must belong to the Rook.")
@@ -35,7 +36,6 @@
         }
         numBricks = numBricks+1
       </ontake>
-      <dropmsg>You dropped the ivory brick.</dropmsg>
       <ondrop type="script">
         player.numBricks = player.numBricks-1
       </ondrop>
@@ -45,8 +45,8 @@
       <look>It is a white kerchief.</look>
       <alias>token</alias>
       <feature_usegive />
-      <giveto type="scriptdictionary" />
       <givesingle type="boolean">false</givesingle>
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -771,7 +771,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southeast" to="E5">
+      <exit alias="southeast" to="E5_EnemyPawn">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -828,7 +828,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit name="Exit_E6_E5" alias="south" to="E5">
+      <exit name="Exit_E6_E5" alias="south" to="E5_EnemyPawn">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
         <locked />
@@ -863,7 +863,7 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southwest" to="E5">
+      <exit alias="southwest" to="E5_EnemyPawn">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1210,7 +1210,7 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="east" to="E5">
+      <exit alias="east" to="E5_EnemyPawn">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1227,7 +1227,7 @@
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
-    <object name="E5">
+    <object name="E5_EnemyPawn">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
@@ -1270,7 +1270,7 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="EnemyPawn">
+      <object name="EnemyPawn5">
         <inherit name="editor_object" />
         <alias>Black pawn</alias>
         <take type="boolean">false</take>
@@ -1282,7 +1282,7 @@
     </object>
     <object name="F5">
       <inherit name="editor_room" />
-      <exit alias="west" to="E5">
+      <exit alias="west" to="E5_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1499,7 +1499,7 @@
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northeast" to="E5">
+      <exit alias="northeast" to="E5_EnemyPawn">
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1534,7 +1534,7 @@
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="north" to="E5">
+      <exit alias="north" to="E5_EnemyPawn">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1567,7 +1567,7 @@
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northwest" to="E5">
+      <exit alias="northwest" to="E5_EnemyPawn">
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1664,6 +1664,8 @@
       <object name="brick2">
         <inherit name="editor_object" />
         <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
+        <alias>Brick</alias>
+        <dropmsg>You dropped the cream coloured brick.</dropmsg>
         <take type="script">
           if (GetBoolean(Rook, "talked_before")) {
             msg ("You pick up the brick. It must belong to the Rook.")
@@ -1673,8 +1675,6 @@
           }
           player.numBricks = player.numBricks+1
         </take>
-        <alias>Brick</alias>
-        <dropmsg>You dropped the cream coloured brick.</dropmsg>
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
@@ -1779,7 +1779,7 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southeast" to="D2">
+      <exit alias="southeast" to="D2_EnemyPawn">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1810,7 +1810,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="south" to="D2">
+      <exit alias="south" to="D2_EnemyPawn">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1842,7 +1842,7 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southwest" to="D2">
+      <exit alias="southwest" to="D2_EnemyPawn">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2078,6 +2078,7 @@
         <inherit name="editor_object" />
         <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
         <dropmsg>You dropped the beige brick.</dropmsg>
+        <alias>Brick</alias>
         <take type="script">
           if (GetBoolean(Rook, "talked_before")) {
             msg ("You pick up the brick. It must belong to the Rook.")
@@ -2090,7 +2091,6 @@
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
-        <alias>Brick</alias>
       </object>
     </object>
     <object name="C2">
@@ -2113,7 +2113,7 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="east" to="D2">
+      <exit alias="east" to="D2_EnemyPawn">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2130,10 +2130,11 @@
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
-    <object name="D2">
+    <object name="D2_EnemyPawn">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <alias>D2</alias>
       <exit alias="west" to="C2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2166,12 +2167,15 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="EnemyPawn2">
+        <inherit name="editor_object" />
+      </object>
     </object>
     <object name="E2">
       <inherit name="editor_room" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
-      <exit alias="west" to="D2">
+      <exit alias="west" to="D2_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2236,7 +2240,7 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southeast" to="G1">
+      <exit alias="southeast" to="G1_EnemyPawn">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2269,7 +2273,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="south" to="G1">
+      <exit alias="south" to="G1_EnemyPawn">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2299,7 +2303,7 @@
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southwest" to="G1">
+      <exit alias="southwest" to="G1_EnemyPawn">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2398,7 +2402,7 @@
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northeast" to="D2">
+      <exit alias="northeast" to="D2_EnemyPawn">
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2425,7 +2429,7 @@
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="north" to="D2">
+      <exit alias="north" to="D2_EnemyPawn">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2451,7 +2455,7 @@
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northwest" to="D2">
+      <exit alias="northwest" to="D2_EnemyPawn">
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2498,7 +2502,7 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="east" to="G1">
+      <exit alias="east" to="G1_EnemyPawn">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2528,7 +2532,7 @@
         </turnscript>
       </object>
     </object>
-    <object name="G1">
+    <object name="G1_EnemyPawn">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
@@ -2537,6 +2541,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <alias>G1</alias>
       <exit alias="west" to="F1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2557,6 +2562,9 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="EnemyPawn1">
+        <inherit name="editor_object" />
+      </object>
     </object>
     <object name="H1">
       <inherit name="editor_room" />
@@ -2567,7 +2575,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <exit alias="west" to="G1">
+      <exit alias="west" to="G1_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
