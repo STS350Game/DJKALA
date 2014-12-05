@@ -749,6 +749,7 @@
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
       <threatenedByQueen />
+      <threatenedByPawn5 />
       <exit alias="west" to="C6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -845,6 +846,7 @@
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
+      <threatenedByPawn5 />
       <exit alias="west" to="E6_StartingSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
