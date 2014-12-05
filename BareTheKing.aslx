@@ -960,7 +960,7 @@
       <threatenedByQueen type="boolean">false</threatenedByQueen>
       <descprefix>You approach</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
-      <description>The tower appears to be in ruin. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
+      <description><![CDATA[Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.<br/><br/>A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.]]></description>
       <alias>H6</alias>
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
@@ -973,7 +973,6 @@
         <inherit name="editor_object" />
         <inherit name="male" />
         <alias>Tower</alias>
-        <look>Your eyes are drawn upwards and you feel something begin to surface in your mind. A feeling of terror grips you as images of a broken mirror, a wooden door and blood stains in a porcelain sink flash through your mind. A sense of inescapable futility fogs your mind and you stumble forward, reaching out to catch yourself on the crumbling tower.</look>
         <gender>it</gender>
         <article>it</article>
         <speak type="script">
