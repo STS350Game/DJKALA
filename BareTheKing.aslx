@@ -12,6 +12,7 @@
     <pov type="object">player</pov>
     <start type="script"><![CDATA[
       msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
+      LockSquaresOnStart
     ]]></start>
     <object name="brick3">
       <inherit name="editor_object" />
@@ -95,6 +96,7 @@
     <inherit name="editor_room" />
     <object name="A8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -116,6 +118,7 @@
     </object>
     <object name="B8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <enter type="script">
@@ -147,6 +150,7 @@
     </object>
     <object name="C8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -176,6 +180,7 @@
     </object>
     <object name="D8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = true
@@ -206,6 +211,7 @@
     </object>
     <object name="E8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -235,6 +241,7 @@
     </object>
     <object name="F8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = true
@@ -265,6 +272,7 @@
     </object>
     <object name="G8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -290,6 +298,7 @@
     </object>
     <object name="H8">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByQueen />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
@@ -316,6 +325,7 @@
     <inherit name="editor_room" />
     <object name="A7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = true
@@ -346,6 +356,7 @@
     </object>
     <object name="B7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="east" to="C7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -381,6 +392,7 @@
     </object>
     <object name="C7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <exit alias="east" to="D7_KnightSquare">
@@ -418,6 +430,7 @@
     </object>
     <object name="D7_KnightSquare">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <description>You see an armoured man staring forlornly at the darkness that surrounds the chessboard, making half hearted whistles and clicking noises. </description>
       <descprefix type="string"></descprefix>
       <objectslistprefix type="string"></objectslistprefix>
@@ -500,6 +513,7 @@
     </object>
     <object name="E7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <exit alias="east" to="F7">
         <inherit name="eastdirection" />
@@ -536,6 +550,7 @@
     </object>
     <object name="F7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="E7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -567,6 +582,7 @@
     </object>
     <object name="G7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="F7">
         <inherit name="westdirection" />
@@ -603,6 +619,7 @@
     </object>
     <object name="H7">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
@@ -632,6 +649,7 @@
     <inherit name="editor_room" />
     <object name="A6">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByRook />
       <enter type="script">
         player.horse_possible = true
@@ -662,6 +680,7 @@
     </object>
     <object name="B6">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
       </enter>
@@ -708,6 +727,7 @@
     </object>
     <object name="C6">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByRook />
       <changedthreatenedByRook type="script">
       </changedthreatenedByRook>
@@ -746,6 +766,7 @@
     </object>
     <object name="D6">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
       <threatenedByQueen />
@@ -781,6 +802,7 @@
     </object>
     <object name="E6_StartingSquare">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <alias>E6</alias>
       <threatenedByRook />
       <descprefix>You are in</descprefix>
@@ -844,6 +866,7 @@
     </object>
     <object name="F6">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
       <threatenedByPawn5 />
@@ -882,6 +905,7 @@
     </object>
     <object name="G6">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByRook />
       <exit alias="west" to="F6">
         <inherit name="westdirection" />
@@ -918,6 +942,7 @@
     </object>
     <object name="H6_TowerSquare">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByRook />
       <threatenedByQueen />
       <descprefix>You approach</descprefix>
@@ -1033,6 +1058,7 @@
     <inherit name="editor_room" />
     <object name="A5_BishopSquare">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <description>You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.</description>
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
@@ -1126,6 +1152,7 @@
     </object>
     <object name="B5">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <exit alias="west" to="A5_BishopSquare">
         <inherit name="westdirection" />
@@ -1162,6 +1189,7 @@
     </object>
     <object name="C5">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="B5">
         <inherit name="westdirection" />
@@ -1198,6 +1226,7 @@
     </object>
     <object name="D5">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="C5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1233,6 +1262,7 @@
     </object>
     <object name="E5_EnemyPawn">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <alias>E5</alias>
@@ -1286,6 +1316,7 @@
     </object>
     <object name="F5">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="E5_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1321,6 +1352,7 @@
     </object>
     <object name="G5">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="F5">
         <inherit name="westdirection" />
@@ -1357,6 +1389,7 @@
     </object>
     <object name="H5">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
@@ -1390,6 +1423,7 @@
     <inherit name="editor_room" />
     <object name="A4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1419,6 +1453,7 @@
     </object>
     <object name="B4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="A4">
         <inherit name="westdirection" />
@@ -1455,6 +1490,7 @@
     </object>
     <object name="C4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="B4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1490,6 +1526,7 @@
     </object>
     <object name="D4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <exit alias="west" to="C4">
         <inherit name="westdirection" />
@@ -1526,6 +1563,7 @@
     </object>
     <object name="E4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
       <beforeenter type="script">
@@ -1565,6 +1603,7 @@
     </object>
     <object name="F4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <exit alias="west" to="E4">
@@ -1602,6 +1641,7 @@
     </object>
     <object name="G4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="F4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1637,6 +1677,7 @@
     </object>
     <object name="H4">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <enter type="script">
@@ -1689,6 +1730,7 @@
     <inherit name="editor_room" />
     <object name="A3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = true
@@ -1719,6 +1761,7 @@
     </object>
     <object name="B3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="A3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1754,6 +1797,7 @@
     </object>
     <object name="C3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByPawn2 />
       <exit alias="west" to="B3">
@@ -1791,6 +1835,7 @@
     </object>
     <object name="D3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <exit alias="west" to="C3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1826,6 +1871,7 @@
     </object>
     <object name="E3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByPawn2 />
       <exit alias="west" to="D3">
@@ -1863,6 +1909,7 @@
     </object>
     <object name="F3_PawnSquare">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <alias>F3</alias>
       <description><![CDATA[You move down the board and spy a small boy clutching a spear far too large for himself and pointing it trembling at the enemy King, who is feet away.  This must be the Pawn that the Rook spoke of.<br/>]]></description>
       <exit alias="west" to="E3">
@@ -1944,6 +1991,7 @@
     </object>
     <object name="G3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <exit alias="west" to="F3_PawnSquare">
@@ -1981,6 +2029,7 @@
     </object>
     <object name="H3">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <enter type="script">
@@ -2015,6 +2064,7 @@
     <inherit name="editor_room" />
     <object name="A2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <enter type="script">
@@ -2046,6 +2096,7 @@
     </object>
     <object name="B2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <exit alias="west" to="A2">
@@ -2101,6 +2152,7 @@
     </object>
     <object name="C2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <threatenedByKing />
@@ -2139,6 +2191,7 @@
     </object>
     <object name="D2_EnemyPawn">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <threatenedByKing />
@@ -2181,6 +2234,7 @@
     </object>
     <object name="E2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <threatenedByKing />
@@ -2219,6 +2273,7 @@
     </object>
     <object name="F2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <threatenedByPawn1 />
@@ -2257,6 +2312,7 @@
     </object>
     <object name="G2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <exit alias="west" to="F2">
@@ -2294,6 +2350,7 @@
     </object>
     <object name="H2">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByPawn1 />
       <enter type="script">
@@ -2336,6 +2393,7 @@
     <inherit name="editor_room" />
     <object name="A1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
         player.horse_possible = True
@@ -2360,6 +2418,7 @@
     </object>
     <object name="B1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
       <grid_parent_offset_auto />
@@ -2394,6 +2453,7 @@
     </object>
     <object name="C1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByKing />
       <enter type="script">
@@ -2425,6 +2485,7 @@
     </object>
     <object name="D1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
       <enter type="script">
@@ -2456,6 +2517,7 @@
     </object>
     <object name="E1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByKing />
       <enter type="script">
@@ -2487,6 +2549,7 @@
     </object>
     <object name="F1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <alias>PawnedWhiteQueenSquare</alias>
       <beforeenter type="script">
@@ -2547,14 +2610,15 @@
     </object>
     <object name="G1_EnemyPawn">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <alias>G1</alias>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <alias>G1</alias>
       <exit alias="west" to="F1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2581,6 +2645,7 @@
     </object>
     <object name="H1">
       <inherit name="editor_room" />
+      <inherit name="square" />
       <threatenedByQueen />
       <enter type="script">
         player.horse_possible = true
@@ -2617,4 +2682,14 @@
     <pattern>givesingle</pattern>
     <defaultexpression>"You can't givesingle " + object.article + "."</defaultexpression>
   </verb>
+  <type name="square">
+    <inherit name="editor_room" />
+  </type>
+  <function name="LockSquaresOnStart">
+    foreach (object, AllObjects()) {
+      if (object.type == "Room") {
+        msg (object.name)
+      }
+    }
+  </function>
 </asl>
