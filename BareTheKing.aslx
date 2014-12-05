@@ -457,7 +457,6 @@
             msg ("“The darkness holds only death for us.  She can outrun the evil therein, but not forever.  The fog blocks her ears, and dulls her senses.  If only I had something to cut the stench of evil!”")
             msg ("He rubs his eyes and turns back to the darkness, anxiously searching for any sign of his beloved mount.  ")
             Knight.talked_to = true
-            AddToInventory (Kerchief)
           }
           else if (Horse.parent = player) {
             msg ("The Knight leaps to his feet when he sees you approaching with the horse.  The horse tugs the bridle out of your hand and trots over to her master, nuzzling at his pockets for treats.  The Knight puts a foot in the stirrup and swings himself onto her back, heaving a sigh of contentment as he settles into his accustomed place.")
@@ -466,6 +465,7 @@
             msg ("The Knight plants his lance into the side of the Rook, which shudders.  To your amazement, it begins shaking apart, and as it falls into ruin you notice something glinting where it’s base was resting. The Knight, his labour completed, salutes you before turning back towards the enemy lines.")
             AddToInventory (helped_knight)
             RemoveObject (Horse)
+            AddToInventory (Kerchief)
             MakeObjectVisible (memory3)
             MoveObject (Knight, B6)
             RemoveObject (Black Rook)
