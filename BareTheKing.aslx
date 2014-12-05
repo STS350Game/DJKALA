@@ -810,7 +810,7 @@
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
       <description type="script">
-        if (GetBoolean(EnemyPawn, "alive")) {
+        if (GetBoolean(EnemyPawn5, "alive")) {
           msg ("A black pawn stands in the square to your immediate south.")
         }
       </description>
@@ -856,7 +856,7 @@
       <exit name="Exit_E6_E5" alias="south" to="E5_EnemyPawn">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
-        <locked />
+        <locked type="boolean">false</locked>
         <lockmessage>That space is threatened. You cannot move there.</lockmessage>
       </exit>
       <exit alias="southeast" to="F5">
@@ -2687,9 +2687,21 @@
   </type>
   <function name="LockSquaresOnStart">
     foreach (object, AllObjects()) {
-      if (object.type == "Room") {
-        msg (object.name)
+      if (IsThreatened(object)) {
+        foreach (exit, AllExits()) {
+          if (exit.to.name = object.name) {
+            LockExit (exit)
+          }
+        }
       }
     }
+  </function>
+  <function name="IsThreatened" parameters="object" type="boolean">
+    if (DoesInherit (object, "square")) {
+      if ( GetBoolean(object, "threatenedByQueen") or GetBoolean (object, "threatenedByRook") or GetBoolean (object, "threatenedByKing") or GetBoolean (object, "threatenedByPawn1") or GetBoolean (object, "threatenedByPawn2") or GetBoolean (object, "threatenedByPawn5")) {
+        return (true)
+      }
+    }
+    return (false)
   </function>
 </asl>
