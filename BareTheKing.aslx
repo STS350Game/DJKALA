@@ -1,8 +1,8 @@
 <!--Saved by Quest 5.5.5328.26617-->
 <asl version="550">
-  <template name="LockedExit">That space is threatened. You cannot move there.</template>
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
+  <template name="LockedExit">That space is threatened. You cannot move there.</template>
   <game name="Bare the King">
     <gameid>508d9430-e42b-4fb5-989f-f43e11445fca</gameid>
     <version>1.0</version>
@@ -350,7 +350,7 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southeast" to="B6">
+      <exit alias="southeast" to="B6_EnemyRook">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -382,7 +382,7 @@
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="south" to="B6">
+      <exit alias="south" to="B6_EnemyRook">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -416,7 +416,7 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southwest" to="B6">
+      <exit alias="southwest" to="B6_EnemyRook">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -464,6 +464,9 @@
             AddToInventory (helped_knight)
             RemoveObject (Horse)
             MakeObjectVisible (memory3)
+            MoveObject (Knight, B6)
+            RemoveObject (Black Rook)
+            RemoveFlagFromSquares (threatenedByRook)
           }
           else {
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
@@ -580,6 +583,10 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southwest" to="D6">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="G7">
       <inherit name="editor_room" />
@@ -666,7 +673,7 @@
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="east" to="B6">
+      <exit alias="east" to="B6_EnemyRook">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -679,12 +686,13 @@
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
-    <object name="B6">
+    <object name="B6_EnemyRook">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
       </enter>
+      <alias>B6</alias>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -732,7 +740,7 @@
       <threatenedByRook />
       <changedthreatenedByRook type="script">
       </changedthreatenedByRook>
-      <exit alias="west" to="B6">
+      <exit alias="west" to="B6_EnemyRook">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1124,7 +1132,7 @@
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northeast" to="B6">
+      <exit alias="northeast" to="B6_EnemyRook">
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1163,7 +1171,7 @@
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="north" to="B6">
+      <exit alias="north" to="B6_EnemyRook">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1196,7 +1204,7 @@
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="northwest" to="B6">
+      <exit alias="northwest" to="B6_EnemyRook">
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2704,5 +2712,23 @@
       }
     }
     return (false)
+  </function>
+  <function name="UnlockUnthreatenedSquares">
+    foreach (object, AllObjects()) {
+      if (DoesInherit (object, "square") and not IsThreatened(object)) {
+        foreach (exit, AllExits()) {
+          if (exit.to.name = object.name) {
+            UnlockExit (exit)
+          }
+        }
+      }
+    }
+  </function>
+  <function name="RemoveFlagFromSquares" parameters="flagName">
+    foreach (object, AllObjects()) {
+      if (DoesInherit (object, "square")) {
+        SetObjectFlagOff (object, flagName)
+      }
+    }
   </function>
 </asl>
