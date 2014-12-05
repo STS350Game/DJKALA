@@ -2217,6 +2217,7 @@
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <threatenedByPawn1 />
       <exit alias="west" to="E2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2290,6 +2291,7 @@
     <object name="H2">
       <inherit name="editor_room" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByPawn1 />
       <enter type="script">
         player.horse_possible = true
       </enter>
