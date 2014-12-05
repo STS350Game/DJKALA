@@ -1,5 +1,6 @@
 <!--Saved by Quest 5.5.5328.26617-->
 <asl version="550">
+  <template name="LockedExit">That space is threatened. You cannot move there.</template>
   <include ref="English.aslx" />
   <include ref="Core.aslx" />
   <game name="Bare the King">
