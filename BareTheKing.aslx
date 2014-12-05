@@ -690,9 +690,9 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <alias>B6</alias>
       <enter type="script">
       </enter>
-      <alias>B6</alias>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1121,6 +1121,7 @@
             RemoveObject (Bishop)
             AddToInventory (helped_bishop)
             MakeObjectVisible (memory2)
+            AddToInventory (brick3)
           </item>
         </useon>
       </object>
