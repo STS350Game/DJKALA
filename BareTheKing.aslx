@@ -467,7 +467,7 @@
             RemoveObject (Horse)
             AddToInventory (Kerchief)
             MakeObjectVisible (memory3)
-            MoveObject (Knight, B6)
+            MoveObject (Knight, B6_EnemyRook)
             RemoveObject (Black Rook)
             RemoveFlagFromSquares (threatenedByRook)
           }
