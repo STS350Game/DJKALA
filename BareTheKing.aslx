@@ -735,6 +735,11 @@
       <threatenedByRook />
       <enter type="script">
       </enter>
+      <beforeenter type="script">
+        if (ListContains(ScopeVisible(), memory3)) {
+          msg ("You see a glimmering object on the floor... it's a collar with a small tag!")
+        }
+      </beforeenter>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2562,6 +2567,11 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <beforeenter type="script">
+        if (not ListContains(ScopeVisible(), memory1)) {
+          msg ("You see a small shining object on the floor... it is a small brass key!")
+        }
+      </beforeenter>
       <exit alias="west" to="G2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
