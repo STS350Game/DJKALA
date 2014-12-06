@@ -53,6 +53,7 @@
       <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
       <drop type="boolean">false</drop>
       <giveto type="scriptdictionary" />
+      <fold>You fold it the kerchief into a neat pyramid like at a fancy restaurant... but this isn't a dinner napkin, so you unfold it</fold>
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -566,6 +567,7 @@
       <object name="Weeds">
         <inherit name="editor_object" />
         <look>The weeds really seem to be a type of flower. The flower itself having five white petals, with black berries hanging off of it.</look>
+        <pick>It would be such a shame to pluck such a pretty thing.</pick>
       </object>
     </object>
     <object name="F7">
@@ -713,9 +715,9 @@
       <attr name="grid_fill">Gray</attr>
       <alias>B6</alias>
       <description>The tile is black beneath your feet, just as any other tile.</description>
+      <threatenedByRook />
       <enter type="script">
       </enter>
-      <threatenedByRook />
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1956,6 +1958,11 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <description>The glint off the white tile under your feet is intense and bright.</description>
+      <beforeenter type="script">
+        if (ListContains(ScopeVisible(), memory3)) {
+          msg ("You can see a small glimmering object on this tile.")
+        }
+      </beforeenter>
       <exit alias="west" to="C3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2723,6 +2730,7 @@
             finish
           }
         ]]></speak>
+        <admire>The White Queen seems almost angelic in her pure white armour.</admire>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
           <script>
@@ -2816,6 +2824,16 @@
     <property>pick</property>
     <pattern>pick</pattern>
     <defaultexpression>"You can't pick " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>fold</property>
+    <pattern>fold</pattern>
+    <defaultexpression>"You can't fold " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>admire</property>
+    <pattern>admire</pattern>
+    <defaultexpression>"You can't admire " + object.article + "."</defaultexpression>
   </verb>
   <type name="square">
     <inherit name="editor_room" />
