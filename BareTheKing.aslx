@@ -128,6 +128,96 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="B8">
       <inherit name="editor_room" />
@@ -161,6 +251,60 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="C8">
       <inherit name="editor_room" />
@@ -190,6 +334,60 @@
       </exit>
       <exit alias="east" to="D8">
         <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -224,6 +422,57 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="E8">
       <inherit name="editor_room" />
@@ -253,6 +502,60 @@
       </exit>
       <exit alias="east" to="F8">
         <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -287,6 +590,60 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="G8">
       <inherit name="editor_room" />
@@ -314,6 +671,63 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="H7">
+        <inherit name="southeastdirection" />
+      </exit>
     </object>
     <object name="H8">
       <inherit name="editor_room" />
@@ -338,6 +752,96 @@
       <exit alias="south" to="H7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="north" to="Darkness">
+        <inherit name="northdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
       </exit>
     </object>
   </object>
@@ -379,6 +883,60 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
         <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="B7">
@@ -687,6 +1245,63 @@
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northwest" to="G8">
+        <inherit name="northwestdirection" />
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
   </object>
   <object name="Row 6">
@@ -722,6 +1337,60 @@
       <exit alias="southeast" to="B5">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
       </exit>
     </object>
     <object name="B6_EnemyRook">
@@ -781,11 +1450,11 @@
         <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
         <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
         <visible type="boolean">false</visible>
+        <listalias>Black Rook's Collar</listalias>
         <ontake type="script"><![CDATA[
           IncreaseObjectCounter (GameStatus, "MemoryCounter")
           msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
         ]]></ontake>
-        <listalias>Black Rook's Collar</listalias>
       </object>
     </object>
     <object name="C6">
@@ -1126,16 +1795,70 @@
         <alias>Small Brass Key</alias>
         <look>It is a small brass key that was dropped  when the Rook destroyed the black Queen.</look>
         <visible type="boolean">false</visible>
-        <ontake type="script"><![CDATA[
-          IncreaseObjectCounter (GameStatus, "MemoryCounter")
-          msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
-        ]]></ontake>
         <alt type="stringlist">
           <value>key</value>
           <value>brass key</value>
         </alt>
         <listalias>Black Queen's Brass Key</listalias>
+        <ontake type="script"><![CDATA[
+          IncreaseObjectCounter (GameStatus, "MemoryCounter")
+          msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
+        ]]></ontake>
       </object>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
   </object>
   <object name="Row 5">
@@ -1280,12 +2003,66 @@
         <drop type="boolean">false</drop>
         <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
         <visible type="boolean">false</visible>
+        <listalias>Bishop's Thermometre</listalias>
         <ontake type="script"><![CDATA[
           IncreaseObjectCounter (GameStatus, "MemoryCounter")
           msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
         ]]></ontake>
-        <listalias>Bishop's Thermometre</listalias>
       </object>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="B5">
       <inherit name="editor_room" />
@@ -1549,13 +2326,13 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <threatenedByQueen />
+      <description>You are in a white tile now, to the east you feel the menacing presence of the void.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a white tile now, to the east you feel the menacing presence of the void.</description>
       <exit alias="west" to="G5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1576,6 +2353,60 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
   </object>
   <object name="Row 4">
@@ -1583,13 +2414,13 @@
     <object name="A4">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You are in a white tile, the floor chipped and black rubble strewn everywhere.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a white tile, the floor chipped and black rubble strewn everywhere.</description>
       <exit alias="north" to="A5_BishopSquare">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1609,6 +2440,60 @@
       <exit alias="southeast" to="B3">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
       </exit>
     </object>
     <object name="B4">
@@ -1734,9 +2619,9 @@
       <inherit name="square" />
       <usedefaultprefix type="boolean">false</usedefaultprefix>
       <prefix>square</prefix>
+      <description>You stand upon a white tile, the floor surprisingly clear of debris.</description>
       <beforeenter type="script">
       </beforeenter>
-      <description>You stand upon a white tile, the floor surprisingly clear of debris.</description>
       <exit alias="west" to="D4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1897,6 +2782,60 @@
           player.numBricks = player.numBricks-1
         </ondrop>
       </object>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
   </object>
   <object name="Row 3">
@@ -1931,6 +2870,60 @@
       <exit alias="southeast" to="B2">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
       </exit>
     </object>
     <object name="B3">
@@ -2251,6 +3244,60 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
   </object>
   <object name="Row 2">
@@ -2260,13 +3307,13 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
+      <description>You are in a white square. To the west there is crushing blackness.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a white square. To the west there is crushing blackness.</description>
       <exit alias="north" to="A3">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2285,6 +3332,60 @@
       </exit>
       <exit alias="southeast" to="B1">
         <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -2553,13 +3654,13 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByPawn1 />
+      <description>You are in a black square, to the east the darkness seems to be trying to overtake and mold with the dark tile.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a black square, to the east the darkness seems to be trying to overtake and mold with the dark tile.</description>
       <exit alias="west" to="G2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2588,6 +3689,60 @@
           MakeObjectVisible (memory1)
         </changedalive>
       </object>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
   </object>
   <object name="Row 1">
@@ -2596,6 +3751,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>You stand in a lonely black square. To the south and to the west the doctor claws at the tile, barely staved off by the light.</description>
       <enter type="script">
         player.horse_possible = True
       </enter>
@@ -2604,7 +3760,6 @@
       <onexit type="script">
         player.horse_possible = False
       </onexit>
-      <description>You stand in a lonely black square. To the south and to the west the doctor claws at the tile, barely staved off by the light.</description>
       <exit alias="north" to="A2">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2617,6 +3772,96 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="northwest" to="Darkness">
+        <inherit name="northwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="west" to="Darkness">
+        <inherit name="westdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="B1">
       <inherit name="editor_room" />
@@ -2625,6 +3870,7 @@
       <attr name="grid_borderwidth" type="int">1</attr>
       <grid_parent_offset_auto />
       <threatenedByRook />
+      <description>You are in a white tile. To the south the darkness teems.</description>
       <beforeenter type="script">
       </beforeenter>
       <enter type="script">
@@ -2633,7 +3879,6 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a white tile. To the south the darkness teems.</description>
       <exit alias="west" to="A1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2654,19 +3899,73 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="C1">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByKing />
+      <description>You find yourself in a black square. To the south you don't see anything except the darkness, an impenetrable curtain.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You find yourself in a black square. To the south you don't see anything except the darkness, an impenetrable curtain.</description>
       <exit alias="west" to="B1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2687,19 +3986,73 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="D1">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
+      <description>You are in a white tile, the darkness seethes to the south.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a white tile, the darkness seethes to the south.</description>
       <exit alias="west" to="C1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2720,19 +4073,73 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="E1">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByKing />
+      <description>The floor beneath you is black, the darkness reaching out from the south is melding with the dark tile.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>The floor beneath you is black, the darkness reaching out from the south is melding with the dark tile.</description>
       <exit alias="west" to="D1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2753,12 +4160,67 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="F1">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <alias>PawnedWhiteQueenSquare</alias>
+      <description>You stand in a white tile. To the south the darkness moves, shifting and pulsing.</description>
       <beforeenter type="script">
       </beforeenter>
       <beforefirstenter type="script">
@@ -2769,7 +4231,6 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You stand in a white tile. To the south the darkness moves, shifting and pulsing.</description>
       <exit alias="west" to="E1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2816,19 +4277,73 @@
           </script>
         </turnscript>
       </object>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
     </object>
     <object name="G1_EnemyPawn">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <alias>G1</alias>
+      <description>You are in a black tile, to the south the void swirls.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a black tile, to the south the void swirls.</description>
       <exit alias="west" to="F1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2857,18 +4372,72 @@
           }
         </speak>
       </object>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="H1">
       <inherit name="editor_room" />
       <inherit name="square" />
       <threatenedByQueen />
+      <description>You are in a white tile. You have reached the end of the board, to the south and the east there is only the abyss.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You are in a white tile. You have reached the end of the board, to the south and the east there is only the abyss.</description>
       <exit alias="west" to="G1_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2880,6 +4449,96 @@
       <exit alias="north" to="H2">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southwest" to="Darkness">
+        <inherit name="southwestdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="south" to="Darkness">
+        <inherit name="southdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="southeast" to="Darkness">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="east" to="Darkness">
+        <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
+      </exit>
+      <exit alias="northeast" to="Darkness">
+        <inherit name="northeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+        <runscript />
+        <script type="script"><![CDATA[
+          if (not GetBoolean(Darkness,"tried")) {
+            msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
+            Darkness.tried = true
+          }
+          else {
+            msg ("Ignoring the panic that threatens to engulf you, you step through the veil. The blackness encloses you, and you lose all sense of sight. Somewhere behind you, you hear something large shifting. Dread wells up inside you.")
+            msg ("This was a bad idea.")
+            msg ("It is your last thought as pain suddenly rips through your body.")
+            msg ("You are dead.")
+            finish
+          }
+        ]]></script>
       </exit>
     </object>
   </object>
@@ -2918,6 +4577,25 @@
     <pattern>admire</pattern>
     <defaultexpression>"You can't admire " + object.article + "."</defaultexpression>
   </verb>
+  <object name="Darkness">
+    <inherit name="editor_room" />
+    <description type="string"></description>
+    <exit alias="southwest" to="H7">
+      <inherit name="southwestdirection" />
+    </exit>
+    <exit alias="west" to="H7">
+      <inherit name="westdirection" />
+    </exit>
+    <exit alias="northwest" to="H7">
+      <inherit name="northwestdirection" />
+    </exit>
+    <exit alias="southeast" to="A6">
+      <inherit name="southeastdirection" />
+    </exit>
+    <exit alias="east" to="A6">
+      <inherit name="eastdirection" />
+    </exit>
+  </object>
   <type name="square">
     <inherit name="editor_room" />
   </type>
