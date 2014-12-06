@@ -314,6 +314,10 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southeast" to="H7">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="H8">
       <inherit name="editor_room" />
@@ -519,7 +523,7 @@
           msg ("You try pushing the Knight. He laughs as you strain yourself")
         </push>
       </object>
-      <exit alias="south" to="E6_StartingSquare">
+      <exit alias="south" to="D6">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -545,6 +549,10 @@
       </exit>
       <exit alias="east" to="E7">
         <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="E6_StartingSquare">
+        <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -691,6 +699,10 @@
       </exit>
       <exit alias="north" to="H8">
         <inherit name="northdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="G8">
+        <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -867,6 +879,10 @@
       </exit>
       <exit alias="southeast" to="E5_EnemyPawn">
         <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="D5">
+        <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -1259,7 +1275,7 @@
           msg ("You push the Bishop. It looks annoyed but remains silent")
         </push>
       </object>
-      <exit alias="southeast" to="E6_StartingSquare">
+      <exit alias="southeast" to="B4">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
