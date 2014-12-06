@@ -10,12 +10,12 @@
     <author>Team DJKALA</author>
     <gridmap />
     <autodescription type="boolean">false</autodescription>
+    <cruelty type="string"></cruelty>
     <pov type="object">player</pov>
     <start type="script"><![CDATA[
       msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
       UpdateSquareLocks
     ]]></start>
-    <cruelty type="string"></cruelty>
     <object name="brick3">
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
@@ -51,8 +51,8 @@
       <feature_usegive />
       <givesingle type="boolean">false</givesingle>
       <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
-      <giveto type="scriptdictionary" />
       <drop type="boolean">false</drop>
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -1801,7 +1801,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>The square under you is losing it's prestige after the many battles it has seen, but it's darkness still shows through.</description>
+      <description>The square under you is losing its prestige after the many battles it has seen, but it's darkness still shows through.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
