@@ -52,8 +52,8 @@
       <givesingle type="boolean">false</givesingle>
       <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
       <drop type="boolean">false</drop>
-      <giveto type="scriptdictionary" />
       <fold>You fold it the kerchief into a neat pyramid like at a fancy restaurant... but this isn't a dinner napkin, so you unfold it</fold>
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -777,7 +777,7 @@
         <inherit name="editor_object" />
         <take />
         <drop type="boolean">false</drop>
-        <alias>Knight's Memory</alias>
+        <alias>Collar</alias>
         <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
         <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
         <visible type="boolean">false</visible>
@@ -785,6 +785,7 @@
           IncreaseObjectCounter (GameStatus, "MemoryCounter")
           msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
         ]]></ontake>
+        <listalias>Black Rook's Collar</listalias>
       </object>
     </object>
     <object name="C6">
@@ -1122,13 +1123,18 @@
         <take />
         <takemsg>You come upon the sparkle you noticed when the Rook destroyed the black Queen.  It is a small brass key.</takemsg>
         <drop type="boolean">false</drop>
-        <alias>Rook's Memory</alias>
-        <look>It is the small brass key that was dropped  when the Rook destroyed the black Queen.</look>
+        <alias>Small Brass Key</alias>
+        <look>It is a small brass key that was dropped  when the Rook destroyed the black Queen.</look>
         <visible type="boolean">false</visible>
         <ontake type="script"><![CDATA[
           IncreaseObjectCounter (GameStatus, "MemoryCounter")
           msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
         ]]></ontake>
+        <alt type="stringlist">
+          <value>key</value>
+          <value>brass key</value>
+        </alt>
+        <listalias>Black Queen's Brass Key</listalias>
       </object>
     </object>
   </object>
@@ -1269,7 +1275,7 @@
         <inherit name="editor_object" />
         <take />
         <takemsg>The small object that flew from the Bishop when he was destroyed by the black King shimmers quietly on the ground.  It is a thermometre.</takemsg>
-        <alias>Bishop's Memory</alias>
+        <alias>Thermometre</alias>
         <attr name="feature_usegive" type="boolean">false</attr>
         <drop type="boolean">false</drop>
         <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
@@ -1278,6 +1284,7 @@
           IncreaseObjectCounter (GameStatus, "MemoryCounter")
           msg ("An antiseptic smell rises up to your nose, sharp but clean.  You close your eyes and remember gentle hands applying cooling pads to burns, and smoothing hair away from a fevered forehead.<br/><br/>You are no longer in pain.")
         ]]></ontake>
+        <listalias>Bishop's Thermometre</listalias>
       </object>
     </object>
     <object name="B5">
@@ -2757,6 +2764,7 @@
         <look>A woman in shining white armour stands valorously before you.</look>
         <drop type="boolean">false</drop>
         <attr name="feature_switchable" type="boolean">false</attr>
+        <admire>The White Queen seems almost angelic in her pure white armour.</admire>
         <speak type="script"><![CDATA[
           if (GetInt(GameStatus, "MemoryCounter") >= 3) {
             msg ("As you approach the White Queen, a gentle light parts the fog overhead, and you can feel yourself being drawn towards it.  She smiles, and offers the sword’s hilt to you.<br/><br/>“I don’t think I can take this with me where I’m going…”<br/>“Not physically, no.  But it will be here whenever you need it.  Do you understand now?”<br/>You smile, thinking back to the happy memories that the defeated black pieces reminded you of.  <br/>“Yes, I think I do.”<br/>“Then go.  Be happy, for all of us.”<br/>Nodding, you take the hilt of the sword and turn towards the light again.  You feel your feet getting lighter, and you let yourself go.  As you float towards it, your eyes close, and the chessboard fades out.<br/><br/>You open your eyes to the concerned faces of your loved ones standing around your hospital bed, tears of relief and joy in their eyes.<br/><br/>You blink back tears yourself, and smile.  <br/>“Its ok...I’m ok.  I’m back.”")
@@ -2766,7 +2774,6 @@
             finish
           }
         ]]></speak>
-        <admire>The White Queen seems almost angelic in her pure white armour.</admire>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
           <script>
