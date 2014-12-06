@@ -442,6 +442,7 @@
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -455,11 +456,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="north" to="Darkness">
         <inherit name="northdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -473,11 +474,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -491,7 +492,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="E8">
@@ -4254,9 +4254,9 @@
           msg ("You get the sudden urge to lick the White Queen.")
           msg ("As you step in, the Queen looks at you and gives you an angelic smile.")
           msg ("You lean in and stick out your tongue. The Queen steps back in surprise!")
-          msg (""What exactly do you think you're doing?! Do you think you're some kind of dog?"")
+          msg ("\"What exactly do you think you're doing?! Do you think you're some kind of dog?\"")
           msg ("You take a step back in embarrassment and quickly apologize.")
-          msg (""I-I-I'm sorry, I don't not what came over me."")
+          msg ("\"I-I-I'm sorry, I don't not what came over me.\"")
         </lick>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
