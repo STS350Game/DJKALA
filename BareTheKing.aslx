@@ -19,29 +19,12 @@
     <object name="brick3">
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
-      <alias>Brick</alias>
-      <dropmsg>You dropped the ivory brick.</dropmsg>
+      <alias>ivory-coloured brick</alias>
       <throw>You throw the brick up into the air. You'd best get out of the way before it comes down.</throw>
-      <take type="script">
-        if (GetBoolean(Rook, "talked_before")) {
-          msg ("You pick up the brick. It must belong to the Rook.")
-        }
-        else {
-          msg ("You pick up the brick. Maybe it belong's to someone.")
-        }
-        player.numBricks = player.numBricks+1
-      </take>
+      <take />
       <ontake type="script">
-        if (GetBoolean(Rook, "talked_before")) {
-          msg ("You pick up the brick. It must belong to the Rook.")
-        }
-        else {
-          msg ("You pick up the brick. Maybe it belong's to someone.")
-        }
-        numBricks = numBricks+1
       </ontake>
       <ondrop type="script">
-        player.numBricks = player.numBricks-1
       </ondrop>
     </object>
     <object name="Kerchief">
@@ -1530,6 +1513,15 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="brick2">
+        <inherit name="editor_object" />
+        <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
+        <alias>cream-coloured brick</alias>
+        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
+        <take />
+        <ondrop type="script">
+        </ondrop>
+      </object>
     </object>
     <object name="G5">
       <inherit name="editor_room" />
@@ -1889,25 +1881,6 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="brick2">
-        <inherit name="editor_object" />
-        <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
-        <alias>Brick</alias>
-        <dropmsg>You dropped the cream coloured brick.</dropmsg>
-        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
-        <take type="script">
-          if (GetBoolean(Rook, "talked_before")) {
-            msg ("You pick up the brick. It must belong to the Rook.")
-          }
-          else {
-            msg ("You pick up the brick. Maybe it belong's to someone.")
-          }
-          player.numBricks = player.numBricks+1
-        </take>
-        <ondrop type="script">
-          player.numBricks = player.numBricks-1
-        </ondrop>
-      </object>
     </object>
   </object>
   <object name="Row 3">
@@ -2346,20 +2319,10 @@
       </exit>
       <object name="brick1">
         <inherit name="editor_object" />
-        <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
-        <dropmsg>You dropped the beige brick.</dropmsg>
-        <alias>Brick</alias>
-        <take type="script">
-          if (GetBoolean(Rook, "talked_before")) {
-            msg ("You pick up the brick. It must belong to the Rook.")
-          }
-          else {
-            msg ("You pick up the brick. Maybe it belong's to someone.")
-          }
-          player.numBricks = player.numBricks+1
-        </take>
+        <look>It is a heavy brick of beige colour that looks rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancholy.</look>
+        <alias>beige-coloured brick</alias>
+        <take />
         <ondrop type="script">
-          player.numBricks = player.numBricks-1
         </ondrop>
       </object>
     </object>
@@ -2804,6 +2767,10 @@
         <drop type="boolean">false</drop>
         <attr name="feature_switchable" type="boolean">false</attr>
         <admire>The White Queen seems almost angelic in her pure white armour.</admire>
+        <alias>White Queen</alias>
+        <alt type="stringlist">
+          <value>queen</value>
+        </alt>
         <speak type="script"><![CDATA[
           if (GetInt(GameStatus, "MemoryCounter") >= 3) {
             msg ("As you approach the White Queen, a gentle light parts the fog overhead, and you can feel yourself being drawn towards it.  She smiles, and offers the sword’s hilt to you.<br/><br/>“I don’t think I can take this with me where I’m going…”<br/>“Not physically, no.  But it will be here whenever you need it.  Do you understand now?”<br/>You smile, thinking back to the happy memories that the defeated black pieces reminded you of.  <br/>“Yes, I think I do.”<br/>“Then go.  Be happy, for all of us.”<br/>Nodding, you take the hilt of the sword and turn towards the light again.  You feel your feet getting lighter, and you let yourself go.  As you float towards it, your eyes close, and the chessboard fades out.<br/><br/>You open your eyes to the concerned faces of your loved ones standing around your hospital bed, tears of relief and joy in their eyes.<br/><br/>You blink back tears yourself, and smile.  <br/>“Its ok...I’m ok.  I’m back.”")
@@ -2813,17 +2780,13 @@
           }
           finish
         ]]></speak>
-        <alias>White Queen</alias>
-        <alt type="stringlist">
-          <value>queen</value>
-        </alt>
         <lick type="script">
-          msg ("You get the sudden urge to lick the White Queen")
-          msg ("As you step in, the Queen looks at you and gives you an angelic smile")
-          msg ("You lean in and stick out ur tongue and the Queen steps back in surprise")
-          msg (""What do you think you're doing?! Do you think you're some kind of dog?"")
-          msg ("You take a step back in embarrassment and quickly apologize")
-          msg (""I-I-I'm sorry, I don't not what came over me"")
+          msg ("You get the sudden urge to lick the White Queen.")
+          msg ("As you step in, the Queen looks at you and gives you an angelic smile.")
+          msg ("You lean in and stick out your tongue. The Queen steps back in surprise!")
+          msg (""What exactly do you think you're doing?! Do you think you're some kind of dog?"")
+          msg ("You take a step back in embarrassment and quickly apologize.")
+          msg (""I-I-I'm sorry, I don't not what came over me."")
         </lick>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
