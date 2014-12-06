@@ -13,8 +13,9 @@
     <pov type="object">player</pov>
     <start type="script"><![CDATA[
       msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
-      LockSquaresOnStart
+      UpdateSquareLocks
     ]]></start>
+    <cruelty type="string"></cruelty>
     <object name="brick3">
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
@@ -484,7 +485,7 @@
             MoveObject (Knight, B6_EnemyRook)
             RemoveObject (Black Rook)
             RemoveFlagFromSquares ("threatenedByRook")
-            UnlockUnthreatenedSquares
+            UpdateSquareLocks
           }
           else {
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
@@ -1038,7 +1039,7 @@
                 RemoveFlagFromSquares ("threatenedByQueen")
                 RemoveFlagFromSquares ("threatenedByPawn1")
                 SetObjectFlagOn (G3, "threatenedByPawn1")
-                UnlockUnthreatenedSquares
+                UpdateSquareLocks
               }
             }
           }
@@ -1167,6 +1168,16 @@
             AddToInventory (helped_bishop)
             MakeObjectVisible (memory2)
             AddToInventory (brick3)
+            RemoveFlagFromSquares ("threatenedByPawn2")
+            RemoveFlagFromSquares ("threatenedByKing")
+            SetObjectFlagOn (C1, "threatenedByKing")
+            SetObjectFlagOn (D1, "threatenedByKing")
+            SetObjectFlagOn (E1, "threatenedByKing")
+            SetObjectFlagOn (C2, "threatenedByKing")
+            SetObjectFlagOn (E2, "threatenedByKing")
+            SetObjectFlagOn (C3, "threatenedByKing")
+            SetObjectFlagOn (D3, "threatenedByKing")
+            SetObjectFlagOn (E3, "threatenedByKing")
           </item>
         </useon>
       </object>
@@ -2765,12 +2776,19 @@
   <type name="square">
     <inherit name="editor_room" />
   </type>
-  <function name="LockSquaresOnStart">
+  <function name="UpdateSquareLocks">
     foreach (object, AllObjects()) {
       if (IsThreatened(object)) {
         foreach (exit, AllExits()) {
           if (exit.to.name = object.name) {
             LockExit (exit)
+          }
+        }
+      }
+      else if (DoesInherit (object, "square")) {
+        foreach (exit, AllExits()) {
+          if (exit.to.name = object.name) {
+            UnlockExit (exit)
           }
         }
       }
@@ -2785,17 +2803,6 @@
       }
     }
     return (false)
-  </function>
-  <function name="UnlockUnthreatenedSquares">
-    foreach (object, AllObjects()) {
-      if (DoesInherit (object, "square") and not IsThreatened(object)) {
-        foreach (exit, AllExits()) {
-          if (exit.to.name = object.name) {
-            UnlockExit (exit)
-          }
-        }
-      }
-    }
   </function>
   <function name="RemoveFlagFromSquares" parameters="flagName">
     foreach (object, AllObjects()) {
