@@ -1801,7 +1801,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>The square under you is losing its prestige after the many battles it has seen, but it's darkness still shows through.</description>
+      <description>The square under you is losing its prestige after the many battles it has seen, but its darkness still shows through.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
