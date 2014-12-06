@@ -11,11 +11,6 @@
     <gridmap />
     <autodescription />
     <cruelty type="string"></cruelty>
-    <pov type="object">player</pov>
-    <start type="script"><![CDATA[
-      msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
-      UpdateSquareLocks
-    ]]></start>
     <appendobjectdescription />
     <attr name="autodescription_youarein_useprefix" type="boolean">false</attr>
     <attr name="autodescription_youcango" type="int">0</attr>
@@ -24,6 +19,11 @@
     <attr name="autodescription_youcansee" type="int">0</attr>
     <cover>king_piece.png</cover>
     <description>Trapped in your own mind, you must break free using the chess pieces of your very psyche.</description>
+    <pov type="object">player</pov>
+    <start type="script"><![CDATA[
+      msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
+      UpdateSquareLocks
+    ]]></start>
     <object name="brick3">
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
@@ -31,14 +31,14 @@
       <dropmsg>You dropped the ivory brick.</dropmsg>
       <throw>You throw the brick up into the air. You'd best get out of the way before it comes down.</throw>
       <take />
+      <alt type="stringlist">
+        <value>brick</value>
+      </alt>
       <ontake type="script">
       </ontake>
       <ondrop type="script">
         player.numBricks = player.numBricks-1
       </ondrop>
-      <alt type="stringlist">
-        <value>brick</value>
-      </alt>
     </object>
     <object name="Kerchief">
       <inherit name="editor_object" />
@@ -1026,6 +1026,10 @@
         <alias>tower</alias>
         <gender>it</gender>
         <article>it</article>
+        <alt type="stringlist">
+          <value>rook</value>
+          <value>ruined tower</value>
+        </alt>
         <speak type="script">
           if (not GetBoolean(Rook,"talked_before")) {
             msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
@@ -1069,10 +1073,6 @@
             msg ("The tower is unresponsive, a somber silence lingers in the air.")
           }
         </speak>
-        <alt type="stringlist">
-          <value>rook</value>
-          <value>ruined tower</value>
-        </alt>
       </object>
       <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
@@ -1106,6 +1106,8 @@
           <value>Look at</value>
           <value>Drop</value>
         </inventoryverbs>
+        <usedefaultprefix type="boolean">false</usedefaultprefix>
+        <prefix>some</prefix>
         <offertothedarkness type="script">
           if (GetBoolean(Knight, "talked_to") and GetBoolean(player,"horse_possible")) {
             msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink.")
@@ -1117,8 +1119,6 @@
             msg ("Nothing happens.")
           }
         </offertothedarkness>
-        <usedefaultprefix type="boolean">false</usedefaultprefix>
-        <prefix>some</prefix>
       </object>
       <object name="memory1">
         <inherit name="editor_object" />
@@ -1511,15 +1511,15 @@
         <dropmsg>You dropped the cream coloured brick.</dropmsg>
         <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
         <take />
-        <ondrop type="script">
-          player.numBricks = player.numBricks-1
-        </ondrop>
         <attr name="feature_usegive" type="boolean">false</attr>
-        <ontake type="script">
-        </ontake>
         <alt type="stringlist">
           <value>brick</value>
         </alt>
+        <ondrop type="script">
+          player.numBricks = player.numBricks-1
+        </ondrop>
+        <ontake type="script">
+        </ontake>
       </object>
     </object>
     <object name="G5">
@@ -2331,14 +2331,14 @@
         <dropmsg>You dropped the beige brick.</dropmsg>
         <alias>beige-coloured brick</alias>
         <take />
+        <alt type="stringlist">
+          <value>brick</value>
+        </alt>
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
         <ontake type="script">
         </ontake>
-        <alt type="stringlist">
-          <value>brick</value>
-        </alt>
       </object>
     </object>
     <object name="C2">
@@ -2556,6 +2556,14 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <beforeenter type="script">
+        if (Contains (H2,EnemyPawn1)) {
+          msg ("Upon entering the square, the Black Pawn occupying it fades out of existence.")
+          RemoveObject (EnemyPawn1)
+          RemoveFlagFromSquares ("threatenedByPawn1")
+          UpdateSquareLocks
+        }
+      </beforeenter>
       <exit alias="west" to="G2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
