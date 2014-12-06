@@ -314,10 +314,6 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southeast" to="H7">
-        <inherit name="southeastdirection" />
-        <attr name="grid_length" type="int">0</attr>
-      </exit>
     </object>
     <object name="H8">
       <inherit name="editor_room" />
@@ -516,14 +512,8 @@
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
           }
         </speak>
-        <smell type="script">
-          msg ("The Knight looks confused as you lean in to sniff him.")
-        </smell>
-        <push type="script">
-          msg ("You try pushing the Knight. He laughs as you strain yourself")
-        </push>
       </object>
-      <exit alias="south" to="D6">
+      <exit alias="south" to="E6_StartingSquare">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -549,10 +539,6 @@
       </exit>
       <exit alias="east" to="E7">
         <inherit name="eastdirection" />
-        <attr name="grid_length" type="int">0</attr>
-      </exit>
-      <exit alias="southeast" to="E6_StartingSquare">
-        <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -699,10 +685,6 @@
       </exit>
       <exit alias="north" to="H8">
         <inherit name="northdirection" />
-        <attr name="grid_length" type="int">0</attr>
-      </exit>
-      <exit alias="northwest" to="G8">
-        <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -879,10 +861,6 @@
       </exit>
       <exit alias="southeast" to="E5_EnemyPawn">
         <inherit name="southeastdirection" />
-        <attr name="grid_length" type="int">0</attr>
-      </exit>
-      <exit alias="south" to="D5">
-        <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -1094,9 +1072,6 @@
             msg ("The tower is unresponsive, a somber silence lingers in the air.")
           }
         </speak>
-        <smell type="script">
-        </smell>
-        <push>You push the Rook. It looks annoyed but remains silent.</push>
       </object>
       <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
@@ -1268,14 +1243,8 @@
             SetObjectFlagOn (E3, "threatenedByKing")
           </item>
         </give>
-        <smell type="script">
-          msg ("The Bishop takes a step back looking perplexed. He gives you a slightly concerned look.")
-        </smell>
-        <push type="script">
-          msg ("You push the Bishop. It looks annoyed but remains silent")
-        </push>
       </object>
-      <exit alias="southeast" to="B4">
+      <exit alias="southeast" to="E6_StartingSquare">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1929,7 +1898,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>The square under you is losing its prestige after the many battles it has seen, but its darkness still shows through.</description>
+      <description>The square under you is losing its prestige after the many battles it has seen, but its darkness still shows through to the west.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -2202,14 +2171,6 @@
             msg ("The boy stands firm, while holding his spear pointed at the enemy king with glaring eyes darting around the battlefield.")
           }
         </speak>
-        <smell type="script">
-          msg ("The Pawn pushes you back as you try to lean in to take a whiff.")
-          msg (""What in tarnation do you thing your up to?"")
-          msg ("You take a step back silently, not sure how to answer for your odd actions")
-        </smell>
-        <push type="script">
-          msg ("You push over the pawn. As he gets up he gives you a scowl and quickly gets back into position.")
-        </push>
       </object>
     </object>
     <object name="G3">
@@ -2217,7 +2178,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
-      <description>You are engulfed by the darkness of the black tile you are in. </description>
+      <description>The black tile you are now in seems to magnify the darkness of the board.</description>
       <exit alias="west" to="F3_PawnSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2256,7 +2217,7 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
-      <description>You have stepped into a white square.</description>
+      <description>You have stepped into a white square. To the east there is hopelessness emanating from the darkness.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -2298,6 +2259,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a white square. To the west there is crushing blackness.</description>
       <exit alias="north" to="A3">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2324,6 +2286,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
+      <description>You step into a black square.</description>
       <exit alias="west" to="A2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2381,6 +2344,7 @@
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <threatenedByKing />
+      <description>You are in a white square, there is a large divet in the middle of the square.</description>
       <exit alias="west" to="B2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2421,6 +2385,7 @@
       <threatenedByQueen />
       <threatenedByKing />
       <alias>D2</alias>
+      <description>The black floor seems to be absorbing all excess light, making the square extrordinarily dark.</description>
       <exit alias="west" to="C2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2463,6 +2428,7 @@
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <threatenedByKing />
+      <description>You stand in a white square, there seems to be a little bit of extra light here. You are hesitant to leave.</description>
       <exit alias="west" to="D2_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2502,6 +2468,7 @@
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <threatenedByPawn1 />
+      <description>The tile beneath your feet is black.</description>
       <exit alias="west" to="E2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2540,6 +2507,7 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
+      <description>You stand in a white square.</description>
       <exit alias="west" to="F2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2584,6 +2552,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a black square, to the east the darkness seems to be trying to overtake and mold with the dark tile.</description>
       <exit alias="west" to="G2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2907,7 +2876,7 @@
   <verb>
     <property>pet</property>
     <pattern>pet</pattern>
-    <defaultexpression>"You pett " + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
+    <defaultexpression>"You can't pet " + object.article + "."</defaultexpression>
   </verb>
   <verb>
     <property>givesingle</property>
@@ -2917,7 +2886,7 @@
   <verb>
     <property>ride</property>
     <pattern>ride</pattern>
-    <defaultexpression>"You try to ride " + object.article + "and probably look really stupid doing so."</defaultexpression>
+    <defaultexpression>"You can't ride " + object.article + "."</defaultexpression>
   </verb>
   <verb>
     <property>pick</property>
@@ -2932,17 +2901,7 @@
   <verb>
     <property>admire</property>
     <pattern>admire</pattern>
-    <defaultexpression>"You admire " + object.article + "."</defaultexpression>
-  </verb>
-  <verb>
-    <pattern>smell</pattern>
-    <property>smell</property>
-    <defaultexpression>"You smell" + object.article + "and get a whiff of dirt and rubble."</defaultexpression>
-  </verb>
-  <verb>
-    <pattern>push</pattern>
-    <property>push</property>
-    <defaultexpression>"You push" + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
+    <defaultexpression>"You can't admire " + object.article + "."</defaultexpression>
   </verb>
   <type name="square">
     <inherit name="editor_room" />
