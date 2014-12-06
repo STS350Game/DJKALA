@@ -2864,7 +2864,6 @@
   <function name="UpdateSquareLocks">
     foreach (object, AllObjects()) {
       if (IsThreatened(object)) {
-        msg ("Locking " + object.name)
         foreach (exit, AllExits()) {
           if (exit.to.name = object.name) {
             LockExit (exit)
