@@ -52,8 +52,8 @@
       <givesingle type="boolean">false</givesingle>
       <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
       <drop type="boolean">false</drop>
-      <giveto type="scriptdictionary" />
       <fold>You fold it the kerchief into a neat pyramid like at a fancy restaurant... but this isn't a dinner napkin, so you unfold it</fold>
+      <giveto type="scriptdictionary" />
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
@@ -314,6 +314,10 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <exit alias="southeast" to="H7">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
     </object>
     <object name="H8">
       <inherit name="editor_room" />
@@ -513,7 +517,7 @@
           }
         </speak>
       </object>
-      <exit alias="south" to="E6_StartingSquare">
+      <exit alias="south" to="D6">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -539,6 +543,10 @@
       </exit>
       <exit alias="east" to="E7">
         <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="E6_StartingSquare">
+        <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -685,6 +693,10 @@
       </exit>
       <exit alias="north" to="H8">
         <inherit name="northdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="northwest" to="G8">
+        <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -861,6 +873,10 @@
       </exit>
       <exit alias="southeast" to="E5_EnemyPawn">
         <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="D5">
+        <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -1244,7 +1260,7 @@
           </item>
         </give>
       </object>
-      <exit alias="southeast" to="E6_StartingSquare">
+      <exit alias="southeast" to="B4">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -2757,6 +2773,7 @@
         <look>A woman in shining white armour stands valorously before you.</look>
         <drop type="boolean">false</drop>
         <attr name="feature_switchable" type="boolean">false</attr>
+        <admire>The White Queen seems almost angelic in her pure white armour.</admire>
         <speak type="script"><![CDATA[
           if (GetInt(GameStatus, "MemoryCounter") >= 3) {
             msg ("As you approach the White Queen, a gentle light parts the fog overhead, and you can feel yourself being drawn towards it.  She smiles, and offers the sword’s hilt to you.<br/><br/>“I don’t think I can take this with me where I’m going…”<br/>“Not physically, no.  But it will be here whenever you need it.  Do you understand now?”<br/>You smile, thinking back to the happy memories that the defeated black pieces reminded you of.  <br/>“Yes, I think I do.”<br/>“Then go.  Be happy, for all of us.”<br/>Nodding, you take the hilt of the sword and turn towards the light again.  You feel your feet getting lighter, and you let yourself go.  As you float towards it, your eyes close, and the chessboard fades out.<br/><br/>You open your eyes to the concerned faces of your loved ones standing around your hospital bed, tears of relief and joy in their eyes.<br/><br/>You blink back tears yourself, and smile.  <br/>“Its ok...I’m ok.  I’m back.”")
@@ -2766,7 +2783,6 @@
             finish
           }
         ]]></speak>
-        <admire>The White Queen seems almost angelic in her pure white armour.</admire>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
           <script>
