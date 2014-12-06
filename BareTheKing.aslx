@@ -1426,6 +1426,12 @@
       <enter type="script">
       </enter>
       <beforeenter type="script">
+        if (Contains (E5_EnemyPawn,EnemyPawn5)) {
+          msg ("Upon entering the square, the Black Pawn occupying it fades out of existence.")
+          RemoveObject (EnemyPawn1)
+          RemoveFlagFromSquares ("threatenedByPawn5")
+          UpdateSquareLocks
+        }
       </beforeenter>
       <exit alias="west" to="D5">
         <inherit name="westdirection" />
