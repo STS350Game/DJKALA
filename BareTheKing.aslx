@@ -614,7 +614,7 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <exit alias="southwest" to="D6">
+      <exit alias="southwest" to="E6_StartingSquare">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
