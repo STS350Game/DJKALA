@@ -1613,6 +1613,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a white tile, the floor chipped and black rubble strewn everywhere.</description>
       <exit alias="north" to="A5_BishopSquare">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1639,6 +1640,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
+      <description>You find yourself on a black tile.</description>
       <exit alias="west" to="A4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1675,6 +1677,7 @@
     <object name="C4">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>The floor is tiled white, some black rubble can be found on the ground here.</description>
       <exit alias="west" to="B4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1712,6 +1715,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>The floor is black, you see a etching in the corner that is unlike the scratches in the other tiles.</description>
       <exit alias="west" to="C4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1744,6 +1748,10 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="Etching">
+        <inherit name="editor_object" />
+        <look>The small etching you noticed is even stranger upon further inspection. A very tiny shark has been carved into the corner of the square.</look>
+      </object>
     </object>
     <object name="E4">
       <inherit name="editor_room" />
@@ -1752,6 +1760,7 @@
       <prefix>square</prefix>
       <beforeenter type="script">
       </beforeenter>
+      <description>You stand upon a white tile, the floor surprisingly clear of debris.</description>
       <exit alias="west" to="D4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1790,6 +1799,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <description>You find yourself upon a black tile. Nothing but silence to be found here.</description>
       <exit alias="west" to="E4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1826,6 +1836,7 @@
     <object name="G4">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You step upon a tile with a white floor. The silence around you is unsettling, the floor is oddly untouched.</description>
       <exit alias="west" to="F4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1864,7 +1875,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
-      <description type="string"></description>
+      <description>You are in a square with a black floor, the darkness pulses to the east.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
