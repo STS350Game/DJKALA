@@ -52,6 +52,7 @@
       <givesingle type="boolean">false</givesingle>
       <wear>It's a bit small, but you try it on anyway. Probably not your best decision.</wear>
       <giveto type="scriptdictionary" />
+      <drop type="boolean">false</drop>
     </object>
     <object name="Horse">
       <inherit name="editor_object" />
