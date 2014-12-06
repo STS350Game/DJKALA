@@ -107,6 +107,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are standing on a  non-descript white square. To your north and west there is nothing but a smothering darkness. </description>
       <exit alias="south" to="A7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -131,6 +132,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>The floor is black beneath your feet. To your north the darkness looms, it's bleak silence unsettles you.</description>
       <exit alias="west" to="A8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -161,6 +163,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You stand upon a white tile, its finish is chipped and worn. To the north the darkness continues to swirl, hiding its contents.</description>
       <exit alias="west" to="B8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -192,6 +195,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are standing on a black tile. To the north there is nothing but blackness.</description>
       <exit alias="west" to="C8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -222,6 +226,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You stand upon a white tile as you enter the square. To the north the dark swirls, its tendrils lap at the edge of your square.</description>
       <exit alias="west" to="D8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -253,6 +258,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>There is a black tile beneath your feet, its surface contain cuts from some sort of stuggle. Pieces of stone are strewn about it. The dark to the north seems expectant, ready to overtake the square at a moments notice.</description>
       <exit alias="west" to="E8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -283,6 +289,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>There is a beat-up white tile beneath your feet. The darkness sits to the north, you feel it watching you.</description>
       <exit alias="south" to="G7">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -311,6 +318,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You sit at the edge of the board, darkness looming to the north and the east. It pulses with energy, unsettling you.</description>
       <exit alias="west" to="G8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -399,6 +407,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <description>Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.</description>
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -431,6 +440,10 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="Rubble">
+        <inherit name="editor_object" />
+        <look>The rubble appears to have been placed in pyramid formation. Its made up of pieces of smooth white stone, marred in places. There are deep cuts that run all over it. You almost miss it, but there is a small shoddily engraved plate in front of the pile. The plate reads, "Rest loyal soldier.".</look>
+      </object>
     </object>
     <object name="D7_KnightSquare">
       <inherit name="editor_room" />
