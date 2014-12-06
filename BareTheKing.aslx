@@ -519,19 +519,6 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="memory3">
-        <inherit name="editor_object" />
-        <take />
-        <drop type="boolean">false</drop>
-        <alias>Knight's Memory</alias>
-        <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
-        <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
-        <visible type="boolean">false</visible>
-        <ontake type="script"><![CDATA[
-          IncreaseObjectCounter (GameStatus, "MemoryCounter")
-          msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
-        ]]></ontake>
-      </object>
     </object>
     <object name="E7">
       <inherit name="editor_room" />
@@ -760,6 +747,19 @@
           MoveObject (memory3, B6)
           MakeObjectVisible (memory3)
         </changedalive>
+      </object>
+      <object name="memory3">
+        <inherit name="editor_object" />
+        <take />
+        <drop type="boolean">false</drop>
+        <alias>Knight's Memory</alias>
+        <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
+        <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
+        <visible type="boolean">false</visible>
+        <ontake type="script"><![CDATA[
+          IncreaseObjectCounter (GameStatus, "MemoryCounter")
+          msg ("The smell of wet dog permeates the air, and you feel a warm, rough tongue on the back of your hand, welcoming you: the image of a toothy smile and soft fur warms your heart.<br/><br/>You no longer feel alone.")
+        ]]></ontake>
       </object>
     </object>
     <object name="C6">
@@ -1029,8 +1029,16 @@
                 msg ("“I am whole again?  Thank you.  Now I can continue my duty, your way will be clear.  The Pawn must be Queen, it is the only way to check the black King.  Hurry, your time is growing short.”")
                 msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Queen.")
                 msg ("You see a small twinkle as something falls to the ground where the black piece stood.")
+                msg ("[placeholder] However, an enemy Pawn jumps out of the bushes in a nearby tile and ambushes the Rook, killing him! The interloper stands over the new corpse, looking triumphant.")
                 AddToInventory (helped_rook)
                 MakeObjectVisible (memory1)
+                RemoveObject (EnemyQueen)
+                RemoveObject (Rook)
+                MoveObject (EnemyPawn1, H2)
+                RemoveFlagFromSquares ("threatenedByQueen")
+                RemoveFlagFromSquares ("threatenedByPawn1")
+                SetObjectFlagOn (G3, "threatenedByPawn1")
+                UnlockUnthreatenedSquares
               }
             }
           }
@@ -2772,7 +2780,6 @@
         foreach (exit, AllExits()) {
           if (exit.to.name = object.name) {
             UnlockExit (exit)
-            msg ("Unlock: " + exit.name)
           }
         }
       }
