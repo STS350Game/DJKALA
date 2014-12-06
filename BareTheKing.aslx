@@ -671,6 +671,7 @@
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+<<<<<<< HEAD
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -727,6 +728,11 @@
       </exit>
       <exit alias="southeast" to="H7">
         <inherit name="southeastdirection" />
+=======
+      <exit alias="southeast" to="H7">
+        <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+>>>>>>> origin/master
       </exit>
     </object>
     <object name="H8">
@@ -1070,8 +1076,14 @@
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
           }
         </speak>
+        <smell type="script">
+          msg ("The Knight looks confused as you lean in to sniff him.")
+        </smell>
+        <push type="script">
+          msg ("You try pushing the Knight. He laughs as you strain yourself")
+        </push>
       </object>
-      <exit alias="south" to="E6_StartingSquare">
+      <exit alias="south" to="D6">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1097,6 +1109,10 @@
       </exit>
       <exit alias="east" to="E7">
         <inherit name="eastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="southeast" to="E6_StartingSquare">
+        <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -1247,6 +1263,7 @@
       </exit>
       <exit alias="northwest" to="G8">
         <inherit name="northwestdirection" />
+<<<<<<< HEAD
       </exit>
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
@@ -1301,6 +1318,9 @@
             finish
           }
         ]]></script>
+=======
+        <attr name="grid_length" type="int">0</attr>
+>>>>>>> origin/master
       </exit>
     </object>
   </object>
@@ -1446,7 +1466,7 @@
         <inherit name="editor_object" />
         <take />
         <drop type="boolean">false</drop>
-        <alias>Collar</alias>
+        <alias>Knight's Memory</alias>
         <takemsg>It takes some searching, but you finally spot the small object that appeared when the Rook fell.  It is a collar with a small tag on it.</takemsg>
         <look>It is the collar with a small tag small that appeared when the Rook fell.  </look>
         <visible type="boolean">false</visible>
@@ -1531,6 +1551,10 @@
       </exit>
       <exit alias="southeast" to="E5_EnemyPawn">
         <inherit name="southeastdirection" />
+        <attr name="grid_length" type="int">0</attr>
+      </exit>
+      <exit alias="south" to="D5">
+        <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
@@ -1703,6 +1727,7 @@
         <alias>Tower</alias>
         <gender>it</gender>
         <article>it</article>
+        <push>You push the Rook. It looks annoyed but remains silent.</push>
         <speak type="script">
           if (not GetBoolean(Rook,"talked_before")) {
             msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
@@ -1742,6 +1767,8 @@
             msg ("The tower is unresponsive, a somber silence lingers in the air.")
           }
         </speak>
+        <smell type="script">
+        </smell>
       </object>
       <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
@@ -1792,14 +1819,17 @@
         <take />
         <takemsg>You come upon the sparkle you noticed when the Rook destroyed the black Queen.  It is a small brass key.</takemsg>
         <drop type="boolean">false</drop>
-        <alias>Small Brass Key</alias>
-        <look>It is a small brass key that was dropped  when the Rook destroyed the black Queen.</look>
+        <alias>Rook's Memory</alias>
+        <look>It is the small brass key that was dropped  when the Rook destroyed the black Queen.</look>
         <visible type="boolean">false</visible>
+<<<<<<< HEAD
         <alt type="stringlist">
           <value>key</value>
           <value>brass key</value>
         </alt>
         <listalias>Black Queen's Brass Key</listalias>
+=======
+>>>>>>> origin/master
         <ontake type="script"><![CDATA[
           IncreaseObjectCounter (GameStatus, "MemoryCounter")
           msg ("The smell of cinnamon surrounds you, and the earlier terror is replaced with images of soft down quilts, and warm wooden loungers in a garden full of lavender.  <br/><br/>You feel safer.")
@@ -1869,7 +1899,7 @@
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
       <description type="script">
-        msg ("You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest. You are in a black square, yo your west the darkness seethes.")
+        msg ("You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.")
         if (Contains (B6_EnemyRook,Black Rook)) {
           msg ("To the northeast, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
         }
@@ -1906,6 +1936,12 @@
           MoveObject (memory2, D3)
           MakeObjectVisible (memory2)
         </changedalive>
+        <smell type="script">
+          msg ("The Bishop takes a step back looking perplexed. He gives you a slightly concerned look.")
+        </smell>
+        <push type="script">
+          msg ("You push the Bishop. It looks annoyed but remains silent")
+        </push>
         <useon type="scriptdictionary">
           <item key="Kerchief">
             msg ("You hold out the white kerchief to the Bishop.  He looks up, startled.")
@@ -1973,7 +2009,7 @@
           </item>
         </give>
       </object>
-      <exit alias="southeast" to="E6_StartingSquare">
+      <exit alias="southeast" to="B4">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1998,7 +2034,7 @@
         <inherit name="editor_object" />
         <take />
         <takemsg>The small object that flew from the Bishop when he was destroyed by the black King shimmers quietly on the ground.  It is a thermometre.</takemsg>
-        <alias>Thermometre</alias>
+        <alias>Bishop's Memory</alias>
         <attr name="feature_usegive" type="boolean">false</attr>
         <drop type="boolean">false</drop>
         <look><![CDATA[It is the thermometre that flew from the Bishop when he was destroyed by the black King.<br/>]]></look>
@@ -2069,7 +2105,6 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByRook />
-      <description>You step into a white square.</description>
       <exit alias="west" to="A5_BishopSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2151,7 +2186,6 @@
     <object name="D5">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>You enter a </description>
       <exit alias="west" to="C5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2196,6 +2230,12 @@
       <enter type="script">
       </enter>
       <beforeenter type="script">
+        if (Contains (E5_EnemyPawn,EnemyPawn5)) {
+          msg ("Upon entering the square, the Black Pawn occupying it fades out of existence.")
+          RemoveObject (EnemyPawn1)
+          RemoveFlagFromSquares ("threatenedByPawn5")
+          UpdateSquareLocks
+        }
       </beforeenter>
       <exit alias="west" to="D5">
         <inherit name="westdirection" />
@@ -2284,7 +2324,6 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>You stand in a black tile, there is a rift in the floor that has extended from the tile above, but the rift has widened in this square. There is blackness is spilling out of the rift slightly.</description>
       <exit alias="west" to="F5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2317,10 +2356,6 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="Rift">
-        <inherit name="editor_object" />
-        <look>You examine the rift more closely, it is wide enough for a person to go through. The closer you get to the rift the more uncomfortable you feel. Its inky black tendrils snaking from the opening seem to be reaching for you.</look>
-      </object>
     </object>
     <object name="H5">
       <inherit name="editor_room" />
@@ -2501,7 +2536,6 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
-      <description>You find yourself on a black tile.</description>
       <exit alias="west" to="A4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2538,7 +2572,6 @@
     <object name="C4">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>The floor is tiled white, some black rubble can be found on the ground here.</description>
       <exit alias="west" to="B4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2576,7 +2609,6 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>The floor is black, you see a etching in the corner that is unlike the scratches in the other tiles.</description>
       <exit alias="west" to="C4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2609,10 +2641,6 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="Etching">
-        <inherit name="editor_object" />
-        <look>The small etching you noticed is even stranger upon further inspection. A very tiny shark has been carved into the corner of the square.</look>
-      </object>
     </object>
     <object name="E4">
       <inherit name="editor_room" />
@@ -2660,7 +2688,6 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
-      <description>You find yourself upon a black tile. Nothing but silence to be found here.</description>
       <exit alias="west" to="E4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2697,7 +2724,6 @@
     <object name="G4">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>You step upon a tile with a white floor. The silence around you is unsettling, the floor is oddly untouched.</description>
       <exit alias="west" to="F4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2736,7 +2762,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
-      <description>You are in a square with a black floor, the darkness pulses to the east.</description>
+      <description type="string"></description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -2844,7 +2870,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>The square under you is losing its prestige after the many battles it has seen, but its darkness still shows through to the west.</description>
+      <description>The square under you is losing its prestige after the many battles it has seen, but its darkness still shows through.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -3164,6 +3190,7 @@
                 msg ("“It is over.” Says the White Queen.")
                 RemoveObject (Pawn)
                 AddToInventory (helped_pawn)
+                MakeObjectVisible (WhiteQueen)
               }
             }
           }
@@ -3171,6 +3198,14 @@
             msg ("The boy stands firm, while holding his spear pointed at the enemy king with glaring eyes darting around the battlefield.")
           }
         </speak>
+        <smell type="script">
+          msg ("The Pawn pushes you back as you try to lean in to take a whiff.")
+          msg (""What in tarnation do you thing your up to?"")
+          msg ("You take a step back silently, not sure how to answer for your odd actions")
+        </smell>
+        <push type="script">
+          msg ("You push over the pawn. As he gets up he gives you a scowl and quickly gets back into position.")
+        </push>
       </object>
     </object>
     <object name="G3">
@@ -3178,7 +3213,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
-      <description>The black tile you are now in seems to magnify the darkness of the board.</description>
+      <description>You are engulfed by the darkness of the black tile you are in. </description>
       <exit alias="west" to="F3_PawnSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -3217,7 +3252,7 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
-      <description>You have stepped into a white square. To the east there is hopelessness emanating from the darkness.</description>
+      <description>You have stepped into a white square.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -3334,6 +3369,7 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+<<<<<<< HEAD
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
@@ -3388,13 +3424,18 @@
         ]]></script>
         <attr name="grid_length" type="int">0</attr>
       </exit>
+=======
+>>>>>>> origin/master
     </object>
     <object name="B2">
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
+<<<<<<< HEAD
       <description>You step into a black square.</description>
+=======
+>>>>>>> origin/master
       <exit alias="west" to="A2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -3452,7 +3493,6 @@
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <threatenedByKing />
-      <description>You are in a white square, there is a large divet in the middle of the square.</description>
       <exit alias="west" to="B2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -3493,7 +3533,6 @@
       <threatenedByQueen />
       <threatenedByKing />
       <alias>D2</alias>
-      <description>The black floor seems to be absorbing all excess light, making the square extrordinarily dark.</description>
       <exit alias="west" to="C2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -3536,7 +3575,6 @@
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
       <threatenedByKing />
-      <description>You stand in a white square, there seems to be a little bit of extra light here. You are hesitant to leave.</description>
       <exit alias="west" to="D2_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -3576,7 +3614,6 @@
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
       <threatenedByPawn1 />
-      <description>The tile beneath your feet is black.</description>
       <exit alias="west" to="E2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -3615,7 +3652,6 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
-      <description>You stand in a white square.</description>
       <exit alias="west" to="F2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -4219,7 +4255,10 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
+<<<<<<< HEAD
       <alias>PawnedWhiteQueenSquare</alias>
+=======
+>>>>>>> origin/master
       <description>You stand in a white tile. To the south the darkness moves, shifting and pulsing.</description>
       <beforeenter type="script">
       </beforeenter>
@@ -4265,14 +4304,25 @@
           }
           else {
             msg ("As you approach the White Queen, a harsh white light pierces the fog overhead, and you flinch from its touch.  The White Queen smiles, and offers the sword’s hilt to you.<br/><br/>“Take it, and be free.”<br/>You shrink from the sword, the painful memories of the white chess pieces still burning in your mind.<br/>“I...can’t.”<br/>The smile fades from her face, and she slowly lowers the sword.<br/>“If you remain here, nothing will change.  You will be trapped forever.”<br/><br/>You look around.  With the black pieces gone, the chessboard doesn’t look nearly as frightening.  There’s nothing left here to hurt you.<br/><br/>Turning to the White Queen, you take her other hand and place it on the hilt.<br/><br/>“You beat him, you keep it.”<br/>She sighs and shakes her head.<br/>“I can’t protect you forever.”<br/>“I’ll just stay a while and get my strength back, you won’t have to hold it forever, I promise.”<br/><br/>You turn to go to the Knight, ignoring the light in the sky as it starts to dim.  You’re sure it’ll still be there when you’re finished visiting with him and the Rook.<br/><br/>You start to whistle, free from pain for the first time in what feels like forever.  The light in the sky flickers for a few moments, then finally goes out.  The darkness starts enclosing the board, enveloping and hiding the Rook and the Knight, but you’re not afraid this time.  The darkness is different, warmer.<br/><br/>Somewhere far above you, the pinging stops, and you hear hysterical sobs, but it doesn’t matter now.<br/><br/>You smile as the darkness engulfs you, closing your eyes and drifting away in its gentle embrace.")
-            finish
           }
+          finish
         ]]></speak>
+        <alias>White Queen</alias>
+        <alt type="stringlist">
+          <value>queen</value>
+        </alt>
+        <lick type="script">
+          msg ("You get the sudden urge to lick the White Queen")
+          msg ("As you step in, the Queen looks at you and gives you an angelic smile")
+          msg ("You lean in and stick out ur tongue and the Queen steps back in surprise")
+          msg (""What do you think you're doing?! Do you think you're some kind of dog?"")
+          msg ("You take a step back in embarrassment and quickly apologize")
+          msg (""I-I-I'm sorry, I don't not what came over me"")
+        </lick>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
           <script>
             if (not Contains (F3_PawnSquare,Pawn)) {
-              MakeObjectVisible (WhiteQueen)
             }
           </script>
         </turnscript>
@@ -4550,7 +4600,7 @@
   <verb>
     <property>pet</property>
     <pattern>pet</pattern>
-    <defaultexpression>"You can't pet " + object.article + "."</defaultexpression>
+    <defaultexpression>"You pett " + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
   </verb>
   <verb>
     <property>givesingle</property>
@@ -4560,7 +4610,7 @@
   <verb>
     <property>ride</property>
     <pattern>ride</pattern>
-    <defaultexpression>"You can't ride " + object.article + "."</defaultexpression>
+    <defaultexpression>"You try to ride " + object.article + "and probably look really stupid doing so."</defaultexpression>
   </verb>
   <verb>
     <property>pick</property>
@@ -4575,7 +4625,22 @@
   <verb>
     <property>admire</property>
     <pattern>admire</pattern>
-    <defaultexpression>"You can't admire " + object.article + "."</defaultexpression>
+    <defaultexpression>"You admire " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <pattern>smell</pattern>
+    <property>smell</property>
+    <defaultexpression>"You smell" + object.article + "and get a whiff of dirt and rubble."</defaultexpression>
+  </verb>
+  <verb>
+    <pattern>push</pattern>
+    <property>push</property>
+    <defaultexpression>"You push" + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
+  </verb>
+  <verb>
+    <property>lick</property>
+    <pattern>lick</pattern>
+    <defaulttext>"You lick" + object.article + "...What are you doing with yourself."</defaulttext>
   </verb>
   <object name="Darkness">
     <inherit name="editor_room" />
