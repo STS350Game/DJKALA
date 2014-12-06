@@ -1188,6 +1188,39 @@
             SetObjectFlagOn (E3, "threatenedByKing")
           </item>
         </useon>
+        <give type="scriptdictionary">
+          <item key="Kerchief">
+            msg ("You hold out the white kerchief to the Bishop.  He looks up, startled.")
+            msg ("“What is this?”")
+            msg ("“Its just a hankee.  The Knight said something about strengthening my heart, but...I think you might need it more then me.”")
+            msg ("“That...is very kind of you.  But giving yourself strength may not be enough to win this fight.”")
+            msg ("You shrug awkwardly.")
+            msg ("“Maybe not but...the Knight seemed pretty convinced that this isn’t over yet.  He’s out there fighting as hard as he can, even if it is hopeless.  Wouldn’t trying be better than sitting here waiting for the end?”")
+            msg ("He looks pensive.")
+            msg ("“Besides, it’s not like it could get any worse.”")
+            msg ("A sad smile tugs at his mouth.  ")
+            msg ("“You...may have a point.  Besides, it looks like that damn Knight isn’t going to let this end any time soon.  Here, take this.”")
+            msg ("He pulls a brick from behind his robes, it’s one of the Rook’s!")
+            msg ("“I...sabotaged the Rook.  I didn’t want to keep fighting, so I thought I would at least hasten the end.  It was foolish of me, and I can only hope you will find it in your heart to forgive me.”")
+            msg ("Turning, he squares his shoulders and moves confidently down the board, toppling the black Pawn directly before the enemy King.")
+            msg ("The Black King chuckles menacingly, then leaps forward, smashing the Bishop to the ground.")
+            msg ("A small sparkle flies through the air, landing a few feet away from you.")
+            RemoveObject (Bishop)
+            AddToInventory (helped_bishop)
+            MakeObjectVisible (memory2)
+            AddToInventory (brick3)
+            RemoveFlagFromSquares ("threatenedByPawn2")
+            RemoveFlagFromSquares ("threatenedByKing")
+            SetObjectFlagOn (C1, "threatenedByKing")
+            SetObjectFlagOn (D1, "threatenedByKing")
+            SetObjectFlagOn (E1, "threatenedByKing")
+            SetObjectFlagOn (C2, "threatenedByKing")
+            SetObjectFlagOn (E2, "threatenedByKing")
+            SetObjectFlagOn (C3, "threatenedByKing")
+            SetObjectFlagOn (D3, "threatenedByKing")
+            SetObjectFlagOn (E3, "threatenedByKing")
+          </item>
+        </give>
       </object>
       <exit alias="southeast" to="E6_StartingSquare">
         <inherit name="southeastdirection" />
