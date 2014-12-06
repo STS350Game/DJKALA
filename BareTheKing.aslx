@@ -1728,13 +1728,13 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <description type="string"></description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description type="string"></description>
       <exit alias="west" to="G4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1782,13 +1782,13 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>The square under you is losing it's prestige after the many battles it has seen, but it's darkness still shows through.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>The square under you is losing it's prestige after the many battles it has seen, but it's darkness still shows through.</description>
       <exit alias="north" to="A4">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2094,13 +2094,13 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByQueen />
+      <description>You have stepped into a white square.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You have stepped into a white square.</description>
       <exit alias="west" to="G3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
