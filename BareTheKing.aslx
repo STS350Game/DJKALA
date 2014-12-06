@@ -2182,6 +2182,7 @@
                 msg ("“It is over.” Says the White Queen.")
                 RemoveObject (Pawn)
                 AddToInventory (helped_pawn)
+                MakeObjectVisible (WhiteQueen)
               }
             }
           }
@@ -2776,7 +2777,6 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
-      <alias>PawnedWhiteQueenSquare</alias>
       <description>You stand in a white tile. To the south the darkness moves, shifting and pulsing.</description>
       <beforeenter type="script">
       </beforeenter>
@@ -2822,14 +2822,17 @@
           }
           else {
             msg ("As you approach the White Queen, a harsh white light pierces the fog overhead, and you flinch from its touch.  The White Queen smiles, and offers the sword’s hilt to you.<br/><br/>“Take it, and be free.”<br/>You shrink from the sword, the painful memories of the white chess pieces still burning in your mind.<br/>“I...can’t.”<br/>The smile fades from her face, and she slowly lowers the sword.<br/>“If you remain here, nothing will change.  You will be trapped forever.”<br/><br/>You look around.  With the black pieces gone, the chessboard doesn’t look nearly as frightening.  There’s nothing left here to hurt you.<br/><br/>Turning to the White Queen, you take her other hand and place it on the hilt.<br/><br/>“You beat him, you keep it.”<br/>She sighs and shakes her head.<br/>“I can’t protect you forever.”<br/>“I’ll just stay a while and get my strength back, you won’t have to hold it forever, I promise.”<br/><br/>You turn to go to the Knight, ignoring the light in the sky as it starts to dim.  You’re sure it’ll still be there when you’re finished visiting with him and the Rook.<br/><br/>You start to whistle, free from pain for the first time in what feels like forever.  The light in the sky flickers for a few moments, then finally goes out.  The darkness starts enclosing the board, enveloping and hiding the Rook and the Knight, but you’re not afraid this time.  The darkness is different, warmer.<br/><br/>Somewhere far above you, the pinging stops, and you hear hysterical sobs, but it doesn’t matter now.<br/><br/>You smile as the darkness engulfs you, closing your eyes and drifting away in its gentle embrace.")
-            finish
           }
+          finish
         ]]></speak>
+        <alias>White Queen</alias>
+        <alt type="stringlist">
+          <value>queen</value>
+        </alt>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
           <script>
             if (not Contains (F3_PawnSquare,Pawn)) {
-              MakeObjectVisible (WhiteQueen)
             }
           </script>
         </turnscript>
