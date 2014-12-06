@@ -2810,9 +2810,9 @@
           msg ("You get the sudden urge to lick the White Queen")
           msg ("As you step in, the Queen looks at you and gives you an angelic smile")
           msg ("You lean in and stick out ur tongue and the Queen steps back in surprise")
-          msg (""What do you think you're doing?! Do you think you're some kind of dog?"")
+          msg ("\"What do you think you're doing?\"")
           msg ("You take a step back in embarrassment and quickly apologize")
-          msg (""I-I-I'm sorry, I don't not what came over me"")
+          msg ("\"I-I-I'm sorry, I don't not what came over me\"")
         </lick>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
