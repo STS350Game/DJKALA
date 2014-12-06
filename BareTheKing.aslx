@@ -97,6 +97,11 @@
         <drop />
         <scenery />
       </object>
+      <object name="helped_pawn">
+        <inherit name="editor_object" />
+        <scenery />
+        <visible type="boolean">false</visible>
+      </object>
     </object>
   </game>
   <object name="Row 8">
@@ -342,7 +347,12 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.</description>
+      <description type="script">
+        msg ("You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the southeast, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -414,7 +424,12 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.</description>
+      <description type="script">
+        msg ("Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the southwest, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1033,7 +1048,7 @@
             msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
             msg ("The tower sighs again and lapses into sad silence.")
           }
-          else if ((brick1.parent = player)) {
+          else if (brick1.parent = player) {
             if (brick2.parent = player) {
               if (brick3.parent = player) {
                 msg ("You place the bricks in the obvious hole, then lift the Rook’s head back onto its shoulders.  The bricks shift a bit under the weight, but appear to be holding.  The Rook shifts on its base to stare down the board.")
@@ -1058,7 +1073,7 @@
           }
         </speak>
       </object>
-      <exit alias="southwest" to="E6_StartingSquare">
+      <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1092,7 +1107,7 @@
         </inventoryverbs>
         <offertothedarkness type="script">
           if (GetBoolean(Knight, "talked_to") and GetBoolean(player,"horse_possible")) {
-            msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink")
+            msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink.")
             msg ("There is a pregnant pause, and the fear that you are too late gnaws at you, but then...you hear the clopping of hooves, and with a jubilant whinny, a large white war horse bursts from the fog, nearly knocking you over.  Startled, you drop the grass, and the horse happily snuffles it up before raising its head to regard you with soft brown eyes.  There is a bridle on its head and a saddle on its back.")
             MakeObjectInvisible (grass)
             AddToInventory (Horse)
@@ -1122,9 +1137,14 @@
     <object name="A5_BishopSquare">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.</description>
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
+      <description type="script">
+        msg ("You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the northeast, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1264,6 +1284,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
+      <threatenedByRook />
       <exit alias="west" to="A5_BishopSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1302,6 +1323,12 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description type="script">
+        msg ("A small expanse of black floor surrounds you.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the northwest, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <exit alias="west" to="B5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1424,6 +1451,11 @@
         <inventoryverbs type="stringlist" />
         <drop type="boolean">false</drop>
         <alive />
+        <speak type="script">
+          if (helped_pawn.parent = player) {
+            msg ("\"I salute you, and congratulate you on your victory.\"")
+          }
+        </speak>
       </object>
     </object>
     <object name="F5">
@@ -1567,6 +1599,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByRook />
       <exit alias="west" to="A4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1878,6 +1911,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <description>Below you is a white tile that looks well worn with a large rock in the centre.</description>
+      <threatenedByRook />
       <exit alias="west" to="A3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2087,8 +2121,8 @@
             msg ("Glaring, he shuffles his feet around a bit, but keeps his spear pointing at the enemy King.")
             Pawn.talked_before = true
           }
-          else if ((helped_rook.parent = player)) {
-            if (helpe_bishop.parent = player) {
+          else if (helped_rook.parent = player) {
+            if (helped_bishop.parent = player) {
               if (helped_knight.parent = player) {
                 msg ("“D-don’t come any closer!”")
                 msg ("“Ok, I’ll stay right here.  Listen, you have to go.  Your path is clear, you’re the only one who can end this!”")
@@ -2110,6 +2144,7 @@
                 msg ("")
                 msg ("“It is over.” Says the White Queen.")
                 RemoveObject (Pawn)
+                AddToInventory (helped_pawn)
               }
             }
           }
@@ -2230,7 +2265,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <threatenedByQueen />
+      <threatenedByRook />
       <exit alias="west" to="A2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2554,6 +2589,7 @@
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
       <grid_parent_offset_auto />
+      <threatenedByRook />
       <beforeenter type="script">
       </beforeenter>
       <enter type="script">
@@ -2774,6 +2810,11 @@
       </exit>
       <object name="EnemyPawn1">
         <inherit name="editor_object" />
+        <speak type="script">
+          if (helped_pawn.parent = player) {
+            msg ("\"I salute you, and congratulate you on your victory.\"")
+          }
+        </speak>
       </object>
     </object>
     <object name="H1">
@@ -2803,7 +2844,7 @@
   <verb>
     <property>offertothedarkness</property>
     <pattern>offer to the darkness</pattern>
-    <defaultexpression>"You can't offer to the darkness " + object.article + "."</defaultexpression>
+    <defaultexpression>"You can't offer " + object.article + " to the darkness."</defaultexpression>
   </verb>
   <verb>
     <property>pet</property>
@@ -2841,6 +2882,7 @@
   <function name="UpdateSquareLocks">
     foreach (object, AllObjects()) {
       if (IsThreatened(object)) {
+        msg ("Locking " + object.name)
         foreach (exit, AllExits()) {
           if (exit.to.name = object.name) {
             LockExit (exit)
@@ -2863,6 +2905,7 @@
           return (true)
         }
       }
+      return (false)
     }
     return (false)
   </function>
