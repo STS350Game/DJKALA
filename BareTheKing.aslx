@@ -341,7 +341,12 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.</description>
+      <description type="script">
+        msg ("You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the southeast, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -413,7 +418,12 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <description>Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.</description>
+      <description type="script">
+        msg ("Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the southwest, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -713,9 +723,9 @@
       <attr name="grid_fill">Gray</attr>
       <alias>B6</alias>
       <description>The tile is black beneath your feet, just as any other tile.</description>
+      <threatenedByRook />
       <enter type="script">
       </enter>
-      <threatenedByRook />
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1056,7 +1066,7 @@
           }
         </speak>
       </object>
-      <exit alias="southwest" to="E6_StartingSquare">
+      <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
@@ -1090,7 +1100,7 @@
         </inventoryverbs>
         <offertothedarkness type="script">
           if (GetBoolean(Knight, "talked_to") and GetBoolean(player,"horse_possible")) {
-            msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink")
+            msg ("You pull out the handful of grass and tentatively hold it out to the darkness, fanning it to waft its clean smell into the oppressive stink.")
             msg ("There is a pregnant pause, and the fear that you are too late gnaws at you, but then...you hear the clopping of hooves, and with a jubilant whinny, a large white war horse bursts from the fog, nearly knocking you over.  Startled, you drop the grass, and the horse happily snuffles it up before raising its head to regard you with soft brown eyes.  There is a bridle on its head and a saddle on its back.")
             MakeObjectInvisible (grass)
             AddToInventory (Horse)
@@ -1120,9 +1130,14 @@
     <object name="A5_BishopSquare">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.</description>
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
+      <description type="script">
+        msg ("You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the northeast, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -1262,6 +1277,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
+      <threatenedByRook />
       <exit alias="west" to="A5_BishopSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1300,6 +1316,12 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description type="script">
+        msg ("A small expanse of black floor surrounds you.")
+        if (Contains (B6_EnemyRook,Black Rook)) {
+          msg ("To the northwest, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
+        }
+      </description>
       <exit alias="west" to="B5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1565,6 +1587,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <threatenedByRook />
       <exit alias="west" to="A4">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1876,6 +1899,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <description>Below you is a white tile that looks well worn with a large rock in the centre.</description>
+      <threatenedByRook />
       <exit alias="west" to="A3">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2223,7 +2247,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <threatenedByQueen />
+      <threatenedByRook />
       <exit alias="west" to="A2">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2547,6 +2571,7 @@
       <attr name="grid_fill">White</attr>
       <attr name="grid_borderwidth" type="int">1</attr>
       <grid_parent_offset_auto />
+      <threatenedByRook />
       <beforeenter type="script">
       </beforeenter>
       <enter type="script">
@@ -2795,7 +2820,7 @@
   <verb>
     <property>offertothedarkness</property>
     <pattern>offer to the darkness</pattern>
-    <defaultexpression>"You can't offer to the darkness " + object.article + "."</defaultexpression>
+    <defaultexpression>"You can't offer " + object.article + " to the darkness."</defaultexpression>
   </verb>
   <verb>
     <property>pet</property>
@@ -2823,6 +2848,7 @@
   <function name="UpdateSquareLocks">
     foreach (object, AllObjects()) {
       if (IsThreatened(object)) {
+        msg ("Locking " + object.name)
         foreach (exit, AllExits()) {
           if (exit.to.name = object.name) {
             LockExit (exit)
@@ -2845,6 +2871,7 @@
           return (true)
         }
       }
+      return (false)
     }
     return (false)
   </function>
