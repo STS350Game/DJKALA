@@ -367,12 +367,14 @@
       <exit alias="southeast" to="B6_EnemyRook">
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
     </object>
     <object name="B7">
       <inherit name="editor_room" />
       <inherit name="square" />
       <description>Beneath your feet is a scuffed white tile.</description>
+      <threatenedByRook />
       <exit alias="east" to="C7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -400,6 +402,7 @@
       <exit alias="south" to="B6_EnemyRook">
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="southeast" to="C6">
         <inherit name="southeastdirection" />
@@ -434,6 +437,7 @@
       <exit alias="southwest" to="B6_EnemyRook">
         <inherit name="southwestdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="south" to="C6">
         <inherit name="southdirection" />
@@ -692,6 +696,7 @@
       <exit alias="east" to="B6_EnemyRook">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="south" to="A5_BishopSquare">
         <inherit name="southdirection" />
@@ -710,6 +715,7 @@
       <description>The tile is black beneath your feet, just as any other tile.</description>
       <enter type="script">
       </enter>
+      <threatenedByRook />
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -774,6 +780,7 @@
       <exit alias="west" to="B6_EnemyRook">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="northwest" to="B7">
         <inherit name="northwestdirection" />
@@ -1193,6 +1200,7 @@
       <exit alias="northeast" to="B6_EnemyRook">
         <inherit name="northeastdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="east" to="B5">
         <inherit name="eastdirection" />
@@ -1232,6 +1240,7 @@
       <exit alias="north" to="B6_EnemyRook">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="northeast" to="C6">
         <inherit name="northeastdirection" />
@@ -1265,6 +1274,7 @@
       <exit alias="northwest" to="B6_EnemyRook">
         <inherit name="northwestdirection" />
         <attr name="grid_length" type="int">0</attr>
+        <lockmessage>You eye the black chess piece and gulp. It looks awfully solid from where you're standing... you're not sure you could budge it, let alone fight it. Better you don't antagonize it.</lockmessage>
       </exit>
       <exit alias="north" to="C6">
         <inherit name="northdirection" />
