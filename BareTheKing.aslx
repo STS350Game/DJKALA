@@ -9,42 +9,36 @@
     <firstpublished>2014</firstpublished>
     <author>Team DJKALA</author>
     <gridmap />
-    <autodescription type="boolean">false</autodescription>
+    <autodescription />
     <cruelty type="string"></cruelty>
     <pov type="object">player</pov>
     <start type="script"><![CDATA[
       msg ("You open your eyes slowly. <br/>*ping*<br/>A faint light pulses in time with a soft pinging somewhere off in the darkness that surrounds you, faintly illuminating a bare, empty floor in an alternating black and white tile pattern. ")
       UpdateSquareLocks
     ]]></start>
+    <appendobjectdescription />
+    <attr name="autodescription_youarein_useprefix" type="boolean">false</attr>
+    <attr name="autodescription_youcango" type="int">0</attr>
+    <attr name="autodescription_youarein" type="int">0</attr>
+    <attr name="autodescription_description" type="int">1</attr>
+    <attr name="autodescription_youcansee" type="int">0</attr>
     <cover>king_piece.png</cover>
     <description>Trapped in your own mind, you must break free using the chess pieces of your very psyche.</description>
     <object name="brick3">
       <inherit name="editor_object" />
       <look>It is an ivory-coloured brick.</look>
-      <alias>Brick</alias>
+      <alias>ivory-coloured brick</alias>
       <dropmsg>You dropped the ivory brick.</dropmsg>
       <throw>You throw the brick up into the air. You'd best get out of the way before it comes down.</throw>
-      <take type="script">
-        if (GetBoolean(Rook, "talked_before")) {
-          msg ("You pick up the brick. It must belong to the Rook.")
-        }
-        else {
-          msg ("You pick up the brick. Maybe it belong's to someone.")
-        }
-        player.numBricks = player.numBricks+1
-      </take>
+      <take />
       <ontake type="script">
-        if (GetBoolean(Rook, "talked_before")) {
-          msg ("You pick up the brick. It must belong to the Rook.")
-        }
-        else {
-          msg ("You pick up the brick. Maybe it belong's to someone.")
-        }
-        numBricks = numBricks+1
       </ontake>
       <ondrop type="script">
         player.numBricks = player.numBricks-1
       </ondrop>
+      <alt type="stringlist">
+        <value>brick</value>
+      </alt>
     </object>
     <object name="Kerchief">
       <inherit name="editor_object" />
@@ -90,13 +84,6 @@
       <object name="helped_knight">
         <inherit name="editor_object" />
         <visible type="boolean">false</visible>
-        <scenery />
-      </object>
-      <object name="numBricks">
-        <inherit name="editor_object" />
-        <numBricks type="int">0</numBricks>
-        <visible type="boolean">false</visible>
-        <drop />
         <scenery />
       </object>
       <object name="helped_pawn">
@@ -465,9 +452,10 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="Rubble">
+      <object name="rubble">
         <inherit name="editor_object" />
         <look>The rubble appears to have been placed in pyramid formation. Its made up of pieces of smooth white stone, marred in places. There are deep cuts that run all over it. You almost miss it, but there is a small shoddily engraved plate in front of the pile. The plate reads, "Rest loyal soldier.".</look>
+        <scenery />
       </object>
     </object>
     <object name="D7_KnightSquare">
@@ -585,6 +573,8 @@
         <inherit name="editor_object" />
         <look>The weeds really seem to be a type of flower. The flower itself having five white petals, with black berries hanging off of it.</look>
         <pick>It would be such a shame to pluck such a pretty thing.</pick>
+        <usedefaultprefix />
+        <scenery />
       </object>
     </object>
     <object name="F7">
@@ -1038,7 +1028,7 @@
       <object name="Rook">
         <inherit name="editor_object" />
         <inherit name="male" />
-        <alias>Tower</alias>
+        <alias>tower</alias>
         <gender>it</gender>
         <article>it</article>
         <speak type="script">
@@ -1055,15 +1045,16 @@
             msg ("If it had eyebrows, the tower would be raising them at you.")
             msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
             msg ("The tower sighs again and lapses into sad silence.")
+            SetObjectFlagOn (Rook, "talked_before")
           }
-          else if (brick1.parent = player) {
-            if (brick2.parent = player) {
-              if (brick3.parent = player) {
+          else if (Got(brick1)) {
+            if (Got(brick2)) {
+              if (Got(brick3)) {
                 msg ("You place the bricks in the obvious hole, then lift the Rook’s head back onto its shoulders.  The bricks shift a bit under the weight, but appear to be holding.  The Rook shifts on its base to stare down the board.")
                 msg ("“I am whole again?  Thank you.  Now I can continue my duty, your way will be clear.  The Pawn must be Queen, it is the only way to check the black King.  Hurry, your time is growing short.”")
                 msg ("Without another word, the Rook slides swiftly down the board, and with a tremendous crack topples the enemy Queen.")
                 msg ("You see a small twinkle as something falls to the ground where the black piece stood.")
-                msg ("[placeholder] However, an enemy Pawn jumps out of the bushes in a nearby tile and ambushes the Rook, killing him! The interloper stands over the new corpse, looking triumphant.")
+                msg ("However, an enemy Pawn jumps out of the bushes in a nearby tile and ambushes the Rook, killing him! The interloper stands over the new corpse, looking triumphant.")
                 AddToInventory (helped_rook)
                 MakeObjectVisible (memory1)
                 RemoveObject (EnemyQueen)
@@ -1073,6 +1064,9 @@
                 RemoveFlagFromSquares ("threatenedByPawn1")
                 SetObjectFlagOn (G3, "threatenedByPawn1")
                 UpdateSquareLocks
+                RemoveObject (brick1)
+                RemoveObject (brick2)
+                RemoveObject (brick3)
               }
             }
           }
@@ -1080,6 +1074,10 @@
             msg ("The tower is unresponsive, a somber silence lingers in the air.")
           }
         </speak>
+        <alt type="stringlist">
+          <value>rook</value>
+          <value>ruined tower</value>
+        </alt>
       </object>
       <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
@@ -1124,6 +1122,8 @@
             msg ("Nothing happens.")
           }
         </offertothedarkness>
+        <usedefaultprefix type="boolean">false</usedefaultprefix>
+        <prefix>some</prefix>
       </object>
       <object name="memory1">
         <inherit name="editor_object" />
@@ -1509,6 +1509,23 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="brick2">
+        <inherit name="editor_object" />
+        <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
+        <alias>cream-coloured brick</alias>
+        <dropmsg>You dropped the cream coloured brick.</dropmsg>
+        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
+        <take />
+        <ondrop type="script">
+          player.numBricks = player.numBricks-1
+        </ondrop>
+        <attr name="feature_usegive" type="boolean">false</attr>
+        <ontake type="script">
+        </ontake>
+        <alt type="stringlist">
+          <value>brick</value>
+        </alt>
+      </object>
     </object>
     <object name="G5">
       <inherit name="editor_room" />
@@ -1885,25 +1902,6 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
-      <object name="brick2">
-        <inherit name="editor_object" />
-        <look>It is an cream-coloured brick chipped in some spots and cracked in others. It has probably seen better days.</look>
-        <alias>Brick</alias>
-        <dropmsg>You dropped the cream coloured brick.</dropmsg>
-        <eat>You bite into the brick. It tastes like dirt and iron. It's not the worst thing you've ever had though.</eat>
-        <take type="script">
-          if (GetBoolean(Rook, "talked_before")) {
-            msg ("You pick up the brick. It must belong to the Rook.")
-          }
-          else {
-            msg ("You pick up the brick. Maybe it belong's to someone.")
-          }
-          player.numBricks = player.numBricks+1
-        </take>
-        <ondrop type="script">
-          player.numBricks = player.numBricks-1
-        </ondrop>
-      </object>
     </object>
   </object>
   <object name="Row 3">
@@ -2266,7 +2264,6 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
-      <threatenedByQueen />
       <description>You are in a white square. To the west there is crushing blackness.</description>
       <enter type="script">
         player.horse_possible = true
@@ -2337,19 +2334,16 @@
         <inherit name="editor_object" />
         <look>It is a heavy brick of beige color is rough around the edges but still fairly sturdy. Looking at it makes you feel slightly melancoly.</look>
         <dropmsg>You dropped the beige brick.</dropmsg>
-        <alias>Brick</alias>
-        <take type="script">
-          if (GetBoolean(Rook, "talked_before")) {
-            msg ("You pick up the brick. It must belong to the Rook.")
-          }
-          else {
-            msg ("You pick up the brick. Maybe it belong's to someone.")
-          }
-          player.numBricks = player.numBricks+1
-        </take>
+        <alias>beige-coloured brick</alias>
+        <take />
         <ondrop type="script">
           player.numBricks = player.numBricks-1
         </ondrop>
+        <ontake type="script">
+        </ontake>
+        <alt type="stringlist">
+          <value>brick</value>
+        </alt>
       </object>
     </object>
     <object name="C2">
