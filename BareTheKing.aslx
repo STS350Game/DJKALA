@@ -2604,6 +2604,7 @@
       <onexit type="script">
         player.horse_possible = False
       </onexit>
+      <description>You stand in a lonely black square. To the south and to the west the doctor claws at the tile, barely staved off by the light.</description>
       <exit alias="north" to="A2">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2632,6 +2633,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a white tile. To the south the darkness teems.</description>
       <exit alias="west" to="A1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2664,6 +2666,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You find yourself in a black square. To the south you don't see anything except the darkness, an impenetrable curtain.</description>
       <exit alias="west" to="B1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2696,6 +2699,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a white tile, the darkness seethes to the south.</description>
       <exit alias="west" to="C1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2728,6 +2732,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>The floor beneath you is black, the darkness reaching out from the south is melding with the dark tile.</description>
       <exit alias="west" to="D1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2764,6 +2769,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You stand in a white tile. To the south the darkness moves, shifting and pulsing.</description>
       <exit alias="west" to="E1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2822,6 +2828,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a black tile, to the south the void swirls.</description>
       <exit alias="west" to="F1">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -2861,6 +2868,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a white tile. You have reached the end of the board, to the south and the east there is only the abyss.</description>
       <exit alias="west" to="G1_EnemyPawn">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
