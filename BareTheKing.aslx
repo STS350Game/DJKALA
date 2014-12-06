@@ -2690,9 +2690,8 @@
   </object>
   <verb>
     <property>offertothedarkness</property>
-    <pattern>offer to the darkness the</pattern>
+    <pattern>offer to the darkness</pattern>
     <defaultexpression>"You can't offer to the darkness " + object.article + "."</defaultexpression>
-    <separator>with; using</separator>
   </verb>
   <verb>
     <property>pet</property>
