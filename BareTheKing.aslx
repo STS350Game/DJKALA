@@ -125,7 +125,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <threatenedByQueen />
+      <threatenedByRook />
       <description>The floor is black beneath your feet. To your north the darkness looms, it's bleak silence unsettles you.</description>
       <enter type="script">
         player.horse_possible = true
@@ -339,13 +339,13 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.</description>
       <exit alias="east" to="B7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -408,7 +408,6 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
-      <threatenedByQueen />
       <description>Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.</description>
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
@@ -482,9 +481,10 @@
             RemoveObject (Horse)
             AddToInventory (Kerchief)
             MakeObjectVisible (memory3)
-            MoveObject (Knight, B6)
+            MoveObject (Knight, B6_EnemyRook)
             RemoveObject (Black Rook)
             RemoveFlagFromSquares ("threatenedByRook")
+            UnlockUnthreatenedSquares
           }
           else {
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
@@ -654,13 +654,13 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <threatenedByQueen type="boolean">false</threatenedByQueen>
+      <description>At the edge of the board you find yourself on a white tile. The void to your east providing stark contrast to the tile.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>At the edge of the board you find yourself on a white tile. The void to your east providing stark contrast to the tile.</description>
       <exit alias="west" to="G7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -685,13 +685,13 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <threatenedByRook />
+      <description>You sit in a white tile, the darkness lingers to the west unsettling you.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You sit in a white tile, the darkness lingers to the west unsettling you.</description>
       <exit alias="north" to="A7">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -718,9 +718,9 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <alias>B6</alias>
+      <description>The tile is black beneath your feet, just as any other tile.</description>
       <enter type="script">
       </enter>
-      <description>The tile is black beneath your feet, just as any other tile.</description>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -766,9 +766,9 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <threatenedByRook />
+      <description>You stand in a white tile, nothing around you.</description>
       <changedthreatenedByRook type="script">
       </changedthreatenedByRook>
-      <description>You stand in a white tile, nothing around you.</description>
       <exit alias="west" to="B6_EnemyRook">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -807,7 +807,6 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
-      <threatenedByQueen />
       <threatenedByPawn5 />
       <description>You step into a black tile.</description>
       <exit alias="west" to="C6">
@@ -2759,8 +2758,10 @@
   </function>
   <function name="IsThreatened" parameters="object" type="boolean">
     if (DoesInherit (object, "square")) {
-      if ( GetBoolean(object, "threatenedByQueen") or GetBoolean (object, "threatenedByRook") or GetBoolean (object, "threatenedByKing") or GetBoolean (object, "threatenedByPawn1") or GetBoolean (object, "threatenedByPawn2") or GetBoolean (object, "threatenedByPawn5")) {
-        return (true)
+      if (GetBoolean(object, "threatenedByQueen") or GetBoolean (object, "threatenedByRook") or GetBoolean (object, "threatenedByKing") or GetBoolean (object, "threatenedByPawn1") or GetBoolean (object, "threatenedByPawn2") or GetBoolean (object, "threatenedByPawn5")) {
+        if (not SquareContainsFriendlyPiece(object)) {
+          return (true)
+        }
       }
     }
     return (false)
@@ -2771,6 +2772,7 @@
         foreach (exit, AllExits()) {
           if (exit.to.name = object.name) {
             UnlockExit (exit)
+            msg ("Unlock: " + exit.name)
           }
         }
       }
@@ -2784,5 +2786,13 @@
         }
       }
     }
+  </function>
+  <function name="SquareContainsFriendlyPiece" parameters="object" type="boolean">
+    if (DoesInherit (object, "square")) {
+      if (Contains (object, Knight) or Contains (object, Rook) or Contains (object, Bishop) or Contains (object, Pawn)) {
+        return (true)
+      }
+    }
+    return (false)
   </function>
 </asl>
