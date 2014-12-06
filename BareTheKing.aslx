@@ -77,6 +77,7 @@
       <givesingle type="boolean">false</givesingle>
       <pet>You calmly pet the horse, as if trying to reassure it. </pet>
       <ride>You don't know how to ride a horse.</ride>
+      <drop type="boolean">false</drop>
       <givetoanything type="script">
         msg ("They don't seem to want the horse.")
       </givetoanything>
@@ -85,7 +86,6 @@
           msg ("You give the horse to the knight.")
         </item>
       </giveto>
-      <drop type="boolean">false</drop>
     </object>
     <object name="GameStatus">
       <inherit name="editor_object" />
@@ -455,6 +455,7 @@
             finish
           }
         ]]></script>
+        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="north" to="Darkness">
         <inherit name="northdirection" />
@@ -472,6 +473,7 @@
             finish
           }
         ]]></script>
+        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
@@ -489,6 +491,7 @@
             finish
           }
         ]]></script>
+        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="E8">
