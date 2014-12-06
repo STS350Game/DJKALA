@@ -101,6 +101,7 @@
     <object name="A8">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You are standing on a  non-descript white square. To your north and west there is nothing but a smothering darkness. </description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -125,6 +126,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <description>The floor is black beneath your feet. To your north the darkness looms, it's bleak silence unsettles you.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -155,6 +157,7 @@
     <object name="C8">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You stand upon a white tile, its finish is chipped and worn. To the north the darkness continues to swirl, hiding its contents.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -186,6 +189,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>You are standing on a black tile. To the north there is nothing but blackness.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -216,6 +220,7 @@
     <object name="E8">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You stand upon a white tile as you enter the square. To the north the dark swirls, its tendrils lap at the edge of your square.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -247,6 +252,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>There is a black tile beneath your feet, its surface contain cuts from some sort of stuggle. Pieces of stone are strewn about it. The dark to the north seems expectant, ready to overtake the square at a moments notice.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -277,6 +283,7 @@
     <object name="G8">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>There is a beat-up white tile beneath your feet. The darkness sits to the north, you feel it watching you.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -305,6 +312,7 @@
       <inherit name="square" />
       <threatenedByQueen type="boolean">false</threatenedByQueen>
       <attr name="grid_fill">Gray</attr>
+      <description>You sit at the edge of the board in a black tile, darkness looming to the north and the east. It pulses with energy, unsettling you.</description>
       <enter type="script">
         player.horse_possible = true
       </enter>
@@ -337,6 +345,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You stand in a black tile, to your west the darkness swirls. It taunts you, but never crossing the board threshold.</description>
       <exit alias="east" to="B7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -361,6 +370,7 @@
     <object name="B7">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>Beneath your feet is a scuffed white tile.</description>
       <exit alias="east" to="C7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -399,6 +409,7 @@
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
       <threatenedByQueen />
+      <description>Beneath your feet is a black tile. There is rubble piled in a corner, arranged in a small mound.</description>
       <exit alias="east" to="D7_KnightSquare">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -431,11 +442,15 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="Rubble">
+        <inherit name="editor_object" />
+        <look>The rubble appears to have been placed in pyramid formation. Its made up of pieces of smooth white stone, marred in places. There are deep cuts that run all over it. You almost miss it, but there is a small shoddily engraved plate in front of the pile. The plate reads, "Rest loyal soldier.".</look>
+      </object>
     </object>
     <object name="D7_KnightSquare">
       <inherit name="editor_room" />
       <inherit name="square" />
-      <description>An armoured man staring forlornly at the darkness that surrounds the chessboard, making half hearted whistles and clicking noises. </description>
+      <description>An armoured man staring forlornly at the darkness that surrounds the chessboard, making half hearted whistles and clicking noises. A white tile is beneath your feet.</description>
       <descprefix type="string"></descprefix>
       <objectslistprefix type="string"></objectslistprefix>
       <alias>D7</alias>
@@ -467,7 +482,7 @@
             RemoveObject (Horse)
             AddToInventory (Kerchief)
             MakeObjectVisible (memory3)
-            MoveObject (Knight, B6_EnemyRook)
+            MoveObject (Knight, B6)
             RemoveObject (Black Rook)
             RemoveFlagFromSquares ("threatenedByRook")
           }
@@ -522,6 +537,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>You step onto a black tile. Its edges are receding from those tiles around it, making room for some weeds to grow.</description>
       <exit alias="east" to="F7">
         <inherit name="eastdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -554,10 +570,15 @@
         <inherit name="southdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="Weeds">
+        <inherit name="editor_object" />
+        <look>The weeds really seem to be a type of flower. The flower itself having five white petals, with black berries hanging off of it.</look>
+      </object>
     </object>
     <object name="F7">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You find yourself on a white tile, worn as all the others are.</description>
       <exit alias="west" to="E7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -595,6 +616,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>You step onto a black tile, chipped and worn. There is a noticeable chunk missing out of the centre of the tile.</description>
       <exit alias="west" to="F7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -638,6 +660,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>At the edge of the board you find yourself on a white tile. The void to your east providing stark contrast to the tile.</description>
       <exit alias="west" to="G7">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -668,6 +691,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You sit in a white tile, the darkness lingers to the west unsettling you.</description>
       <exit alias="north" to="A7">
         <inherit name="northdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -696,6 +720,7 @@
       <alias>B6</alias>
       <enter type="script">
       </enter>
+      <description>The tile is black beneath your feet, just as any other tile.</description>
       <exit alias="west" to="A6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -743,6 +768,7 @@
       <threatenedByRook />
       <changedthreatenedByRook type="script">
       </changedthreatenedByRook>
+      <description>You stand in a white tile, nothing around you.</description>
       <exit alias="west" to="B6_EnemyRook">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -783,6 +809,7 @@
       <threatenedByRook />
       <threatenedByQueen />
       <threatenedByPawn5 />
+      <description>You step into a black tile.</description>
       <exit alias="west" to="C6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -825,6 +852,7 @@
         if (GetBoolean(EnemyPawn5, "alive")) {
           msg ("A black pawn stands in the square to your immediate south.")
         }
+        msg ("You are standing in a white tile.")
       </description>
       <beforefirstenter type="script">
       </beforefirstenter>
@@ -883,6 +911,7 @@
       <attr name="grid_fill">Gray</attr>
       <threatenedByRook />
       <threatenedByPawn5 />
+      <description>There is a scuffed black tile beneath you, its worn surface scarred.</description>
       <exit alias="west" to="E6_StartingSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -920,6 +949,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <threatenedByRook />
+      <description>You are standing on what should be a white tile. It has been cracked so deeply that a dark substance has leaked through the crack and covered the tile though.</description>
       <exit alias="west" to="F6">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -960,7 +990,7 @@
       <threatenedByQueen type="boolean">false</threatenedByQueen>
       <descprefix>You approach</descprefix>
       <objectslistprefix>You can see</objectslistprefix>
-      <description>There is a ruined tower before you. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.</description>
+      <description><![CDATA[There is a ruined tower before you. A battlement crowned top lies a few feet away from the base, with small tufts of soft, fragrant grass poking up from underneath it.<br/>The abysmal darkness lingers to the east, seething.]]></description>
       <alias>H6</alias>
       <attr name="grid_fill">Gray</attr>
       <enter type="script">
@@ -2707,6 +2737,11 @@
     <property>ride</property>
     <pattern>ride</pattern>
     <defaultexpression>"You can't ride " + object.article + "."</defaultexpression>
+  </verb>
+  <verb>
+    <property>pick</property>
+    <pattern>pick</pattern>
+    <defaultexpression>"You can't pick " + object.article + "."</defaultexpression>
   </verb>
   <type name="square">
     <inherit name="editor_room" />
