@@ -1165,7 +1165,7 @@
       <alias>A5</alias>
       <attr name="grid_fill">Gray</attr>
       <description type="script">
-        msg ("You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest.")
+        msg ("You come upon a robed man seated on a small bench cradling his head in his hands.  A tall mitre is on the ground next to him, and a stethoscope glints on his chest. You are in a black square, yo your west the darkness seethes.")
         if (Contains (B6_EnemyRook,Black Rook)) {
           msg ("To the northeast, you see a Black Rook. He glowers menacingly, and you gulp: he's definitely too big for you to take on.")
         }
@@ -1316,6 +1316,7 @@
       <inherit name="square" />
       <attr name="grid_fill">White</attr>
       <threatenedByRook />
+      <description>You step into a white square.</description>
       <exit alias="west" to="A5_BishopSquare">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1397,6 +1398,7 @@
     <object name="D5">
       <inherit name="editor_room" />
       <inherit name="square" />
+      <description>You enter a </description>
       <exit alias="west" to="C5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1529,6 +1531,7 @@
       <inherit name="editor_room" />
       <inherit name="square" />
       <attr name="grid_fill">Gray</attr>
+      <description>You stand in a black tile, there is a rift in the floor that has extended from the tile above, but the rift has widened in this square. There is blackness is spilling out of the rift slightly.</description>
       <exit alias="west" to="F5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -1561,6 +1564,10 @@
         <inherit name="southeastdirection" />
         <attr name="grid_length" type="int">0</attr>
       </exit>
+      <object name="Rift">
+        <inherit name="editor_object" />
+        <look>You examine the rift more closely, it is wide enough for a person to go through. The closer you get to the rift the more uncomfortable you feel. Its inky black tendrils snaking from the opening seem to be reaching for you.</look>
+      </object>
     </object>
     <object name="H5">
       <inherit name="editor_room" />
@@ -1572,6 +1579,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
+      <description>You are in a white tile now, to the east you feel the menacing presence of the void.</description>
       <exit alias="west" to="G5">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
