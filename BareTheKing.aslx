@@ -484,7 +484,7 @@
             MakeObjectVisible (memory3)
             MoveObject (Knight, B6)
             RemoveObject (Black Rook)
-            RemoveFlagFromSquares (threatenedByRook)
+            RemoveFlagFromSquares ("threatenedByRook")
           }
           else {
             msg ("The knight continues to stare forlornly into the darkness, not even acknowledging you")
@@ -2791,7 +2791,9 @@
   <function name="RemoveFlagFromSquares" parameters="flagName">
     foreach (object, AllObjects()) {
       if (DoesInherit (object, "square")) {
-        SetObjectFlagOff (object, flagName)
+        if (GetBoolean(object, flagName)) {
+          SetObjectFlagOff (object, flagName)
+        }
       }
     }
   </function>
