@@ -52,6 +52,7 @@
           msg ("You give the horse to the knight.")
         </item>
       </giveto>
+      <drop type="boolean">false</drop>
     </object>
     <object name="GameStatus">
       <inherit name="editor_object" />
@@ -114,6 +115,7 @@
       <exit alias="north" to="Darkness">
         <inherit name="northdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -127,7 +129,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
@@ -150,6 +151,7 @@
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -163,7 +165,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="west" to="Darkness">
         <inherit name="westdirection" />
@@ -186,6 +187,7 @@
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -199,7 +201,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="B8">
@@ -322,6 +323,7 @@
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -335,11 +337,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="north" to="Darkness">
         <inherit name="northdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -353,11 +355,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -371,7 +373,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="D8">
@@ -490,6 +491,7 @@
       <exit alias="north" to="Darkness">
         <inherit name="northdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -503,11 +505,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -521,11 +523,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -539,7 +541,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="F8">
@@ -871,6 +872,7 @@
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -884,11 +886,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="west" to="Darkness">
         <inherit name="westdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -902,11 +904,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -920,7 +922,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="B7">
@@ -2766,6 +2767,7 @@
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -2779,11 +2781,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="east" to="Darkness">
         <inherit name="eastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -2797,11 +2799,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southeast" to="Darkness">
         <inherit name="southeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -2815,7 +2817,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
   </object>
@@ -3237,6 +3238,7 @@
       <exit alias="northeast" to="Darkness">
         <inherit name="northeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3250,11 +3252,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="east" to="Darkness">
         <inherit name="eastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3268,11 +3270,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southeast" to="Darkness">
         <inherit name="southeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3286,7 +3288,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
   </object>
@@ -3327,6 +3328,7 @@
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3340,11 +3342,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="west" to="Darkness">
         <inherit name="westdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3358,11 +3360,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3376,7 +3378,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="B2">
@@ -3750,6 +3751,7 @@
       <exit alias="northwest" to="Darkness">
         <inherit name="northwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3763,11 +3765,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="west" to="Darkness">
         <inherit name="westdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3781,11 +3783,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3799,11 +3801,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="south" to="Darkness">
         <inherit name="southdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3817,11 +3819,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southeast" to="Darkness">
         <inherit name="southeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3835,7 +3837,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="B1">
@@ -3964,6 +3965,7 @@
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3977,11 +3979,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="south" to="Darkness">
         <inherit name="southdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -3995,11 +3997,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southeast" to="Darkness">
         <inherit name="southeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4013,7 +4015,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="D1">
@@ -4138,6 +4139,7 @@
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4151,11 +4153,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="south" to="Darkness">
         <inherit name="southdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4169,11 +4171,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southeast" to="Darkness">
         <inherit name="southeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4187,7 +4189,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="F1">
@@ -4360,6 +4361,7 @@
       <exit alias="southwest" to="Darkness">
         <inherit name="southwestdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4373,11 +4375,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="south" to="Darkness">
         <inherit name="southdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4391,11 +4393,11 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
       <exit alias="southeast" to="Darkness">
         <inherit name="southeastdirection" />
         <runscript />
+        <attr name="grid_length" type="int">0</attr>
         <script type="script"><![CDATA[
           if (not GetBoolean(Darkness,"tried")) {
             msg ("As you near the edge of the board, you come upon an ethereal black curtain that the ambient light which has been following you since you woke up cannot pierce. Getting even close, you notice shifting shadows behind the veil. You reach out your hand to touch it and panic envelops your mind.<br/>Whatever is behind there is bad, very very bad. You probably don't want to proceed any further.")
@@ -4409,7 +4411,6 @@
             finish
           }
         ]]></script>
-        <attr name="grid_length" type="int">0</attr>
       </exit>
     </object>
     <object name="H1">
