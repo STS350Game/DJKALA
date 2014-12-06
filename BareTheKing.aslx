@@ -1732,6 +1732,7 @@
         <gender>it</gender>
         <article>it</article>
         <push>You push the Rook. It looks annoyed but remains silent.</push>
+        <smell>The Rook looks confused and bit scared as you lean in to sniff him.</smell>
         <speak type="script">
           if (not GetBoolean(Rook,"talked_before")) {
             msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
@@ -1772,8 +1773,6 @@
             msg ("The tower is unresponsive. A somber silence lingers in the air.")
           }
         </speak>
-        <smell type="script">
-        </smell>
       </object>
       <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
@@ -3159,7 +3158,7 @@
         </speak>
         <smell type="script">
           msg ("The Pawn pushes you back as you try to lean in to take a whiff.")
-          msg (""What in tarnation do you thing your up to?"")
+          msg ("\"What in tarnation do you thing your up to?\"")
           msg ("You take a step back silently, not sure how to answer for your odd actions")
         </smell>
         <push type="script">
@@ -4539,12 +4538,12 @@
   <verb>
     <property>pet</property>
     <pattern>pet</pattern>
-    <defaultexpression>"You pett " + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
+    <defaultexpression>"You pett " + object.article + " and nothing happens. What more did you expect?"</defaultexpression>
   </verb>
   <verb>
     <property>ride</property>
     <pattern>ride</pattern>
-    <defaultexpression>"You try to ride " + object.article + "and probably look really stupid doing so."</defaultexpression>
+    <defaultexpression>"You try to ride " + object.article + " and probably look really stupid doing so."</defaultexpression>
   </verb>
   <verb>
     <property>pick</property>
@@ -4564,17 +4563,18 @@
   <verb>
     <pattern>smell</pattern>
     <property>smell</property>
-    <defaultexpression>"You smell" + object.article + "and get a whiff of dirt and rubble."</defaultexpression>
+    <defaultexpression>"You smell" + object.article + " and get a whiff of dirt and rubble."</defaultexpression>
   </verb>
   <verb>
     <pattern>push</pattern>
     <property>push</property>
-    <defaultexpression>"You push" + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
+    <defaultexpression>"You push" + object.article + " and nothing happens. What more did you expect?"</defaultexpression>
   </verb>
   <verb>
     <property>lick</property>
     <pattern>lick</pattern>
     <defaulttext>"You lick" + object.article + "...What are you doing with yourself."</defaulttext>
+    <defaultexpression>"You lick" + object.article + "...What are you doing with yourself."</defaultexpression>
   </verb>
   <object name="Darkness">
     <inherit name="editor_room" />
