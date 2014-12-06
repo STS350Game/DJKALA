@@ -1055,6 +1055,7 @@
         <alias>Tower</alias>
         <gender>it</gender>
         <article>it</article>
+        <push>You push the Rook. It looks annoyed but remains silent.</push>
         <speak type="script">
           if (not GetBoolean(Rook,"talked_before")) {
             msg ("“If you’re looking for help, I don’t think I’m going to be much use to you.”")
@@ -1096,7 +1097,6 @@
         </speak>
         <smell type="script">
         </smell>
-        <push>You push the Rook. It looks annoyed but remains silent.</push>
       </object>
       <exit alias="southwest" to="G5">
         <inherit name="southwestdirection" />
@@ -1202,6 +1202,12 @@
           MoveObject (memory2, D3)
           MakeObjectVisible (memory2)
         </changedalive>
+        <smell type="script">
+          msg ("The Bishop takes a step back looking perplexed. He gives you a slightly concerned look.")
+        </smell>
+        <push type="script">
+          msg ("You push the Bishop. It looks annoyed but remains silent")
+        </push>
         <useon type="scriptdictionary">
           <item key="Kerchief">
             msg ("You hold out the white kerchief to the Bishop.  He looks up, startled.")
@@ -1268,12 +1274,6 @@
             SetObjectFlagOn (E3, "threatenedByKing")
           </item>
         </give>
-        <smell type="script">
-          msg ("The Bishop takes a step back looking perplexed. He gives you a slightly concerned look.")
-        </smell>
-        <push type="script">
-          msg ("You push the Bishop. It looks annoyed but remains silent")
-        </push>
       </object>
       <exit alias="southeast" to="B4">
         <inherit name="southeastdirection" />
@@ -2806,6 +2806,14 @@
             finish
           }
         ]]></speak>
+        <lick type="script">
+          msg ("You get the sudden urge to lick the White Queen")
+          msg ("As you step in, the Queen looks at you and gives you an angelic smile")
+          msg ("You lean in and stick out ur tongue and the Queen steps back in surprise")
+          msg (""What do you think you're doing?! Do you think you're some kind of dog?"")
+          msg ("You take a step back in embarrassment and quickly apologize")
+          msg (""I-I-I'm sorry, I don't not what came over me"")
+        </lick>
         <turnscript name="WhiteQueenVisibility">
           <enabled />
           <script>
@@ -2924,6 +2932,11 @@
     <pattern>push</pattern>
     <property>push</property>
     <defaultexpression>"You push" + object.article + "and nothing happens. What more did you expect?"</defaultexpression>
+  </verb>
+  <verb>
+    <property>lick</property>
+    <pattern>lick</pattern>
+    <defaulttext>"You lick" + object.article + "...What are you doing with yourself."</defaulttext>
   </verb>
   <type name="square">
     <inherit name="editor_room" />
