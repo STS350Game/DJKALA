@@ -318,7 +318,7 @@
       <onexit type="script">
         player.horse_possible = false
       </onexit>
-      <description>You sit at the edge of the board, darkness looming to the north and the east. It pulses with energy, unsettling you.</description>
+      <description>You sit at the edge of the board in a black tile, darkness looming to the north and the east. It pulses with energy, unsettling you.</description>
       <exit alias="west" to="G8">
         <inherit name="westdirection" />
         <attr name="grid_length" type="int">0</attr>
@@ -480,7 +480,7 @@
             RemoveObject (Horse)
             AddToInventory (Kerchief)
             MakeObjectVisible (memory3)
-            MoveObject (Knight, B6_EnemyRook)
+            MoveObject (Knight, B6)
             RemoveObject (Black Rook)
             RemoveFlagFromSquares (threatenedByRook)
           }
@@ -2703,9 +2703,8 @@
   </object>
   <verb>
     <property>offertothedarkness</property>
-    <pattern>offer to the darkness the</pattern>
+    <pattern>offer to the darkness</pattern>
     <defaultexpression>"You can't offer to the darkness " + object.article + "."</defaultexpression>
-    <separator>with; using</separator>
   </verb>
   <verb>
     <property>pet</property>
