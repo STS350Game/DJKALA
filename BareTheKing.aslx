@@ -96,6 +96,11 @@
         <drop />
         <scenery />
       </object>
+      <object name="helped_pawn">
+        <inherit name="editor_object" />
+        <scenery />
+        <visible type="boolean">false</visible>
+      </object>
     </object>
   </game>
   <object name="Row 8">
@@ -1041,7 +1046,7 @@
             msg ("“I have been laid low, and unmade.  I cannot continue while I am in pieces.”")
             msg ("The tower sighs again and lapses into sad silence.")
           }
-          else if ((brick1.parent = player)) {
+          else if (brick1.parent = player) {
             if (brick2.parent = player) {
               if (brick3.parent = player) {
                 msg ("You place the bricks in the obvious hole, then lift the Rook’s head back onto its shoulders.  The bricks shift a bit under the weight, but appear to be holding.  The Rook shifts on its base to stare down the board.")
@@ -1444,6 +1449,11 @@
         <inventoryverbs type="stringlist" />
         <drop type="boolean">false</drop>
         <alive />
+        <speak type="script">
+          if (helped_pawn.parent = player) {
+            msg ("\"I salute you, and congratulate you on your victory.\"")
+          }
+        </speak>
       </object>
     </object>
     <object name="F5">
@@ -2104,8 +2114,8 @@
             msg ("Glaring, he shuffles his feet around a bit, but keeps his spear pointing at the enemy King.")
             Pawn.talked_before = true
           }
-          else if ((helped_rook.parent = player)) {
-            if (helpe_bishop.parent = player) {
+          else if (helped_rook.parent = player) {
+            if (helped_bishop.parent = player) {
               if (helped_knight.parent = player) {
                 msg ("“D-don’t come any closer!”")
                 msg ("“Ok, I’ll stay right here.  Listen, you have to go.  Your path is clear, you’re the only one who can end this!”")
@@ -2127,6 +2137,7 @@
                 msg ("")
                 msg ("“It is over.” Says the White Queen.")
                 RemoveObject (Pawn)
+                AddToInventory (helped_pawn)
               }
             }
           }
@@ -2791,6 +2802,11 @@
       </exit>
       <object name="EnemyPawn1">
         <inherit name="editor_object" />
+        <speak type="script">
+          if (helped_pawn.parent = player) {
+            msg ("\"I salute you, and congratulate you on your victory.\"")
+          }
+        </speak>
       </object>
     </object>
     <object name="H1">
